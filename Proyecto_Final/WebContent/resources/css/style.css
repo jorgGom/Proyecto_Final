@@ -1,0 +1,121 @@
+body{
+	font-family: 'Pacifico', cursive;
+}
+header{
+	background-color: rgba(19,193,172,.93);
+}
+h1{
+	float: left;
+	margin-left: 20px;
+	display:block;
+	color: white;
+	
+}
+nav{
+	display: inline-block;
+	float:right;
+	margin-top: 25px;
+}
+.amenu{
+	margin-right: 20px;
+	font-size: 20px;
+}
+a:hover{
+	text-decoration: none;
+}
+.navegacion{
+	text-align: right;
+
+}
+.navegacion:after,
+.navegacion:before{
+	content: '';
+	display: table;
+	clear: both;
+}
+.form-busqueda{
+	margin-top:10px;
+	padding-bottom: 10px;
+}
+.busqueda{
+	height: 40px;
+	width: 97%;
+	max-width: 100%;
+	display: inline-flex;
+	margin-left:10px;
+	background-color: #2ba696;
+	border-radius:30px;
+    border: 0;
+    color:white;
+    font-size: 20px;
+    padding-left: 10px;
+}
+#buscar{
+	height: 40px;
+	width: 40px;
+	border-radius:30px;
+	border:0;
+}
+input{
+	outline:none;
+	font-family: serif;
+}
+*::-webkit-input-placeholder {
+    /* Google Chrome y Safari */
+    color: #D8D8D8;
+}
+*:-moz-placeholder {
+    /* Firefox anterior a 19 */
+    color: white;
+}
+*::-moz-placeholder {
+    /* Firefox 19 y superior */
+    color: white;
+}
+*:-ms-input-placeholder {
+    /* Internet Explorer 10 y superior */
+   color: white;
+}
+.contenedor{
+	margin:20px;
+}
+.descripcion{
+	margin-bottom: 40px;
+}
+
+table{
+	width: 100%;
+	margin-top:10px;
+}
+.imgportada{
+max-height: 150px;
+max-width: 150px;
+	
+}
+main{
+	margin-bottom: 50px;
+}
+footer{
+	position:absolute;
+	float:right;
+	background-color: rgba(19,193,172,.93);
+	bottom: 0;
+	width: 100%;
+
+}
+.apie{
+	text-align:left;
+	margin-right: 50px;
+	margin-bottom: 20px;
+}
+.Copyright{
+    float: left;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+.pie{
+		display: inline;
+	width: 100%;
+
+}
