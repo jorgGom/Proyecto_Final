@@ -138,3 +138,6 @@ footer{
 	width: 100%;
 
 }
+.clase-general{
+	display: table-row;
+}
