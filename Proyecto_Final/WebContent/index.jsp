@@ -4,9 +4,43 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<title>WallaTroll</title>
 </head>
 <body>
-<h1>Hola</h1>
+<div class="navegacion">
+<h1>${company}</h1>
+<nav>
+<a href="InitSess">Inicio de Sesion</a>
+<a href="Registro">Registrarse</a>
+</nav>
+</div>
+<form action="post">
+<label></label>
+<input/>
+</form>
+<div class="contenedor">
+<div class="descripcion">
+<h2>Qué hacemos</h2>
+<p>Aquí va la descripción</p>
+</div>
+<div class="imagenes">
+<table>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</table>
+</div>
+<h3><a href="">Productos en venta</a></h3>
+</div>
+<div class="pie"></div>
 </body>
 </html>
