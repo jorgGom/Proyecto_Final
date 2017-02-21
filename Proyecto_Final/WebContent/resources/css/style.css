@@ -20,7 +20,7 @@ nav{
 	margin-right: 20px;
 	font-size: 20px;
 }
-.amenu:hover{
+a:hover{
 	text-decoration: none;
 }
 .navegacion{
@@ -79,6 +79,10 @@ input{
 .contenedor{
 	margin:20px;
 }
+.descripcion{
+	margin-bottom: 40px;
+}
+
 table{
 	width: 100%;
 	margin-top:10px;
@@ -92,6 +96,7 @@ main{
 	margin-bottom: 50px;
 }
 footer{
+	position:absolute;
 	float:right;
 	background-color: rgba(19,193,172,.93);
 	bottom: 0;
