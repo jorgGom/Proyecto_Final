@@ -1,8 +1,20 @@
 body{
 	font-family: 'Pacifico', cursive;
+	margin-top:150px;
 }
 header{
 	background-color: rgba(19,193,172,.93);
+	-webkit-box-shadow: 0px 10px 20px 4px rgba(0,0,0,0.27);
+	margin-bottom: 50px;
+	
+}
+.navbar-default {
+    background-color: rgba(19,193,172,.93);
+    border-color: #e7e7e7;
+}
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 0px;
 }
 h1{
 	float: left;
@@ -82,10 +94,17 @@ input{
 .descripcion{
 	margin-bottom: 40px;
 }
-
+p{
+	font-family: 'Dosis', sans-serif;
+	font-size: 20px;
+}
 table{
 	width: 100%;
 	margin-top:10px;
+}
+.tdimg{
+	font-family: 'Dosis', sans-serif;
+	font-size: 20px;
 }
 .imgportada{
 max-height: 150px;
