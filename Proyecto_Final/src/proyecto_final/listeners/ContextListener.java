@@ -44,7 +44,7 @@ public class ContextListener implements ServletContextListener {
     	 String DATABASE_URI = context.getInitParameter("DATABASE_URI");
     	 String DATABASE_USERNAME = context.getInitParameter("DATABASE_USERNAME");
     	 String DATABASE_PASSWORD = context.getInitParameter("DATABASE_PASSWORD");
-    	 
+    	 //Conexion
     	 Connection conn = null;
     	 try {
     		 Class.forName(DATABASE_DRIVER);
