@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,10 +14,10 @@
 	crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Dosis|Pacifico" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
-<title>Pagina de Inicio</title>
+<title>WallaTroll</title>
 </head>
 <body>
-<header class="clase-general">
+	<header class="clase-general">
 	<div class="navegacion">
 		<h1>${CompanyName}WallaTroll</h1>
 		<nav> <a class="amenu" href="InitSess">Inicio de Sesion</a> <a
@@ -33,26 +33,7 @@
 	</div>
 	</header>
 	<main class="clase-general">
-	<div class="contenedor">
-		<div class="descripcion">
-			<h2>Qué hacemos</h2>
-			<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.<a href="">Productos en venta</a></p>
-						<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.<a href="">Productos en venta</a></p>			
-		</div>
-		<div class="imagenes">
-			<table>
-				<tr>
-					<td class="tdimg" ROWSPAN="2">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) </td>
-					<td><img class="imgportada" src="resources\img\LG.jpg"/></td>
-					<td><img class="imgportada" src="resources\img\calcetines.jpg"/></td>
-					<td><img class="imgportada" src="resources\img\smartphone.jpg"/></td>
-				</tr>
-				<tr>
-					<td><img class="imgportada" src="resources\img\ford.jpg"/></td>
-					<td><img class="imgportada" src="resources\img\consolas.jpg"/></td>
-					<td><img class="imgportada" src="resources\img\trump.jpg"/></td>
-				</tr>
-			</table>
+
 
 	</main>
 	<footer class="clase-general">

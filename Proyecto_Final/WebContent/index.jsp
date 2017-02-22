@@ -16,7 +16,7 @@
 <link rel="stylesheet" type="text/css" href="resources/css/style.css">
 <title>WallaTroll</title>
 </head>
-<body>
+<body class="body">
 	<header class="navbar navbar-default navbar-fixed-top">
 	<div class="navegacion">
 		<h1>${CompanyName}WallaTroll</h1>

@@ -1,5 +1,9 @@
 body{
 	font-family: 'Pacifico', cursive;
+	
+}
+.body{
+	font-family: 'Pacifico', cursive;
 	margin-top:150px;
 }
 header{
@@ -134,7 +138,7 @@ footer{
     margin-left: 10px;
 }
 .pie{
-		display: inline;
+	display: inline;
 	width: 100%;
 
 }
