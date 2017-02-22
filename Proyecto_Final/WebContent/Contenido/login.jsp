@@ -15,15 +15,15 @@
 <link href="https://fonts.googleapis.com/css?family=Dosis|Pacifico"
 	rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
-<title>WallaTroll</title>
+<title>Iniciar Sesión</title>
 </head>
-<body>
+<body style="background-color: #F1F1F1">
 	<header class="navbar navbar-default navbar-fixed-top">
 	<div class="navegacion">
 		<h1>${CompanyName}WallaTroll</h1>
-		<nav id="navPrincipal"> 
-			<a class="amenu" href="InitSess">${nombreUsuario }</a>
-		 	<a class="amenu" href="InitSess">Cerrar sesión</a>
+		<nav id="navPrincipal">
+			<a class="amenu" href="../index.jsp">Home</a> 
+			<a class="amenu" href="Registro">Registrarse</a> 
 		</nav>
 	</div>
 	<div class="form-busqueda">
@@ -36,24 +36,30 @@
 		</form>
 	</div>
 	</header>
-	<main>
-	<h2>Bienvenido ${nombreUsuario }</h2>
-		<ul>
-			<li><a href="#">Perfil</a></li>
-			<li><a href="#">Productos en venta</a></li>
-			<li><a href="#">Productos comprados</a></li>
-		</ul>
-
-	<form>
-		<button type="button" id="comprar">Comprar</button>
-		<button type="button" id="vender">Vender</button>
-	</form>
-	</main>
-	<footer>
-	<div class="pie">
-		<p class="Copyright">@Copyright</p>
-		<nav> <a class="apie" href="">Contacto</a> </nav>
+	<div class="mainLogin">
+	<div id="login">
+		<h2>Iniciar Sesión</h2>
+		<form action="/" method="POST">
+			<fieldset>
+				<p>
+					<label for="email">E-mail</label>
+				</p>
+				<p>
+					<input type="email" id="email" placeholder="e-mail">
+				</p>
+				<p>
+					<label for="password">Contraseña</label>
+				</p>
+				<p>
+					<input type="password" id="password" placeholder="Contraseña">
+				</p>
+				<p>
+					<input type="submit" value="Iniciar Sesión">
+				</p>
+			</fieldset>
+		</form>
 	</div>
-	</footer>
+	</form>
+</div>
 </body>
 </html>

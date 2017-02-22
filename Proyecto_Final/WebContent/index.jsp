@@ -20,8 +20,10 @@
 	<header class="navbar navbar-default navbar-fixed-top">
 	<div class="navegacion">
 		<h1>${CompanyName}WallaTroll</h1>
-		<nav> <a class="amenu" href="InitSess">Inicio de Sesion</a> <a
-			class="amenu" href="Registro">Registrarse</a> </nav>
+		<nav id="navPrincipal">
+			<a class="amenu" href="InitSess">Inicio de Sesion</a>
+			<a class="amenu" href="Registro">Registrarse</a> 
+		</nav>
 	</div>
 	<div class="form-busqueda">
 		<form class="busqueda" action="/" method="post">
