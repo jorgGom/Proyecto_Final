@@ -35,22 +35,17 @@
 	</header>
 	<main>
 	<h2>Bienvenido ${nombreUsuario }</h2>
-	
-	<nav class="navbar navbar-default">
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="#">Home</a></li>
-			<li><a href="#">Page 1</a></li>
-			<li><a href="#">Page 2</a></li>
-			<li><a href="#">Page 3</a></li>
+		<ul>
+			<li><a href="#">Perfil</a></li>
+			<li><a href="#">Productos en venta</a></li>
+			<li><a href="#">Productos comprados</a></li>
 		</ul>
-	
-	</nav> 
-	<a href="#">Perfil</a>
+
 	<form>
 		<button type="button" id="comprar">Comprar</button>
 		<button type="button" id="vender">Vender</button>
 	</form>
-	<a href="#">Comprados</a> </main>
+	</main>
 	<footer>
 	<div class="pie">
 		<p class="Copyright">@Copyright</p>
