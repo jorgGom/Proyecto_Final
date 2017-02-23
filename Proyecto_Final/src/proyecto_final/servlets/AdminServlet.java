@@ -11,16 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class AutenticadorServlet
+ * Servlet implementation class AdminServlet
  */
-//@WebServlet("/AutenticadorServlet")
-public class AutenticadorServlet extends HttpServlet {
+//@WebServlet("/AdminServlet")
+public class AdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AutenticadorServlet() {
+    public AdminServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,7 +30,9 @@ public class AutenticadorServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.sendRedirect("Contenido/error.jsp");
+		HttpSession session = request.getSession();
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Contenido/admin.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
@@ -38,23 +40,7 @@ public class AutenticadorServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String newName = request.getParameter("mail");
-		String newPass = request.getParameter("pass");
-		
-		if("prueba".equalsIgnoreCase(newName) && "1234".equalsIgnoreCase(newPass)){
-			HttpSession session = request.getSession();
-			session.setAttribute("userName", newName);
-			session.setAttribute("newPass", newPass);
-			response.sendRedirect("/Admin");
-			
-			/*RequestDispatcher dispatcher = request.getRequestDispatcher("Contenido/admin.jsp");
-			dispatcher.forward(request, response);*/
-		}
-		else{
-			RequestDispatcher d = request.getRequestDispatcher("Contenido/error.jsp");
-			d.forward(request,response);
-			
-		}
+
 	}
 
 }
