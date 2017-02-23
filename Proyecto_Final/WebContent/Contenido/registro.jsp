@@ -23,7 +23,7 @@
 		<h1>${CompanyName}WallaTroll</h1>
 		<nav id="navPrincipal">
 			<a class="amenu" href="../index.jsp">Home</a> 
-			<a class="amenu" href="Registro">Registrarse</a> 
+			<a class="amenu" href="InitSess">Inicio de Sesion</a>
 		</nav>
 	</div>
 	<div class="form-busqueda">
@@ -82,7 +82,7 @@
 				</p>
 				</div>
 				<div class="dcha">
-				<p>
+				<p class="button">
 					<input type="submit" value="Registrarse">
 				</p>
 				</div>

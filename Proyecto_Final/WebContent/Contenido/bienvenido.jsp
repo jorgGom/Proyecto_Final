@@ -15,16 +15,14 @@
 <link href="https://fonts.googleapis.com/css?family=Dosis|Pacifico"
 	rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
-<title>WallaTroll</title>
+<title>Bienvenido</title>
 </head>
 <body>
 	<header class="navbar navbar-default navbar-fixed-top">
 	<div class="navegacion">
 		<h1>${CompanyName}WallaTroll</h1>
-		<nav id="navPrincipal"> 
-			<a class="amenu" href="InitSess">${nombreUsuario }</a>
-		 	<a class="amenu" href="InitSess">Cerrar sesión</a>
-		</nav>
+		<nav id="navPrincipal"> <a class="amenu" href="InitSess">${nombreUsuario }</a>
+		<a class="amenu" href="InitSess"><p class="glyphicon glyphicon-off"></p></a> </nav>
 	</div>
 	<div class="form-busqueda">
 		<form class="busqueda" action="/" method="post">
@@ -36,23 +34,41 @@
 		</form>
 	</div>
 	</header>
-	<main>
-	<h2>Bienvenido ${nombreUsuario }</h2>
-		<ul>
-			<li><a href="#">Perfil</a></li>
+
+
+	<div class="container">
+	<div class="item">
+		<h2>Bienvenido ${nombreUsuario }</h2>
+		<ul class="nav nav-pills nav-stacked">
+			<li><a class="glyphicon glyphicon-user" href="#"> Perfil</a></li>
 			<li><a href="#">Productos en venta</a></li>
 			<li><a href="#">Productos comprados</a></li>
 		</ul>
 
-	<form>
-		<button type="button" id="comprar">Comprar</button>
-		<button type="button" id="vender">Vender</button>
-	</form>
-	</main>
+		<form>
+			<button type="button" id="comprar">Comprar</button>
+			<button type="button" id="vender">Vender</button>
+		</form>
+	</div>
+	<div class="item2">
+		<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas
+			y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar
+			de las industrias desde el año 1500, cuando un impresor (N. del T.
+			persona que se dedica a la imprenta) desconocido usó una galería de
+			textos y los mezcló de tal manera que logró hacer un libro de textos
+			especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como
+			texto de relleno en documentos electrónicos, quedando esencialmente
+			igual al original. Fue popularizado en los 60s con la creación de las
+			hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más
+			recientemente con software de autoedición, como por ejemplo Aldus
+			PageMaker, el cual incluye versiones de Lorem Ipsum</p>
+	</div>
+
+</div>
 	<footer>
 	<div class="pie">
 		<p class="Copyright">@Copyright</p>
-		<nav> <a class="apie" href="">Contacto</a> </nav>
+		<nav class="contactpie"> <a class="apie" href="">Contacto</a> </nav>
 	</div>
 	</footer>
 </body>
