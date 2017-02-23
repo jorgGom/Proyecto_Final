@@ -39,19 +39,19 @@
 	<div class="mainLogin">
 	<div id="login">
 		<h2>Iniciar Sesión</h2>
-		<form action="/" method="POST">
+		<form action="../home" method="POST">
 			<fieldset>
 				<p>
-					<label for="email">E-mail</label>
+					<label>E-mail</label>
 				</p>
 				<p>
-					<input type="email" id="email" placeholder="e-mail">
+					<input type="text" name="mail" placeholder="e-mail">
 				</p>
 				<p>
-					<label for="password">Contraseña</label>
+					<label>Contraseña</label>
 				</p>
 				<p>
-					<input type="password" id="password" placeholder="Contraseña">
+					<input type="password" name="pass" placeholder="Contraseña">
 				</p>
 				<p>
 					<input type="submit" value="Iniciar Sesión">

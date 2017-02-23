@@ -22,7 +22,7 @@
 	<div class="navegacion">
 		<h1>${CompanyName}WallaTroll</h1>
 		<nav id="navPrincipal"> 
-			<a class="amenu" href="InitSess">${nombreUsuario }</a>
+			<a class="amenu" href="InitSess"></a>
 		 	<a class="amenu" href="InitSess">Cerrar sesión</a>
 		</nav>
 	</div>

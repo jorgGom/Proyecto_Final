@@ -21,8 +21,8 @@
 	<div class="navegacion">
 		<h1>${CompanyName}WallaTroll</h1>
 		<nav id="navPrincipal">
-			<a class="amenu" href="InitSess">Inicio de Sesion</a>
-			<a class="amenu" href="Registro">Registrarse</a> 
+			<a class="amenu" href="Contenido/login.jsp">Inicio de Sesion</a>
+			<a class="amenu" href="Contenido/registro.jsp">Registrarse</a> 
 		</nav>
 	</div>
 	<div class="form-busqueda">

@@ -1,16 +1,19 @@
 package proyecto_final.servlets;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class AutenticadorServlet
  */
-@WebServlet("/AutenticadorServlet")
+//@WebServlet("/AutenticadorServlet")
 public class AutenticadorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -35,7 +38,16 @@ public class AutenticadorServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String newName = request.getParameter("mail");
+		String newPass = request.getParameter("pass");
+		
+		if("prueba".equalsIgnoreCase(newName) && "1234".equalsIgnoreCase(newPass)){
+			HttpSession session = request.getSession();
+			session.setAttribute("userName", newName);
+			session.setAttribute("newPass", newPass);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("Contenido/bienvenido.jsp");
+			dispatcher.forward(request, response);
+		}
 	}
 
 }
