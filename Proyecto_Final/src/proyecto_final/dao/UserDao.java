@@ -21,7 +21,7 @@ public class UserDao {
 
 	public Usuario validateUser(String nombre, String password){
 		Usuario u = null;
-		String query = "SELECT * FROM usuarios WHERE nombre=? AND password=?";
+		String query = "SELECT * FROM usuario WHERE nombre=? AND password=?";
 		try {
 			statement = conn.prepareStatement(query);
 			statement.setString(1, nombre);
@@ -44,7 +44,7 @@ public class UserDao {
 	public List<Usuario> readUsers(){
 		List <Usuario> users=new ArrayList<>();
 		
-		String query = "SELECT * fROM usuarios";
+		String query = "SELECT * fROM usuario";
 		try {
 			statement = conn.prepareStatement(query);
 			ResultSet rs = statement.executeQuery();
@@ -65,7 +65,7 @@ public class UserDao {
 	}
 	
 	public void deleteUser(int idusuario){
-		String query = "DELETE FROM usuarios WHERE (idusuario=?)";
+		String query = "DELETE FROM usuario WHERE (idusuario=?)";
 		
 		try {
 			statement = conn.prepareStatement(query);
@@ -80,7 +80,7 @@ public class UserDao {
 	
 	public boolean insertUser(String nombre, String apellido, String email, String password){
 		boolean result= false;
-		String query = "INSERT INTO usuarios VALUES (?,?,?,?,?)";
+		String query = "INSERT INTO usuario VALUES (?,?,?,?,?)";
 		
 		try {
 			statement = conn.prepareStatement(query);
@@ -99,26 +99,8 @@ public class UserDao {
 		return result;
 	}
 	
-	public void modUserAdmin(int idusuario,String nombre, String apellido, String email, String password){
-		String query = "UPDATE usuarios SET nombre=?, email=?, password=?, WHERE idusuario=?";
-		
-		try {
-			statement = conn.prepareStatement(query);
-			statement.setString(1, nombre);
-			statement.setString(2, apellido);
-			statement.setString(3, email);
-			statement.setString(4, password);
-			statement.setInt(7, idusuario);
-			statement.executeUpdate();
-			statement.close();
-		} catch (SQLException e) {
-			System.out.println("Error SQL");
-			e.printStackTrace();
-		}
-	}
-	
 	public void modUser(int idusuario, String nombre, String password, String descripcion){
-		String query = "UPDATE usuarios SET nombre=?, password=?, descripcion=? WHERE idusuario=?";
+		String query = "UPDATE usuario SET nombre=?, password=?, descripcion=? WHERE idusuario=?";
 		
 		try {
 			statement = conn.prepareStatement(query);
@@ -135,7 +117,7 @@ public class UserDao {
 	}
 	
 	public Usuario getUser (int idusuario){
-		String query = "SELECT * FROM usuarios WHERE (idusuario=?)";
+		String query = "SELECT * FROM usuario WHERE (idusuario=?)";
 		Usuario user=null;
 		try {
 			statement = conn.prepareStatement(query);

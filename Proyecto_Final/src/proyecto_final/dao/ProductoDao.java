@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import proyecto_final.clases.Usuario;
+import proyecto_final.clases.Producto;
 
 public class ProductoDao {
 
@@ -19,57 +19,36 @@ public class ProductoDao {
 		this.conn = conn;
 	}
 
-	public Usuario validateUser(String nombre, String password){
-		Usuario u = null;
-		String query = "SELECT * FROM usuarios WHERE nombre=? AND password=?";
-		try {
-			statement = conn.prepareStatement(query);
-			statement.setString(1, nombre);
-			statement.setString(2, nombre);
-			statement.setString(3, password);
-			ResultSet rs = statement.executeQuery();
-			if (rs.next()) {				
-				u = new Usuario(rs.getInt("idusuario"),rs.getString("nombre"),
-						rs.getString("apellido"),rs.getString("email"),
-						rs.getString("password"));
-			}
-			statement.close();
-		} catch (SQLException e) {
-			System.out.println("Error: Validate User");
-			e.printStackTrace();
-		}
-		return u;
-	}
-	
-	public List<Usuario> readUsers(){
-		List <Usuario> users=new ArrayList<>();
+	public List<Producto> readUsers(){
+		List <Producto> product=new ArrayList<>();
 		
-		String query = "SELECT * fROM usuarios";
+		String query = "SELECT * fROM productos";
 		try {
 			statement = conn.prepareStatement(query);
 			ResultSet rs = statement.executeQuery();
 			while (rs.next()){
-				Usuario user = new Usuario(rs.getInt("idusuario"),rs.getString("nombre"),
-						rs.getString("apellido"),rs.getString("email"),
-						rs.getString("password"));
-				users.add(user);
+				Producto pro = new Producto(rs.getInt("idproductos"),rs.getInt("vendido"),
+						rs.getInt("vendedor"),rs.getInt("comprador"),
+						rs.getString("nombre"),rs.getString("descripcion"),
+						rs.getString("precio"));
+				product.add(pro);
 			}
 			statement.close();
 		} catch (SQLException e) {
-			System.out.println("Error getUsers");
+			System.out.println("Error getProducts");
 			e.printStackTrace();
 		}
 		
-		return users;
+		return product;
 		
 	}
 	
-	public void deleteUser(int idusuario){
-		String query = "DELETE FROM usuarios WHERE (idusuario=?)";
+	public void deleteProducto(int idproductos){
+		String query = "DELETE FROM productos WHERE (idproductos=?)";
 		
 		try {
 			statement = conn.prepareStatement(query);
-			statement.setInt(1, idusuario);
+			statement.setInt(1, idproductos);
 			statement.executeUpdate();
 			statement.close();
 		} catch (SQLException e) {
@@ -78,17 +57,20 @@ public class ProductoDao {
 		}
 	}
 	
-	public boolean insertUser(String nombre, String apellido, String email, String password){
+	public boolean insertProduct(int idproductos, int vendido, int vendedor, int comprador, String nombre, String descripcion,
+			String precio){
 		boolean result= false;
-		String query = "INSERT INTO usuarios VALUES (?,?,?,?,?)";
+		String query = "INSERT INTO productos VALUES (?,?,?,?,?,?,?)";
 		
 		try {
 			statement = conn.prepareStatement(query);
 			statement.setInt(1, 0);
 			statement.setString(2, nombre);
-			statement.setString(3, apellido);
-			statement.setString(4, email);
-			statement.setString(5, password);
+			statement.setString(3, descripcion);
+			statement.setString(4, precio);
+			statement.setInt(5, vendido);
+			statement.setInt(6, vendedor);
+			statement.setInt(7, comprador);
 			statement.executeUpdate();
 			statement.close();
 			result= true;
@@ -98,17 +80,18 @@ public class ProductoDao {
 		}
 		return result;
 	}
-	
-	public void modUserAdmin(int idusuario,String nombre, String apellido, String email, String password){
-		String query = "UPDATE usuarios SET nombre=?, email=?, password=?, WHERE idusuario=?";
+
+	public void modProduct(int idproductos, int vendido, int comprador, String nombre, String descripcion,
+			String precio){
+		String query = "UPDATE productos SET vendido=?, comprador=?, nombre=? , descripcion?, precio=? WHERE idproducto=?";
 		
 		try {
 			statement = conn.prepareStatement(query);
-			statement.setString(1, nombre);
-			statement.setString(2, apellido);
-			statement.setString(3, email);
-			statement.setString(4, password);
-			statement.setInt(7, idusuario);
+			statement.setInt(1, vendido);
+			statement.setInt(2, comprador);
+			statement.setString(3, nombre);
+			statement.setString(4, descripcion);
+			statement.setString(5, precio);
 			statement.executeUpdate();
 			statement.close();
 		} catch (SQLException e) {
@@ -117,39 +100,23 @@ public class ProductoDao {
 		}
 	}
 	
-	public void modUser(int idusuario, String nombre, String password, String descripcion){
-		String query = "UPDATE usuarios SET nombre=?, password=?, descripcion=? WHERE idusuario=?";
-		
+	public Producto getProduct (int idproductos){
+		String query = "SELECT * FROM productos WHERE (idproductos=?)";
+		Producto prod=null;
 		try {
 			statement = conn.prepareStatement(query);
-			statement.setString(1, nombre);
-			statement.setString(2, password);
-			statement.setString(3, descripcion);
-			statement.setInt(4, idusuario);
-			statement.executeUpdate();
-			statement.close();
-		} catch (SQLException e) {
-			System.out.println("Error SQL");
-			e.printStackTrace();
-		}
-	}
-	
-	public Usuario getUser (int idusuario){
-		String query = "SELECT * FROM usuarios WHERE (idusuario=?)";
-		Usuario user=null;
-		try {
-			statement = conn.prepareStatement(query);
-			statement.setLong(1, idusuario);
+			statement.setLong(1, idproductos);
 			ResultSet rs=statement.executeQuery();
 			if (rs.next()) {
-				user = new Usuario(rs.getInt("idusuario"),rs.getString("nombre"),
-						rs.getString("apellido"),rs.getString("email"),
-						rs.getString("password"));
+				prod = new Producto(rs.getInt("idproductos"),rs.getInt("vendido"),
+						rs.getInt("vendedor"),rs.getInt("comprador"),
+						rs.getString("nombre"),rs.getString("descripcion"),
+						rs.getString("precio"));
 			}
 		} catch (SQLException e){
 			System.out.println("Error SQL");
 			e.printStackTrace();
 		}
-		return user;
+		return prod;
 	}
 }

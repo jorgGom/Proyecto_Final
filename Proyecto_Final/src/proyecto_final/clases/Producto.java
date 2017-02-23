@@ -2,49 +2,59 @@ package proyecto_final.clases;
 
 public class Producto {
 	
-	private int id,vendido,idVendedor;
-	private String nombre,desc,precio;
+	private int idproductos,vendido,vendedor,comprador;
+	private String nombre,descripcion,precio;
 	
-	
-	
-	public Producto(int id, int vendido, int idVendedor, String nombre, String desc, String precio) {
+
+	public Producto(int idproductos, int vendido, int vendedor, int comprador, String nombre, String descripcion,
+			String precio) {
 		super();
-		this.id = id;
+		this.idproductos = idproductos;
 		this.vendido = vendido;
-		this.idVendedor = idVendedor;
+		this.vendedor = vendedor;
+		this.comprador = comprador;
 		this.nombre = nombre;
-		this.desc = desc;
+		this.descripcion = descripcion;
 		this.precio = precio;
 	}
-	public int getId() {
-		return id;
+
+	public int getIdproductos() {
+		return idproductos;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setIdproductos(int idproductos) {
+		this.idproductos = idproductos;
 	}
+
 	public int getVendido() {
 		return vendido;
 	}
 	public void setVendido(int vendido) {
 		this.vendido = vendido;
 	}
-	public int getIdVendedor() {
-		return idVendedor;
+	public int getComprador() {
+		return comprador;
 	}
-	public void setIdVendedor(int idVendedor) {
-		this.idVendedor = idVendedor;
+	public void setComprador(int comprador) {
+		this.comprador = comprador;
 	}
+
 	public String getNombre() {
 		return nombre;
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getDesc() {
-		return desc;
+	public int getVendedor() {
+		return vendedor;
 	}
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setVendedor(int vendedor) {
+		this.vendedor = vendedor;
+	}
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 	public String getPrecio() {
 		return precio;
