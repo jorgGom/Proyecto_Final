@@ -38,7 +38,7 @@
 	<div class="mainLogin">
 	<div id="registro">
 		<h2>Registrarse</h2>
-		<form action="/" method="POST">
+		<form action="/Proyecto_Final/registro" method="POST">
 			<fieldset>
 				<div class="izq">
 				<p>
@@ -69,7 +69,7 @@
 					<label for="password">Repita Contraseña</label>
 				</p>
 				<p>
-					<input type="password" id="password" placeholder="Contraseña">
+					<input type="password" id="passwordrepeat" placeholder="Contraseña">
 				</p>
 				</div>
 				<div class="izq">
