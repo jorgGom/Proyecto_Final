@@ -51,6 +51,7 @@ public class AutenticadorServlet extends HttpServlet {
 		else{
 			RequestDispatcher d = request.getRequestDispatcher("Contenido/error.jsp");
 			d.forward(request,response);
+			
 		}
 	}
 
