@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class AdminServlet
  */
-//@WebServlet("/AdminServlet")
+@WebServlet("/Admin")
 public class AdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,9 +30,7 @@ public class AdminServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session = request.getSession();
-		RequestDispatcher dispatcher = request.getRequestDispatcher("Contenido/admin.jsp");
-		dispatcher.forward(request, response);
+		request.getRequestDispatcher("Filtrado/admin.jsp").forward(request, response);
 	}
 
 	/**

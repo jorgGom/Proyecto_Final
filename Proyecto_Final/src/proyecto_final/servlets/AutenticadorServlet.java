@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class AutenticadorServlet
  */
-//@WebServlet("/AutenticadorServlet")
+@WebServlet("/login")
 public class AutenticadorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -44,11 +44,8 @@ public class AutenticadorServlet extends HttpServlet {
 		if("prueba".equalsIgnoreCase(newName) && "1234".equalsIgnoreCase(newPass)){
 			HttpSession session = request.getSession();
 			session.setAttribute("userName", newName);
-			session.setAttribute("newPass", newPass);
-			response.sendRedirect("Admin");
-			
-			/*RequestDispatcher dispatcher = request.getRequestDispatcher("Contenido/admin.jsp");
-			dispatcher.forward(request, response);*/
+			RequestDispatcher dispatcher = request.getRequestDispatcher("Admin");
+			dispatcher.forward(request, response);
 		}
 		else{
 			RequestDispatcher d = request.getRequestDispatcher("Contenido/error.jsp");

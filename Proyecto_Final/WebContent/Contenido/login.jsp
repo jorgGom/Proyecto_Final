@@ -22,7 +22,6 @@
 	<div class="navegacion">
 		<h1><a href="../index.jsp" style="color:white;">WallaTroll</a></h1>
 		<nav id="navPrincipal">
-			<a class="amenu" href="../index.jsp">Home</a> 
 			<a class="amenu" href="registro.jsp">Registrarse</a> 
 		</nav>
 	</div>
@@ -39,7 +38,7 @@
 	<div class="mainLogin">
 	<div id="login">
 		<h2>Iniciar Sesión</h2>
-		<form action="../home" method="POST">
+		<form action="/Proyecto_Final/login" method="POST">
 			<fieldset>
 				<p>
 					<label>E-mail</label>
