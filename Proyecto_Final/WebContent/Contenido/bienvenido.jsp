@@ -14,22 +14,20 @@
 	crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Dosis|Pacifico"
 	rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 <title>Bienvenido</title>
 </head>
 <body>
 	<header class="navbar navbar-default navbar-fixed-top">
 	<div class="navegacion">
 		<h1>${CompanyName}WallaTroll</h1>
-<<<<<<< HEAD
 		<nav id="navPrincipal"> 
 			<a class="amenu" href="InitSess"></a>
 		 	<a class="amenu" href="InitSess">Cerrar sesión</a>
 		</nav>
-=======
 		<nav id="navPrincipal"> <a class="amenu" href="InitSess">${nombreUsuario }</a>
 		<a class="amenu" href="InitSess"><p class="glyphicon glyphicon-off"></p></a> </nav>
->>>>>>> branch 'master' of https://github.com/jorgGom/Proyecto_Final.git
+
 	</div>
 	<div class="form-busqueda">
 		<form class="busqueda" action="/" method="post">
