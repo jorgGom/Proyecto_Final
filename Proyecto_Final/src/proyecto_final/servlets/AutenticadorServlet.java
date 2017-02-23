@@ -48,6 +48,10 @@ public class AutenticadorServlet extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("Contenido/bienvenido.jsp");
 			dispatcher.forward(request, response);
 		}
+		else{
+			RequestDispatcher d = request.getRequestDispatcher("Contenido/error.jsp");
+			d.forward(request,response);
+		}
 	}
 
 }

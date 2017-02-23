@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css?family=Dosis|Pacifico"
 	rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
-<link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 <title>Página de error</title>
 </head>
 <body style="background-color: #F1F1F1">
