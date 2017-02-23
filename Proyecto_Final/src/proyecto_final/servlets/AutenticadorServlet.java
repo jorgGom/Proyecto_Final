@@ -45,7 +45,7 @@ public class AutenticadorServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("userName", newName);
 			session.setAttribute("newPass", newPass);
-			response.sendRedirect("/Admin");
+			response.sendRedirect("Admin");
 			
 			/*RequestDispatcher dispatcher = request.getRequestDispatcher("Contenido/admin.jsp");
 			dispatcher.forward(request, response);*/

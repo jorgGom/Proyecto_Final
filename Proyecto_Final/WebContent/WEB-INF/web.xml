@@ -9,14 +9,22 @@
     <servlet-name>AutenticadorServlet</servlet-name>
     <url-pattern>/home</url-pattern>
   </servlet-mapping>
- <servlet>
- <servlet-name>AdminServlet</servlet-name>
- <servlet-class>proyecto_final.servlets.AdminServlet</servlet-class>
- </servlet>
- <servlet-mapping>
- <servlet-name>AdminServlet</servlet-name>
- <url-pattern>/Admin</url-pattern>
- </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminServlet</servlet-name>
+    <servlet-class>proyecto_final.servlets.AdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminServlet</servlet-name>
+    <url-pattern>/Admin</url-pattern>
+  </servlet-mapping>
+    <filter>
+    <filter-name>Filtro</filter-name>
+    <filter-class>proyecto_final.filters.Filtro</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>Filtro</filter-name>
+    <url-pattern>/Contenido/*</url-pattern>
+  </filter-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>

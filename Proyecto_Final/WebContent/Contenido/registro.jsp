@@ -23,7 +23,7 @@
 		<h1><a href="../index.jsp" style="color:white;">WallaTroll</a></h1>
 		<nav id="navPrincipal">
 			<a class="amenu" href="../index.jsp">Home</a> 
-			<a class="amenu" href="InitSess">Inicio de Sesion</a>
+			<a class="amenu" href="login.jsp">Inicio de Sesion</a>
 		</nav>
 	</div>
 	<div class="form-busqueda">
