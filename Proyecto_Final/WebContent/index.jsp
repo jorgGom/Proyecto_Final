@@ -103,11 +103,5 @@
 				</tr>
 			</table>
 	</main>
-	<footer>
-	<div class="pie">
-		<p class="Copyright">@Copyright</p>
-		<nav class="contactpie"> <a class="apie" href="">Contacto</a> </nav>
-	</div>
-	</footer>
 </body>
 </html>

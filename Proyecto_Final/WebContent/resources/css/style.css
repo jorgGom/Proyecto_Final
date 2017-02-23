@@ -118,36 +118,7 @@ table{
 main{
 	margin-bottom: 50px;
 }
-footer{
-	position:absolute;
-	float:right;
-	background-color: rgba(19,193,172,.93);
-	bottom: 0;
-	width: 100%;
 
-}
-.apie{
-	text-align:left;
-	margin-right: 50px;
-	margin-bottom: 20px;
-}
-.Copyright{
-    float: left;
-    margin-top: 25px;
-    margin-bottom: 20px;
-    margin-left: 10px;
-}
-.pie{
-	display: inline;
-	width: 100%;
-
-}
-.contactpie{
-	display: inline-block;
-	float:right;
-	margin-top: 25px;
-	margin-right: 20px;
-}
 .clase-general{
 	display: table-row;
 }
