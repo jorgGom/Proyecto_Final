@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class AutenticadorServlet
  */
-@WebServlet("/login")
+@WebServlet({"/login","/home"})
 public class AutenticadorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,7 +30,7 @@ public class AutenticadorServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.sendRedirect("Contenido/error.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	/**

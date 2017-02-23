@@ -30,7 +30,7 @@ public class AdminServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("Filtrado/admin.jsp").forward(request, response);
+		request.getRequestDispatcher("Proyecto_Final/Filtrado/admin.jsp").forward(request, response);
 	}
 
 	/**
@@ -38,7 +38,7 @@ public class AdminServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
+		request.getRequestDispatcher("Filtrado/admin.jsp").forward(request, response);
 	}
 
 }

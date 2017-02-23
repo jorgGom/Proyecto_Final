@@ -14,7 +14,6 @@
 	crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Dosis|Pacifico"
 	rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
 <link rel="stylesheet" type="text/css" href="resources/css/style.css">
 <title>Página de error</title>
 </head>
@@ -24,7 +23,7 @@
 		<h1><a href="index.jsp" style="color:white;">WallaTroll</a></h1>
 		<nav id="navPrincipal">
 			<a class="amenu" href="index.jsp">Home</a> 
-			<a class="amenu" href="Registro">Registrarse</a> 
+			<a class="amenu" href="Contenido/registro.jsp">Registrarse</a> 
 		</nav>
 	</div>
 	<div class="form-busqueda">
