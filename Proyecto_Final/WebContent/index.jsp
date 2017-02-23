@@ -41,57 +41,23 @@
 		<div class="descripcion">
 			<h2>Qué hacemos</h2>
 			<p>
-				Lorem Ipsum es simplemente el texto de relleno de las imprentas y
-				archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar
-				de las industrias desde el año 1500, cuando un impresor (N. del T.
-				persona que se dedica a la imprenta) desconocido usó una galería de
-				textos y los mezcló de tal manera que logró hacer un libro de textos
-				especimen. No sólo sobrevivió 500 años, sino que tambien ingresó
-				como texto de relleno en documentos electrónicos, quedando
-				esencialmente igual al original. Fue popularizado en los 60s con la
-				creación de las hojas "Letraset", las cuales contenian pasajes de
-				Lorem Ipsum, y más recientemente con software de autoedición, como
-				por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem
-				Ipsum.<a href="">Productos en venta</a>
-			</p>
-			<p>
-				Lorem Ipsum es simplemente el texto de relleno de las imprentas y
-				archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar
-				de las industrias desde el año 1500, cuando un impresor (N. del T.
-				persona que se dedica a la imprenta) desconocido usó una galería de
-				textos y los mezcló de tal manera que logró hacer un libro de textos
-				especimen. No sólo sobrevivió 500 años, sino que tambien ingresó
-				como texto de relleno en documentos electrónicos, quedando
-				esencialmente igual al original. Fue popularizado en los 60s con la
-				creación de las hojas "Letraset", las cuales contenian pasajes de
-				Lorem Ipsum, y más recientemente con software de autoedición, como
-				por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem
-				Ipsum.<a href="">Productos en venta</a>
-			</p>
-			<p>
-				Lorem Ipsum es simplemente el texto de relleno de las imprentas y
-				archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar
-				de las industrias desde el año 1500, cuando un impresor (N. del T.
-				persona que se dedica a la imprenta) desconocido usó una galería de
-				textos y los mezcló de tal manera que logró hacer un libro de textos
-				especimen. No sólo sobrevivió 500 años, sino que tambien ingresó
-				como texto de relleno en documentos electrónicos, quedando
-				esencialmente igual al original. Fue popularizado en los 60s con la
-				creación de las hojas "Letraset", las cuales contenian pasajes de
-				Lorem Ipsum, y más recientemente con software de autoedición, como
-				por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem
-				Ipsum.<a href="">Productos en venta</a>
+			Somos una web en la que facilitamos la venta y compra de productos ya sean de segunda mano o nuevos, sin intermediarios 
+			, el precio lo fija el vendedor y el comprador puede negociar para llegar a un acuerdo<br>
+			Está permitido vender todo tipo de productos, excepto seres humanos, drogas y armas. Ante malos comportamientos o cuentas sospechosas nuestro 
+			todopoderoso ADMINISTRADOR actuará con mano firme.<br>
+			OS DESEAMOS UNA BUENA COMPRA/VENTA.<br>
+			Pinchando en el siguiente enlace puedes acceder a los productos que están en este momento a la venta--><a href="">Productos en venta</a>
 			</p>
 
 		</div>
 		<div class="imagenes">
 			<table>
 				<tr>
-					<td class="tdimg" ROWSPAN="2">Lorem Ipsum es simplemente el
-						texto de relleno de las imprentas y archivos de texto. Lorem Ipsum
-						ha sido el texto de relleno estándar de las industrias desde el
-						año 1500, cuando un impresor (N. del T. persona que se dedica a la
-						imprenta)</td>
+					<td class="tdimg" ROWSPAN="2">ESTOS SON ALGUNOS DE LOS PRODUCTOS QUE PODRÁS ENCONTRAR EN VENTA. TODOS LOS QUE SE VEN EN LAS IMÁGENES SON 
+					FOTOS REALES DE PRODUCTOS VENDIDOS Y COMPRADOS EN ESTA WEB.<br>
+					SI QUIERES PODER ACCEDER A LA WEB NO SE TE OLVIDE REGISTRARTE, EN UNOS SENCILLOS PASOS Y MUY RÁPIDOS ESTARÁS LISTO PARA COMPRAR O VENDER LO QUE QUIERAS.<br>
+					NO NOS HACEMOS RESPONSABLES DE LAS IMAGENES NI LA DESCRIPCIÓN DE CADA PRODUCTO.
+					</td>
 					<td><img class="imgportada" src="resources\img\LG.jpg" /></td>
 					<td><img class="imgportada" src="resources\img\calcetines.jpg" /></td>
 					<td><img class="imgportada" src="resources\img\smartphone.jpg" /></td>
