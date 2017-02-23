@@ -153,6 +153,18 @@ footer{
 }
 
 /* ---------- LOGIN  y  REGISTRO ---------- */
+#login h2.error{
+	background-color: #ce0808;
+	-webkit-border-radius: 20px 20px 0 0;
+	-moz-border-radius: 20px 20px 0 0;
+	border-radius: 20px 20px 0 0;
+	color: #fff;
+	font-size: 28px;
+	padding: 20px 26px;
+	text-align: center;
+	margin-bottom: 0px;
+	margin-top: 250px;
+}
 .izq{
 	float:left;
 	margin-left: 10px;

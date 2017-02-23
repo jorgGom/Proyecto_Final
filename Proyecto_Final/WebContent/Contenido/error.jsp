@@ -4,9 +4,64 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Dosis|Pacifico"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
+<link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+<title>Página de error</title>
 </head>
-<body>
+<body style="background-color: #F1F1F1">
+	<header class="navbar navbar-default navbar-fixed-top">
+	<div class="navegacion">
+		<h1>${CompanyName}WallaTroll</h1>
+		<nav id="navPrincipal">
+			<a class="amenu" href="../index.jsp">Home</a> 
+			<a class="amenu" href="Registro">Registrarse</a> 
+		</nav>
+	</div>
+	<div class="form-busqueda">
+		<form class="busqueda" action="/" method="post">
+			<input type="text" class="busqueda"
+				placeholder="¿Qué estás buscando?" maxlength="150" />
+			<button type="button" id="buscar">
+				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+			</button>
+		</form>
+	</div>
+	</header>
 
+	<div class="mainLogin">
+	<div id="login">
+		<h2 class="error">Error al logearse</h2>
+		<form action="/" method="POST">
+			<fieldset>
+				<p>
+					<label for="email">E-mail</label>
+				</p>
+				<p>
+					<input type="email" id="email" placeholder="e-mail">
+				</p>
+				<p>
+					<label for="password">Contraseña</label>
+				</p>
+				<p>
+					<input type="password" id="password" placeholder="Contraseña">
+				</p>
+				<p>
+					<input type="submit" value="Iniciar Sesión">
+				</p>
+			</fieldset>
+		</form>
+	</div>
+	</form>
+</div>
 </body>
 </html>
