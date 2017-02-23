@@ -2,24 +2,25 @@ package proyecto_final.clases;
 
 public class Usuario {
 	
-	private int id;
+	private int idusuario;
 	private String nombre,apellido,email,password;
 	
 	
 	
-	public Usuario(int id, String nombre, String apellido, String email, String password) {
+	public Usuario(int idusuario, String nombre, String apellido, String email, String password) {
 		super();
-		this.id = id;
+		this.idusuario = idusuario;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.email = email;
 		this.password = password;
 	}
-	public int getId() {
-		return id;
+	
+	public int getIdusuario() {
+		return idusuario;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setIdusuario(int idusuario) {
+		this.idusuario = idusuario;
 	}
 	public String getNombre() {
 		return nombre;

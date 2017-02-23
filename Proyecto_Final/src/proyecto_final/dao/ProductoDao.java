@@ -9,12 +9,12 @@ import java.util.List;
 
 import proyecto_final.clases.Usuario;
 
-public class UserDao {
+public class ProductoDao {
 
 	private Connection conn;
 	private PreparedStatement statement = null;
 
-	public UserDao(Connection conn) {
+	public ProductoDao(Connection conn) {
 		super();
 		this.conn = conn;
 	}
