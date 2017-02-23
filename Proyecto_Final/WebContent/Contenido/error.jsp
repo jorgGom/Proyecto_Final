@@ -41,7 +41,7 @@
 	<div class="mainLogin">
 	<div id="login">
 		<h2 class="error">Error al logearse</h2>
-		<form action="/" method="POST">
+		<form action="/Proyecto_Final/home" method="POST">
 			<fieldset>
 				<p>
 					<label>E-mail</label>
