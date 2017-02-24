@@ -154,7 +154,10 @@ main {
 	margin-bottom: 0px;
 	margin-top: 250px;
 }
-
+.centro {
+    margin-top: 35%;
+    margin-left: 9%;
+}
 .izq {
 	float: left;
 	margin-left: 10px;

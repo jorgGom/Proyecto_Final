@@ -66,21 +66,13 @@
 				</div>
 				<div class="dcha">
 				<p>
-					<label for="password">Repita Contraseña</label>
-				</p>
-				<p>
-					<input type="password" id="passwordrepeat" placeholder="Contraseña" required>
-				</p>
-				</div>
-				<div class="izq">
-				<p>
 					<label for="email">E-mail</label>
 				</p>
 				<p>
 					<input type="email" id="email" placeholder="E-mail" required>
 				</p>
 				</div>
-				<div class="dcha">
+				<div class="centro">
 				<p class="button">
 					<input type="submit" value="Registrarse">
 				</p>
