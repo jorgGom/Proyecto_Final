@@ -42,10 +42,10 @@
 		<form action="/Proyecto_Final/home" method="POST">
 			<fieldset>
 				<p>
-					<label>E-mail</label>
+					<label>Nombre</label>
 				</p>
 				<p>
-					<input type="text" name="mail" placeholder="e-mail">
+					<input type="text" name="nombre" placeholder="nombre">
 				</p>
 				<p>
 					<label>Contraseña</label>

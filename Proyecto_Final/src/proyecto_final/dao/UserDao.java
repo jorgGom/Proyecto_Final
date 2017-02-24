@@ -21,17 +21,16 @@ public class UserDao {
 
 	public Usuario validateUser(String nombre, String password){
 		Usuario u = null;
-		String query = "SELECT * FROM usuario WHERE nombre=? AND password=?";
+		String query = "SELECT * FROM usuario WHERE nombre=? AND contraseña=?";
 		try {
 			statement = conn.prepareStatement(query);
 			statement.setString(1, nombre);
-			statement.setString(2, nombre);
-			statement.setString(3, password);
+			statement.setString(2, password);
 			ResultSet rs = statement.executeQuery();
 			if (rs.next()) {				
 				u = new Usuario(rs.getInt("idusuario"),rs.getString("nombre"),
 						rs.getString("apellido"),rs.getString("email"),
-						rs.getString("password"));
+						rs.getString("contraseña"));
 			}
 			statement.close();
 		} catch (SQLException e) {
@@ -100,7 +99,7 @@ public class UserDao {
 	}
 	
 	public void modUser(int idusuario, String nombre, String password, String descripcion){
-		String query = "UPDATE usuario SET nombre=?, password=?, descripcion=? WHERE idusuario=?";
+		String query = "UPDATE usuario SET nombre=?, contraseña=?, descripcion=? WHERE idusuario=?";
 		
 		try {
 			statement = conn.prepareStatement(query);
