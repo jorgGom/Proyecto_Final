@@ -43,7 +43,7 @@
 
 	<div class="container">
 	<div class="item">
-		<h2>Bienvenido ${nombreUsuario }</h2>
+		<h2>Bienvenido ${userName }</h2>
 		<ul class="nav nav-pills nav-stacked">
 			<li><a class="glyphicon glyphicon-user" href="#"> Perfil</a></li>
 			<li><a href="#">Productos en venta</a></li>
