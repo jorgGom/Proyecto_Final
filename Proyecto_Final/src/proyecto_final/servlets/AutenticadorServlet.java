@@ -3,6 +3,7 @@ package proyecto_final.servlets;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,14 +11,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.mysql.jdbc.Connection;
+
+import proyecto_final.clases.Usuario;
+import proyecto_final.dao.UserDao;
+
 /**
  * Servlet implementation class AutenticadorServlet
  */
 @WebServlet({"/login","/home"})
 public class AutenticadorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private UserDao dao;
+	
+	
+	
        
-    /**
+    @Override
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+		super.init(config);
+		dao = new UserDao((Connection) config.getServletContext().getAttribute("conection"));
+	}
+
+	/**
      * @see HttpServlet#HttpServlet()
      */
     public AutenticadorServlet() {
@@ -40,16 +58,22 @@ public class AutenticadorServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String newName = request.getParameter("mail");
 		String newPass = request.getParameter("pass");
+		HttpSession session = request.getSession();
+		//Usuario user = dao.validateUser(newName, newPass);
 		
-		if("prueba".equalsIgnoreCase(newName) && "1234".equalsIgnoreCase(newPass)){
-			HttpSession session = request.getSession();
+		if("admin".equalsIgnoreCase(newName) && "admin".equalsIgnoreCase(newPass)){
+			
 			session.setAttribute("userName", newName);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("Admin");
 			dispatcher.forward(request, response);
+			
 		}
+		
+		//else if(user!=null){
+			//session.setAttribute("usuario", user);
+		//}
 		else{
-			RequestDispatcher d = request.getRequestDispatcher("Contenido/error.jsp");
-			d.forward(request,response);
+			request.getRequestDispatcher("Contenido/error.jsp").forward(request,response);
 			
 		}
 	}
