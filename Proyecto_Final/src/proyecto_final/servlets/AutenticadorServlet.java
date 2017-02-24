@@ -59,7 +59,7 @@ public class AutenticadorServlet extends HttpServlet {
 		String newName = request.getParameter("nombre");
 		String newPass = request.getParameter("pass");
 		HttpSession session = request.getSession();
-		//Usuario user = dao.validateUser(newName, newPass);
+		Usuario user = dao.validateUser(newName, newPass);
 		
 		if("admin".equalsIgnoreCase(newName) && "admin".equalsIgnoreCase(newPass)){
 			

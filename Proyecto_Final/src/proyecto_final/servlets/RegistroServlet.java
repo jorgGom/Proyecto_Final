@@ -1,7 +1,7 @@
 package proyecto_final.servlets;
 
 import java.io.IOException;
-import com.mysql.jdbc.Connection;
+import java.sql.Connection;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 
 import proyecto_final.dao.UserDao;
 
@@ -29,7 +28,7 @@ public class RegistroServlet extends HttpServlet {
     @Override
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
-		super.init();
+		super.init(config);
 		dao = new UserDao((Connection)getServletContext().getAttribute("conection"));
 	}
 
@@ -61,14 +60,15 @@ public class RegistroServlet extends HttpServlet {
 		String pass = request.getParameter("password");
 		String email = request.getParameter("email");
 		
-		boolean very = dao.insertUser(nombre, apellido, email, pass);
+		boolean correcto = dao.insertUser(nombre, apellido, email, pass);
 		
-		if(very){
+		if(correcto){
 			request.setAttribute("msg", "Registro realizado correctamente.");
+			response.sendRedirect("inicio");
 		}else{
 			request.setAttribute("msg", "No se pudo insertar el usuario, intentalo mas tarde");
 		}
-		request.getRequestDispatcher("vistas/registro.jsp").forward(request, response);
+		//request.getRequestDispatcher("vistas/registro.jsp").forward(request, response);
 		
 		
 	}
