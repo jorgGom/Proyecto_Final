@@ -30,8 +30,11 @@ public class inicio extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession sesion = request.getSession();
-		String user = (String) sesion.getAttribute("userName");
+		String page = request.getParameter("page");
+		if("productosVenta".equals(page)){
+			request.getRequestDispatcher("Filtrado/productosEnVenta.jsp").forward(request, response);
+			return;
+		}
 		//response.sendRedirect("inicio?action=new");
 		request.getRequestDispatcher("Filtrado/bienvenido.jsp").forward(request, response);
 
