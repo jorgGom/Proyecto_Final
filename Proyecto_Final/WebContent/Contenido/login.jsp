@@ -41,16 +41,16 @@
 		<form action="/Proyecto_Final/login" method="POST">
 			<fieldset>
 				<p>
-					<label>E-mail</label>
+					<label>Nombre</label>
 				</p>
 				<p>
-					<input type="text" name="mail" placeholder="e-mail">
+					<input type="text" name="nombre" placeholder="Nombre" required>
 				</p>
 				<p>
 					<label>Contraseña</label>
 				</p>
 				<p>
-					<input type="password" name="pass" placeholder="Contraseña">
+					<input type="password" name="pass" placeholder="Contraseña" required>
 				</p>
 				<p>
 					<input type="submit" value="Iniciar Sesión">

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>Proyecto_Final</display-name>
+
   <context-param>
     <param-name>DATABASE_DRIVER</param-name>
     <param-value>com.mysql.jdbc.Driver</param-value>
   </context-param>
   <context-param>
     <param-name>DATABASE_URI</param-name>
-    <param-value>jdbc:mysql://localhost:3306/proyecto</param-value>
+    <param-value>jdbc:mysql://localhost:3306/proyecto_interfaces</param-value>
   </context-param>
   <context-param>
     <param-name>DATABASE_USERNAME</param-name>

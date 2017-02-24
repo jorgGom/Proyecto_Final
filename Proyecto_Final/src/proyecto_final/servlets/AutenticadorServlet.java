@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.mysql.jdbc.Connection;
+import java.sql.*;
 
 import proyecto_final.clases.Usuario;
 import proyecto_final.dao.UserDao;
@@ -56,7 +56,7 @@ public class AutenticadorServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String newName = request.getParameter("mail");
+		String newName = request.getParameter("nombre");
 		String newPass = request.getParameter("pass");
 		HttpSession session = request.getSession();
 		//Usuario user = dao.validateUser(newName, newPass);

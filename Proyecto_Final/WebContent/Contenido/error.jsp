@@ -22,7 +22,6 @@
 	<div class="navegacion">
 		<h1><a href="index.jsp" style="color:white;">WallaTroll</a></h1>
 		<nav id="navPrincipal">
-			<a class="amenu" href="index.jsp">Home</a> 
 			<a class="amenu" href="Contenido/registro.jsp">Registrarse</a> 
 		</nav>
 	</div>

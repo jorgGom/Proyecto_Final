@@ -45,7 +45,7 @@
 					<label for="nombre">Nombre</label>
 				</p>
 				<p>
-					<input type="nombre" id="nombre" placeholder="Nombre">
+					<input type="nombre" id="nombre" placeholder="Nombre" required>
 				</p>
 				</div>
 				<div class="dcha">
@@ -53,7 +53,7 @@
 					<label for="apellido">Apellido</label>
 				</p>
 				<p>
-					<input type="apellido" id="apellido" placeholder="Apellido">
+					<input type="apellido" id="apellido" placeholder="Apellido" required>
 				</p>
 				</div>
 				<div class="izq">
@@ -61,7 +61,7 @@
 					<label for="password">Contraseña</label>
 				</p>
 				<p>
-					<input type="password" id="password" placeholder="Contraseña">
+					<input type="password" id="password" placeholder="Contraseña" required>
 				</p>
 				</div>
 				<div class="dcha">
@@ -69,7 +69,7 @@
 					<label for="password">Repita Contraseña</label>
 				</p>
 				<p>
-					<input type="password" id="passwordrepeat" placeholder="Contraseña">
+					<input type="password" id="passwordrepeat" placeholder="Contraseña" required>
 				</p>
 				</div>
 				<div class="izq">
@@ -77,7 +77,7 @@
 					<label for="email">E-mail</label>
 				</p>
 				<p>
-					<input type="email" id="email" placeholder="E-mail">
+					<input type="email" id="email" placeholder="E-mail" required>
 				</p>
 				</div>
 				<div class="dcha">
