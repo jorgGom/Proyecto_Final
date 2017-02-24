@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+ <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css?family=Dosis|Pacifico"
 	rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="resources/css/style.css">
-<title>Bienvenido</title>
+<title>Lista de usuarios</title>
 </head>
 <body>
 	<header class="navbar navbar-default navbar-fixed-top">
@@ -45,10 +46,9 @@
 	<div class="item">
 		<h2>Bienvenido ${userName }</h2>
 		<ul class="nav nav-pills nav-stacked">
-			<li class="active"><a class="glyphicon glyphicon-user" href="inicio"> Perfil</a></li>
+			<li><a class="glyphicon glyphicon-user" href="inicio"> Perfil</a></li>
 			<li><a href="inicio?page=productosVenta">Productos en venta</a></li>
-			<li><a href="#">Productos comprados</a></li>
-			<li><a href="inicio?page=listaUsuarios">Lista de usuarios</a></li>
+			<li class="active"><a href="inicio?page2=listaUsuarios">Lista de usuarios</a></li>
 		</ul>
 
 		<form>
@@ -57,17 +57,13 @@
 		</form>
 	</div>
 	<div class="item2">
-		<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas
-			y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar
-			de las industrias desde el año 1500, cuando un impresor (N. del T.
-			persona que se dedica a la imprenta) desconocido usó una galería de
-			textos y los mezcló de tal manera que logró hacer un libro de textos
-			especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como
-			texto de relleno en documentos electrónicos, quedando esencialmente
-			igual al original. Fue popularizado en los 60s con la creación de las
-			hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más
-			recientemente con software de autoedición, como por ejemplo Aldus
-			PageMaker, el cual incluye versiones de Lorem Ipsum</p>
+	<table class="tableUsu">
+    <tr><th>ID</th><th>Nombre</th><th>Apellido</th><th>Email</th><th>Modificar</th><th>Eliminar</th></tr>
+      <c:forEach var="i" begin="1" end="5">
+        <tr><td><c:out value="${i}"></c:out></td><td>jorge</td><td>gomez</td><td>jorge@gmail.com</td><td><button>Modificar</button></td><td><button>Eliminar</button></td></tr>  
+      </c:forEach>
+
+  </table>
 	</div>
 
 </div>

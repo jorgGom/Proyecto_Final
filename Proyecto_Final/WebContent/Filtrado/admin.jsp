@@ -45,9 +45,9 @@
 	<div class="item">
 		<h2>Bienvenido ${nombreUsuario }</h2>
 		<ul class="nav nav-pills nav-stacked">
-			<li><a class="glyphicon glyphicon-user" href="#"> Perfil</a></li>
+			<li class="active"><a class="glyphicon glyphicon-user" href="#"> Perfil</a></li>
 			<li><a href="#">Productos en venta</a></li>
-			<li><a href="#">Lista de usuarios</a></li>
+			<li><a href="inicio?page=listaUsuarios">Lista de usuarios</a></li>
 		</ul>
 	</div>
 	<div class="item2">
