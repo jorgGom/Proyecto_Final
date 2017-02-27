@@ -20,7 +20,7 @@
 <body>
 	<header class="navbar navbar-default navbar-fixed-top">
 	<div class="navegacion">
-		<h1><a href="index.jsp" style="color:white;">WallaTroll</a></h1>
+		<h1><a href="index.jsp" >${attCompanyName}</a></h1>
 		<nav id="navPrincipal"> 
 			<a class="amenu" href="InitSess"></a>
 		 	<a class="amenu" href="InitSess">Cerrar sesión</a>
@@ -47,7 +47,7 @@
 		<ul class="nav nav-pills nav-stacked">
 			<li class="active"><a class="glyphicon glyphicon-user" href="inicio"> Perfil</a></li>
 			<li><a href="inicio?page=productosVenta">Productos en venta</a></li>
-			<li><a href="#">Productos comprados</a></li>
+			<li><a href="inicio?page=productosComprados">Productos comprados</a></li>
 			<li><a href="inicio?page=listaUsuarios">Lista de usuarios</a></li>
 		</ul>
 

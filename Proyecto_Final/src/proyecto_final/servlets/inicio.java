@@ -35,8 +35,11 @@ public class inicio extends HttpServlet {
 			request.getRequestDispatcher("Filtrado/productosEnVenta.jsp").forward(request, response);
 			return;
 		}
-		else if("listaUsuarios".equals("page")){
+		else if("listaUsuarios".equals(page)){
 			request.getRequestDispatcher("Filtrado/listaUsuarios.jsp").forward(request, response);
+			return;
+		}else if("productosComprados".equals(page)){
+			request.getRequestDispatcher("Filtrado/productosComprados.jsp").forward(request, response);
 			return;
 		}
 		//response.sendRedirect("inicio?action=new");

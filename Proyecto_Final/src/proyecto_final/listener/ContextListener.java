@@ -20,6 +20,8 @@ public class ContextListener implements ServletContextListener {
     }
 
     public void contextInitialized(ServletContextEvent ev)  { 
+    	 String company=ev.getServletContext().getInitParameter("CompanyName");
+    	 ev.getServletContext().setAttribute("attCompanyName", company);
     	
     	ServletContext context = ev.getServletContext();
     	

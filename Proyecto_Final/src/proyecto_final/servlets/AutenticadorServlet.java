@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import java.sql.*;
+import java.util.List;
 
 import proyecto_final.clases.Usuario;
 import proyecto_final.dao.UserDao;
@@ -68,7 +69,11 @@ public class AutenticadorServlet extends HttpServlet {
 		} 
 		else if (user != null) {
 			session.setAttribute("userName", newName);
-			request.getRequestDispatcher("Filtrado/bienvenido.jsp").forward(request, response);}
+			request.getRequestDispatcher("Filtrado/bienvenido.jsp").forward(request, response);
+			
+			List<Usuario> users=dao.readUsers();
+			request.setAttribute("listaUsuarios", users);	
+		}
 
 		/*else if ("admin".equalsIgnoreCase(newName) && "admin".equalsIgnoreCase(newPass)) {
 

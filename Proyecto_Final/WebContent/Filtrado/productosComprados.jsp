@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
-<%@ page import="java.util.List" %>
-<%@ page import="proyecto_final.clases.Usuario" %>   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css?family=Dosis|Pacifico"
 	rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="resources/css/style.css">
-<title>Lista de usuarios</title>
+<title>Bienvenido</title>
 </head>
 <body>
 	<header class="navbar navbar-default navbar-fixed-top">
@@ -50,8 +47,7 @@
 		<ul class="nav nav-pills nav-stacked">
 			<li><a class="glyphicon glyphicon-user" href="inicio"> Perfil</a></li>
 			<li><a href="inicio?page=productosVenta">Productos en venta</a></li>
-			<li><a href="inicio?page=productosComprados">Productos comprados</a></li>
-			<li class="active"><a href="inicio?page=listaUsuarios">Lista de usuarios</a></li>
+			<li class="active"><a href="inicio?page=productosComprados">Productos comprados</a></li>
 		</ul>
 
 		<form>
@@ -60,36 +56,7 @@
 		</form>
 	</div>
 	<div class="item2">
-	<table class="tableUsu">
-    <tr><th>ID</th><th>Nombre</th><th>Apellido</th><th>Email</th><th>Modificar</th><th>Eliminar</th></tr>
-      <c:forEach var="i" begin="1" end="5">
-        <tr><td><c:out value="${i}"></c:out></td><td>jorge</td><td>gomez</td><td>jorge@gmail.com</td><td><button>Modificar</button></td><td><button>Eliminar</button></td></tr>  
-      </c:forEach>
-  </table>
-  <table border=3>
-			<tr align=center bgcolor=#A9A9A9>
-				<td>Id de usuario</td>
-				<td>Nombre usuario</td>
-				<td>Apellido</td>
-				<td>Email de usuario</td>
-				<td>Modificar</td>
-				<td>Eliminar</td>
-			</tr>
-		<% List<Usuario> users = (List<Usuario>)request.getAttribute("listaUsuarios"); 
-		
-		for (Usuario u:users){%>
-			<tr align=right>
-				<td><%= u.getIdusuario() %></td>
-				<td><%= u.getNombre() %></td>
-				<td><%= u.getApellido() %></td>
-				<td><%= u.getEmail() %></td>
-				<td align="center"><a href="#">Modificar</a></td>
-				<td align="center"><a href="#">Eliminar</a></td>	
-			</tr>
-		<%}
-		
-		%>
-		</table>
+		<p>Productos Comprados</p>
 	</div>
 
 </div>
