@@ -54,10 +54,12 @@
 			</c:if>
 		</ul>
 
+		<c:if test="${usuario.nombre!='admin' }">
 		<form>
 			<button type="button" id="comprar">Comprar</button>
 			<button type="button" id="vender">Vender</button>
 		</form>
+		</c:if>
 	</div>
 	<div class="item2">
 		<p>Tus productos</p>
