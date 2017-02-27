@@ -62,26 +62,34 @@
 	<div class="item2">
 	<table class="tableUsu">
     <tr><th>ID</th><th>Nombre</th><th>Apellido</th><th>Email</th><th>Modificar</th><th>Eliminar</th></tr>
-      <c:forEach var="i" begin="1" end="5">
-        <tr><td><c:out value="${i}"></c:out></td><td>jorge</td><td>gomez</td><td>jorge@gmail.com</td><td><button>Modificar</button></td><td><button>Eliminar</button></td></tr>  
+    <% List<Usuario> users = (List<Usuario>)request.getAttribute("listaUsuarios"); %>
+      <c:forEach var="i" items="${ listaUsuarios }">
+        <tr>
+        <td>${i.idusuario}</td>
+        <td>${i.nombre}</td>
+        <td>${i.apellido}</td>
+        <td>${i.email}</td>
+        <td><button>Modificar</button></td>
+        <td><button>Eliminar</button></td>
+        </tr>  
       </c:forEach>
   </table>
-  <table border=3>
-			<tr><th>ID</th><th>Nombre</th><th>Apellido</th><th>Email</th><th>Modificar</th><th>Eliminar</th></tr>
-		<% List<Usuario> users = (List<Usuario>)request.getAttribute("listaUsuarios"); %>
-		<%for (Usuario u:users){ %>
-			<tr>
-				<td><%= u.getIdusuario() %></td>
-				<td><%= u.getNombre() %></td>
-				<td><%= u.getApellido() %></td>
-				<td><%= u.getEmail() %></td>
-				<td align="center"><a href="#">Modificar</a></td>
-				<td align="center"><a href="#">Eliminar</a></td>	
-			</tr>
-		<%}
+<!--   <table border=3> -->
+<!-- 			<tr><th>ID</th><th>Nombre</th><th>Apellido</th><th>Email</th><th>Modificar</th><th>Eliminar</th></tr> -->
+<%-- 		<% List<Usuario> users = (List<Usuario>)request.getAttribute("listaUsuarios"); %> --%>
+<%-- 		<%for (Usuario u:users){ %> --%>
+<!-- 			<tr> -->
+<%-- 				<td><%= u.getIdusuario() %></td> --%>
+<%-- 				<td><%= u.getNombre() %></td> --%>
+<%-- 				<td><%= u.getApellido() %></td> --%>
+<%-- 				<td><%= u.getEmail() %></td> --%>
+<!-- 				<td align="center"><a href="#">Modificar</a></td> -->
+<!-- 				<td align="center"><a href="#">Eliminar</a></td>	 -->
+<!-- 			</tr> -->
+<%-- 		<%} --%>
 		
-		%>
-		</table>
+<%-- 		%> --%>
+<!-- 		</table> -->
 	</div>
 
 </div>

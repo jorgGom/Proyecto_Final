@@ -19,7 +19,7 @@ public class ContextListener implements ServletContextListener {
         // TODO Auto-generated constructor stub
     }
 
-    public void contextInitialized(ServletContextEvent ev)  { 
+    public void contextInitialized(ServletContextEvent ev)  {  
     	 String company=ev.getServletContext().getInitParameter("CompanyName");
     	 ev.getServletContext().setAttribute("attCompanyName", company);
     	

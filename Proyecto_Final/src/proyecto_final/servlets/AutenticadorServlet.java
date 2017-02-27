@@ -66,13 +66,15 @@ public class AutenticadorServlet extends HttpServlet {
 		if (user == null) {
 			request.getRequestDispatcher("Contenido/error.jsp").forward(request, response);
 
+
 		} 
 		else if (user != null) {
 			session.setAttribute("userName", newName);
 			request.getRequestDispatcher("Filtrado/bienvenido.jsp").forward(request, response);
-			
 			List<Usuario> users=dao.readUsers();
-			request.setAttribute("listaUsuarios", users);	
+			request.setAttribute("listaUsuarios", users);
+			
+	
 		}
 
 		/*else if ("admin".equalsIgnoreCase(newName) && "admin".equalsIgnoreCase(newPass)) {

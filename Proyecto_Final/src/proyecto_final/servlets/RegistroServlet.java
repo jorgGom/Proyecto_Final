@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import proyecto_final.dao.UserDao;
 
@@ -54,7 +55,7 @@ public class RegistroServlet extends HttpServlet {
 		//nombre, apellido, contraseña, rep, email
 		
 		
-		
+		HttpSession session = request.getSession();
 		String nombre = request.getParameter("nombre");
 		String apellido = request.getParameter("apellido");
 		String pass = request.getParameter("password");
