@@ -26,7 +26,7 @@
 		<h1><a href="index.jsp" class="company">${attCompanyName}</a></h1>
 		<nav id="navPrincipal"> 
 			<a class="amenu" href="InitSess"></a>
-		 	<a class="amenu" href="InitSess">Cerrar sesión</a>
+		 	<a class="amenu" href="login?accion=salir">Cerrar sesión</a>
 		</nav>
 		<nav id="navPrincipal"> <a class="amenu" href="InitSess">${nombreUsuario }</a>
 		<a class="amenu" href="InitSess"><p class="glyphicon glyphicon-off"></p></a> </nav>

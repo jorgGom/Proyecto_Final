@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -23,7 +24,7 @@
 		<h1><a href="index.jsp" class="company">${attCompanyName}</a></h1>
 		<nav id="navPrincipal"> 
 			<a class="amenu" href="InitSess"></a>
-		 	<a class="amenu" href="InitSess">Cerrar sesión</a>
+		 	<a class="amenu" href="login?accion=salir">Cerrar sesión</a>
 		</nav>
 		<nav id="navPrincipal"> <a class="amenu" href="InitSess">${nombreUsuario }</a>
 		<a class="amenu" href="InitSess"><p class="glyphicon glyphicon-off"></p></a> </nav>
@@ -48,6 +49,9 @@
 			<li><a class="glyphicon glyphicon-user" href="inicio"> Perfil</a></li>
 			<li><a href="inicio?page=productosVenta">Productos en venta</a></li>
 			<li class="active"><a href="inicio?page=productosComprados">Productos comprados</a></li>
+			<c:if test="${usuario.nombre=='admin' }">
+				<li><a href="inicio?page=listaUsuarios">Lista de usuarios</a></li>
+			</c:if>
 		</ul>
 
 		<form>

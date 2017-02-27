@@ -16,10 +16,10 @@
 <link href="https://fonts.googleapis.com/css?family=Dosis|Pacifico"
 	rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
-<title>Registrarse</title>
+<title>Añadir Producto</title>
 </head>
-<body style="background-color: #F1F1F1">
-	<header class="navbar navbar-default navbar-fixed-top">
+<body>
+<header class="navbar navbar-default navbar-fixed-top">
 	<div class="navegacion">
 		<h1><a href="/Proyecto_Final/home" class="company">${attCompanyName}</a></h1>
 		<nav id="navPrincipal"> 
@@ -36,52 +36,6 @@
 		</form>
 	</div>
 	</header>
-	<div class="mainLogin">
-	<div id="registro">
-		<h2>Registrarse</h2>
-		<form action="/Proyecto_Final/registro" method="POST">
-			<fieldset>
-				<div class="izq">
-				<p>
-					<label for="nombre">Nombre</label>
-				</p>
-				<p>
-					<input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
-				</p>
-				</div>
-				<div class="dcha">
-				<p>
-					<label for="apellido">Apellido</label>
-				</p>
-				<p>
-					<input  type="text" name="apellido" id="apellido" placeholder="Apellido" required>
-				</p>
-				</div>
-				<div class="izq">
-				<p>
-					<label for="password">Contraseña</label>
-				</p>
-				<p>
-					<input name="password" type="password" id="password" placeholder="Contraseña" required>
-				</p>
-				</div>
-				<div class="dcha">
-				<p>
-					<label for="email">E-mail</label>
-				</p>
-				<p>
-					<input name="email" type="email" id="email" placeholder="E-mail" required>
-				</p>
-				</div>
-				<div class="centro">
-				<p class="button">
-					<input type="submit" value="Registrarse">
-				</p>
-				</div>
-			</fieldset>
-		</form>
-	</div>
-	</form>
-</div>
+
 </body>
 </html>

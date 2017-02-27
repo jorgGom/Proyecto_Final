@@ -48,6 +48,11 @@ public class AutenticadorServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		HttpSession session =request.getSession();
+		String accion=request.getParameter("accion");
+		if ("salir".equals(accion)) {
+			session.invalidate();
+		}
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
@@ -71,11 +76,13 @@ public class AutenticadorServlet extends HttpServlet {
 		else if (user != null) {
 			if ("admin".equalsIgnoreCase(newName) && "admin".equalsIgnoreCase(newPass)) {
 				session.setAttribute("userName", newName);
+				session.setAttribute("usuario", user);
 				RequestDispatcher dispatcher = request.getRequestDispatcher("Admin");
 				dispatcher.forward(request, response);
 
 			}else{
 			session.setAttribute("userName", newName);
+			session.setAttribute("usuario", user);
 			request.getRequestDispatcher("Filtrado/bienvenido.jsp").forward(request, response);
 			List<Usuario> users=dao.readUsers();
 			request.setAttribute("listaUsuarios", users);
