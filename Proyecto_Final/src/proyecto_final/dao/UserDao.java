@@ -43,14 +43,14 @@ public class UserDao {
 	public List<Usuario> readUsers(){
 		List <Usuario> users=new ArrayList<>();
 		
-		String query = "SELECT * fROM usuario";
+		String query = "SELECT * FROM usuario";
 		try {
 			statement = conn.prepareStatement(query);
 			ResultSet rs = statement.executeQuery();
 			while (rs.next()){
 				Usuario user = new Usuario(rs.getInt("idusuario"),rs.getString("nombre"),
 						rs.getString("apellido"),rs.getString("email"),
-						rs.getString("password"));
+						rs.getString("contraseña"));
 				users.add(user);
 			}
 			statement.close();
@@ -125,7 +125,7 @@ public class UserDao {
 			if (rs.next()) {
 				user = new Usuario(rs.getInt("idusuario"),rs.getString("nombre"),
 						rs.getString("apellido"),rs.getString("email"),
-						rs.getString("password"));
+						rs.getString("contraseña"));
 			}
 		} catch (SQLException e){
 			System.out.println("Error SQL");

@@ -67,18 +67,10 @@
       </c:forEach>
   </table>
   <table border=3>
-			<tr align=center bgcolor=#A9A9A9>
-				<td>Id de usuario</td>
-				<td>Nombre usuario</td>
-				<td>Apellido</td>
-				<td>Email de usuario</td>
-				<td>Modificar</td>
-				<td>Eliminar</td>
-			</tr>
-		<% List<Usuario> users = (List<Usuario>)request.getAttribute("listaUsuarios"); 
-		
-		for (Usuario u:users){%>
-			<tr align=right>
+			<tr><th>ID</th><th>Nombre</th><th>Apellido</th><th>Email</th><th>Modificar</th><th>Eliminar</th></tr>
+		<% List<Usuario> users = (List<Usuario>)request.getAttribute("listaUsuarios"); %>
+		<%for (Usuario u:users){ %>
+			<tr>
 				<td><%= u.getIdusuario() %></td>
 				<td><%= u.getNombre() %></td>
 				<td><%= u.getApellido() %></td>
