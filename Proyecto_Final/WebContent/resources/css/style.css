@@ -8,7 +8,9 @@ header {
 	-webkit-box-shadow: 0px 10px 20px 4px rgba(0, 0, 0, 0.27);
 	margin-bottom: 50px;
 }
-
+a.company{
+	color:white;
+}
 .navbar-default {
 	background-color: rgba(19, 193, 172, .93);
 	border-color: #e7e7e7;

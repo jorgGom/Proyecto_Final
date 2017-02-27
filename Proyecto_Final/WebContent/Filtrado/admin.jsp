@@ -20,7 +20,7 @@
 <body>
 	<header class="navbar navbar-default navbar-fixed-top">
 	<div class="navegacion">
-		<h1><a href="index.jsp" >${attCompanyName}(AdministradorTodopoderoso)</a></h1>
+		<h1><a href="index.jsp" class="company">${attCompanyName}(AdministradorTodopoderoso)</a></h1>
 		<nav id="navPrincipal"> 
 			<a class="amenu" href="InitSess"></a>
 		 	<a class="amenu" href="InitSess">Cerrar sesión</a>

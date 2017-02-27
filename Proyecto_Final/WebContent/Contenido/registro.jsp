@@ -20,7 +20,7 @@
 <body style="background-color: #F1F1F1">
 	<header class="navbar navbar-default navbar-fixed-top">
 	<div class="navegacion">
-		<h1><a href="index.jsp" >${attCompanyName}</a></h1>
+		<h1><a href="../index.jsp" class="company">${attCompanyName}</a></h1>
 		<nav id="navPrincipal"> 
 			<a class="amenu" href="login.jsp">Inicio de Sesion</a>
 		</nav>
