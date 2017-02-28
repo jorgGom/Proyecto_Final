@@ -19,7 +19,7 @@ public class ProductoDao {
 		this.conn = conn;
 	}
 
-	public List<Producto> readUsers(){
+	public List<Producto> readProductos(){
 		List <Producto> product=new ArrayList<>();
 		
 		String query = "SELECT * fROM productos";

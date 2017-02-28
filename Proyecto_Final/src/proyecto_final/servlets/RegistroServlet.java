@@ -2,6 +2,7 @@ package proyecto_final.servlets;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.util.List;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -11,17 +12,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import proyecto_final.clases.Producto;
 import proyecto_final.clases.Usuario;
+import proyecto_final.dao.ProductoDao;
 import proyecto_final.dao.UserDao;
 
 /**
  * Servlet implementation class RegistroServlet
  */
-@WebServlet("/registro")
+@WebServlet({ "/registro", "/busqueda" })
 public class RegistroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private UserDao dao;     
+	private ProductoDao daoPro;
 	
 	
 	
@@ -31,6 +35,7 @@ public class RegistroServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		super.init(config);
 		dao = new UserDao((Connection)getServletContext().getAttribute("conection"));
+		daoPro = new ProductoDao((Connection)getServletContext().getAttribute("conection"));
 	}
 
 	public RegistroServlet() {
@@ -44,7 +49,11 @@ public class RegistroServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String producto = request.getParameter("buscar");
+		List<Producto> lista = daoPro.readProductos();
+		request.setAttribute("lista", lista);
+		request.getRequestDispatcher("Contenido/busqueda.jsp").forward(request, response);
+		
 	}
 
 	/**
