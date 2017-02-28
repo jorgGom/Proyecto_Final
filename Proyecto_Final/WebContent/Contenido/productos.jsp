@@ -54,7 +54,7 @@
 			<c:if test="${ usuario.nombre eq 'admin' }">
 				<li><a class="aperfil" href="inicio?page=listaUsuarios"><span class="glyphicon glyphicon-book"></span> Lista de usuarios</a></li>
 			</c:if>
-			<li class="active"><a class="aperfil" href="RegistroProducto?page=compra"><span class="glyphicon glyphicon-piggy-bank"></span> Lista de productos</a></li>
+			<li class="active"><a class="aperfil" href="busqueda"><span class="glyphicon glyphicon-piggy-bank"></span> Lista de productos</a></li>
 		</ul>
 
 				<c:if test="${usuario.nombre!='admin' }">
