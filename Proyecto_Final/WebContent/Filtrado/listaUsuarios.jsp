@@ -90,11 +90,11 @@
 						<td class="tdUser">${i.apellido}</td>
 						<td class="tdUser">${i.email}</td>
 						<td class="tdUser"><a class="btn"
-							href="Admin?accion=modificar&id="
-							<c:out value="${i.idusuario}"></c:out>>Modificar</a></td>
+							href="Admin?accion=modificar&id=
+							<c:out value="${i.idusuario}"></c:out>">Modificar</a></td>
 						<td class="tdUser"><a class="btn"
-							href="Admin?accion=eliminar&id="
-							<c:out value="${i.idusuario}"></c:out>>Eliminar</a></td>
+							href="Admin?accion=eliminar&id=
+							<c:out value="${i.idusuario}"></c:out>">Eliminar</a></td>
 					</tr>
 				</c:forEach>
 			</table>

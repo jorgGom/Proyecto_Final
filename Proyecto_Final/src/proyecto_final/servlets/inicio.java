@@ -55,8 +55,9 @@ public class inicio extends HttpServlet {
 		// TODO Auto-generated method stub
 		String page = request.getParameter("page");
 		HttpSession session =request.getSession();
-		int idUser = (int) session.getAttribute("idUser");
+		
 		if("productosVenta".equals(page)){
+			int idUser = (int) session.getAttribute("idUser");
 			List<Producto> pro=daoPro.getProductUser(idUser);
 			request.setAttribute("listaProductos", pro);
 			request.getRequestDispatcher("Filtrado/productosEnVenta.jsp").forward(request, response);

@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,13 +33,23 @@ public class AdminServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+    
+
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+		super.init(config);
+		dao = new UserDao((Connection) config.getServletContext().getAttribute("conection"));
+	}
+
+
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("Proyecto_Final/Filtrado/bienvenido.jsp").forward(request, response);
 		HttpSession session =request.getSession();
 		String accion=request.getParameter("accion");
 		
@@ -49,10 +60,17 @@ public class AdminServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 		}
 		else if("eliminar".equals(accion)){
-			int id=(int) session.getAttribute(accion);
-			request.setAttribute("idUser", id);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("Filtrado/listaUsuarios.jsp");
+			//int id=(int) session.getAttribute(accion);
+			String idS=request.getParameter("id");
+			int id = Integer.parseInt(idS);
+			dao.deleteUser(id);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("inicio?page=listaUsuarios");
 			dispatcher.forward(request, response);
+			//response.sendRedirect("Filtrado/bienvenido.jsp");
+		}
+		
+		else{
+			request.getRequestDispatcher("Proyecto_Final/Filtrado/bienvenido.jsp").forward(request, response);
 		}
 		
 	}
