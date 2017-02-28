@@ -18,7 +18,7 @@
 <link rel="stylesheet" type="text/css" href="resources/css/style.css">
 <title>Añadir Producto</title>
 </head>
-<body>
+<body style="background-color: #F1F1F1">
 <header class="navbar navbar-default navbar-fixed-top">
 	<div class="navegacion">
 		<h1><a href="/Proyecto_Final/home" class="company">${attCompanyName}</a></h1>
@@ -66,7 +66,7 @@
 				</p>
 				<div class="centro">
 				<p class="button">
-					<input type="submit" value="Anadir">
+					<input type="submit" value="Añadir">
 				</p>
 				</div>
 			</fieldset>
