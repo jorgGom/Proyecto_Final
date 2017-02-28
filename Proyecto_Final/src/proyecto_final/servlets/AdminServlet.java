@@ -71,6 +71,7 @@ public class AdminServlet extends HttpServlet {
 		
 		else{
 			request.getRequestDispatcher("Proyecto_Final/Filtrado/bienvenido.jsp").forward(request, response);
+			
 		}
 		
 	}
