@@ -39,30 +39,30 @@
 		<div class="mainLogin">
 	<div id="registro">
 		<h2>Añadir Producto</h2>
-		<form action="/Proyecto_Final/registro" method="POST">
+		<form action="/Proyecto_Final/RegistroProducto" method="POST">
 			<fieldset>
 				<div class="izq">
 				<p>
-					<label for="nombre">Nombre de producto</label>
+					<label for="nombrePro">Nombre de producto</label>
 				</p>
 				<p>
-					<input type="text" name="nombrePro" id="nombre" placeholder="Nombre de producto" required>
+					<input type="text" name="nombrePro" id="nombrePro" placeholder="Nombre de producto" required>
 				</p>
 				</div>
 				<div class="dcha">
 				<p>
-					<label for="apellido">Descripcion</label>
+					<label for="descripcion">Descripcion</label>
 				</p>
 				<p>
-					<input  type="text" name="descripcion" id="apellido" placeholder="Descripcion" required>
+					<input  type="text" name="descripcion" id="descripcion" placeholder="Descripcion" required>
 				</p>
 				</div>
 				<div class="izq">
 				<p>
-					<label for="password">Precio</label>
+					<label for="precio">Precio</label>
 				</p>
 				<p>
-					<input name="precio" type="text" id="password" placeholder="Precio" required>
+					<input name="precio" type="text" id="precio" placeholder="Precio" required>
 				</p>
 				<div class="centro">
 				<p class="button">

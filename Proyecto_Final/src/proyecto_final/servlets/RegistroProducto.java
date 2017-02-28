@@ -61,14 +61,17 @@ public class RegistroProducto extends HttpServlet {
 		}
 		else{
 		HttpSession session = request.getSession();
-		int id =  (int) session.getAttribute("idUser");
+		System.out.println(session.getAttribute("userName"));
+		int id = (int) session.getAttribute("idUser");
 		System.out.println(id);
 		String nombre = request.getParameter("nombrePro");
 		String descripcion = request.getParameter("descripcion");
 		String precio = request.getParameter("precio");
 		
 		
-		boolean correcto = dao.insertProduct(0, nombre, descripcion, precio, 0, id, 0);
+		
+		
+		boolean correcto = dao.insertProduct(0, nombre, descripcion, precio, 0,id, 0);
 		
 		if(correcto){
 			request.setAttribute("msg", "Registro realizado correctamente.");
