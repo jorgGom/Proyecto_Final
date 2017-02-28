@@ -45,30 +45,33 @@
 	<div class="container">
 	<div class="item">
 		<h2>Bienvenido ${userName }</h2>
+		<div class="menu">
 		<ul class="nav nav-pills nav-stacked">
-			<li class="active"><a class="glyphicon glyphicon-user" href="inicio"> Perfil</a></li>
-			<li><a href="inicio?page=productosVenta">Productos en venta</a></li>
-			<li><a href="inicio?page=productosComprados">Productos comprados</a></li>
+			<li class="active"><a class="aperfil" href="inicio"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
+			<li><a class="aperfil" href="inicio?page=productosVenta"><span class="glyphicon glyphicon-shopping-cart"></span> Productos en venta</a></li>
+			<li><a class="aperfil" href="inicio?page=productosComprados"><span class="glyphicon glyphicon-piggy-bank"></span> Productos comprados</a></li>
 			<c:if test="${ usuario.nombre eq 'admin' }">
-				<li><a href="inicio?page=listaUsuarios">Lista de usuarios</a></li>
+				<li><a class="aperfil" href="inicio?page=listaUsuarios">Lista de usuarios</a></li>
 			</c:if>
 		</ul>
 
 		<c:if test="${usuario.nombre!='admin' }">
+		
 		<form method="get" action="/Proyecto_Final/RegistroProducto">
-			<button type="button" id="comprar">Comprar</button>
+			<input type="button" id="comprar" value="Comprar">
 		</form>
 		<form method="POST" action="/Proyecto_Final/RegistroProducto?page=venta">
-		<input type="submit" value="vender">
+			<input type="submit" value="Cender" id="vender">
 		</form>
 		</c:if>
+		</div>
 	</div>
 	<div class="item2">
-		<ul>
-		<li>Nombre: ${usuario.nombre }</li>
-		<li>Apellido: ${usuario.apellido }</li>
-		<li>Email: ${usuario.email }</li>
-
+		<img class="imgPerfil" alt="perfil" src="resources/img/perfil.jpg" />
+		<ul class="ulPerfil">
+		<li class="liPerfil"><span>Nombre: </span>${usuario.nombre }</li>
+		<li class="liPerfil"><span>Apellido: </span>${usuario.apellido }</li>
+		<li class="liPerfil"><span>Email: </span>${usuario.email }</li>
 		</ul>
 	</div>
 

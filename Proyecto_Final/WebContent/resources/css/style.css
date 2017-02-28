@@ -27,7 +27,9 @@ h1 {
 	display: block;
 	color: white;
 }
-
+h2{
+	font-size: 35px;
+}
 #navPrincipal {
 	display: inline-block;
 	float: right;
@@ -260,6 +262,7 @@ input {
 }
 
 .item {
+	margin-top: -35px;
 	margin-right:50px;
 	order: 1;
 	width: 25%;
@@ -267,8 +270,48 @@ input {
 
 .item2 {
 	margin-right:10px;
+	margin-top:60px;
 	order: 2;
 	width: 75%;
+	font-size: 20px;
+	font-family: 'Dosis', sans-serif;
+}
+.imgPerfil{
+	float:left;
+	width: 15%;
+}
+.ulPerfil{
+	float:left;
+	list-style-type: none;
+}
+.liPerfil{
+	margin-bottom: 10px;	
+}
+span{
+	font-size: 25px;
+}
+.aperfil{
+	font-family: 'Dosis', sans-serif;
+	font-size: 20px;
+}
+.menu{
+	margin-top:40px;
+}
+
+#comprar{
+	margin-left: 20px;
+    margin-top: 30px;
+    margin-bottom:30px;
+    padding: 15px;
+    font-size: 20px;
+    width: 90%;
+}
+#vender{
+	margin-left: 20px;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 20px;
+    width: 90%;
 }
 /*-------------- Tabla usuarios ---------*/
 .tableUsu {
