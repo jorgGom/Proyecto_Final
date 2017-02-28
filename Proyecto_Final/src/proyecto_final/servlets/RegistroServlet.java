@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import proyecto_final.clases.Usuario;
 import proyecto_final.dao.UserDao;
 
 /**
@@ -20,8 +21,7 @@ import proyecto_final.dao.UserDao;
 public class RegistroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private UserDao dao;
-       
+	private UserDao dao;     
 	
 	
 	
@@ -64,8 +64,12 @@ public class RegistroServlet extends HttpServlet {
 		boolean correcto = dao.insertUser(nombre, apellido, email, pass);
 		
 		if(correcto){
+			session.setAttribute("userName", nombre);
+			Usuario user = dao.validateUser(nombre, pass);
+			session.setAttribute("usuario", user);
 			request.setAttribute("msg", "Registro realizado correctamente.");
-			response.sendRedirect("inicio");
+			request.getRequestDispatcher("Filtrado/bienvenido.jsp").forward(request, response);
+			//response.sendRedirect("inicio");
 		}else{
 			request.setAttribute("msg", "No se pudo insertar el usuario, intentalo mas tarde");
 		}
