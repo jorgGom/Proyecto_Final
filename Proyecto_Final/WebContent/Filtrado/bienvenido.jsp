@@ -59,13 +59,13 @@
 
 		<c:if test="${usuario.nombre!='admin' }">
 		
-		<a class="comVend" href="RegistroProducto?page=compra">
+		<p class="botones"><a class="comVen" href="RegistroProducto?page=compra">
 		Comprar
-		</a>
+		</a></p>
 		<br>
-		<a class="comVend" href="RegistroProducto?page=venta">
+		<p class="botones"><a class="comVend" href="RegistroProducto?page=venta">
 		Vender
-		</a>
+		</a></p>
 		</c:if>
 		</div>
 	</div>
