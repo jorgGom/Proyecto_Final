@@ -11,8 +11,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
+import proyecto_final.clases.Producto;
 import proyecto_final.clases.Usuario;
+import proyecto_final.dao.ProductoDao;
 import proyecto_final.dao.UserDao;
 
 /**
@@ -24,6 +27,7 @@ public class inicio extends HttpServlet {
        
 	
 	private UserDao dao;
+	private ProductoDao daoPro;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -34,6 +38,7 @@ public class inicio extends HttpServlet {
 		// TODO Auto-generated method stub
 		super.init(config);
 		dao = new UserDao((Connection) config.getServletContext().getAttribute("conection"));
+		daoPro = new ProductoDao((Connection) config.getServletContext().getAttribute("conection")); 
 	}
 	
     public inicio() {
@@ -49,7 +54,11 @@ public class inicio extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String page = request.getParameter("page");
+		HttpSession session =request.getSession();
+		int idUser = (int) session.getAttribute("idUser");
 		if("productosVenta".equals(page)){
+			List<Producto> pro=daoPro.getProductUser(idUser);
+			request.setAttribute("listaProductos", pro);
 			request.getRequestDispatcher("Filtrado/productosEnVenta.jsp").forward(request, response);
 			return;
 		}

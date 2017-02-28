@@ -118,4 +118,27 @@ public class ProductoDao {
 		}
 		return prod;
 	}
+	
+	public List<Producto> getProductUser (int idUser){
+		String query = "SELECT * FROM productos WHERE (vendedor=?)";
+		List <Producto> prod=new ArrayList<>();
+		Producto producto=null;
+		try {
+			statement = conn.prepareStatement(query);
+			statement.setInt(1, idUser);
+			ResultSet rs=statement.executeQuery();
+			while(rs.next()) {
+				producto = new Producto(rs.getInt("idproductos"),rs.getInt("vendido"),
+						rs.getInt("vendedor"),rs.getInt("comprador"),
+						rs.getString("nombre"),rs.getString("descripcion"),
+						rs.getString("precio"));
+			prod.add(producto);
+			}
+			statement.close();
+		} catch (SQLException e){
+			System.out.println("Error SQL");
+			e.printStackTrace();
+		}
+		return prod;
+	}
 }

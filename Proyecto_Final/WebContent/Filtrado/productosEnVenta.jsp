@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.util.List" %>
+<%@ page import="proyecto_final.clases.Producto" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -67,7 +69,22 @@
 		</div>
 	</div>
 	<div class="item2">
-		<p>Tus productos</p>
+			<table class="tableUsu">
+    <tr class="trUser"><th>Id Producto</th><th>Vendido</th><th>Comprador</th><th>Nombre Producto</th>
+    <th>Descripcion</th><th>Precio</th></tr>
+      <c:forEach var="i" items="${ listaProductos }">
+        <tr>
+        <td class="tdUser">${i.idproductos}</td>
+        <td class="tdUser">${i.vendido}</td>
+        <td class="tdUser">${i.comprador}</td>
+        <td class="tdUser">${i.nombre}</td>
+        <td class="tdUser">${i.descripcion}</td>
+        <td class="tdUser">${i.precio}</td>
+        <td class="tdUser"><button>Modificar</button></td>
+        <td class="tdUser"><button>Eliminar</button></td>
+        </tr>  
+      </c:forEach>
+  </table>
 	</div>
 
 </div>
