@@ -46,29 +46,39 @@
 
 	<div class="container">
 	<div class="item">
-		<h2>Bienvenido ${userName }</h2>
+		<h2>Bienvenido ${userName }</h2><div class="menu">
 		<ul class="nav nav-pills nav-stacked">
-			<li><a class="glyphicon glyphicon-user" href="inicio"> Perfil</a></li>
-			<li><a href="inicio?page=productosVenta">Productos en venta</a></li>
-			<li><a href="inicio?page=productosComprados">Productos comprados</a></li>
-			<li class="active"><a href="inicio?page=listaUsuarios">Lista de usuarios</a></li>
+			<li><a class="aperfil" href="inicio"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
+			<li><a class="aperfil" href="inicio?page=productosVenta"><span class="glyphicon glyphicon-shopping-cart"></span> Productos en venta</a></li>
+			<li><a class="aperfil" href="inicio?page=productosComprados"><span class="glyphicon glyphicon-piggy-bank"></span> Productos comprados</a></li>
+			<c:if test="${ usuario.nombre eq 'admin' }">
+				<li><a class="aperfil" href="inicio?page=listaUsuarios"><span class="glyphicon glyphicon-book"></span> Lista de usuarios</a></li>
+			</c:if>
+			<li class="active"><a class="aperfil" href="RegistroProducto?page=compra"><span class="glyphicon glyphicon-piggy-bank"></span> Lista de productos</a></li>
 		</ul>
 
-		<form>
-			<button type="button" id="comprar">Comprar</button>
-			<button type="button" id="vender">Vender</button>
-		</form>
+		<c:if test="${usuario.nombre!='admin' }">
+		
+		<a href="RegistroProducto?page=compra">
+		Comprar
+		</a>
+		<a href="RegistroProducto?page=venta">
+		Vender
+		</a>
+		</c:if>
+		</div>
 	</div>
 	<div class="item2">
 	<table class="tableUsu">
-    <tr><th>ID</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Vendedor</th><th>Comprar</th></tr>
+    <tr class="trUser"><th>ID Producto</th><th>Nombre</th><th>Descripción</th><th>Vendedor</th><th>Precio</th><th>Comprar</th></tr>
       <c:forEach var="i" items="${ listaProductos }">
         <tr>
-        <td>${i.idproductos}</td>
-        <td>${i.nombre}</td>
-        <td>${i.descripcion}</td>
-        <td>${i.vendedor}</td>
-        <td><button>Comprar</button></td>
+        <td class="tdUser">${i.idproductos}</td>
+        <td class="tdUser">${i.nombre}</td>
+        <td class="tdUser">${i.descripcion}</td>
+        <td class="tdUser">${i.vendedor}</td>
+        <td class="tdUser">${i.precio}</td>
+        <td class="tdUser"><button>Comprar</button></td>
         </tr>  
       </c:forEach>
   </table>
