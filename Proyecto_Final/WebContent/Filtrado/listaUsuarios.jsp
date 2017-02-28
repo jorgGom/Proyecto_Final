@@ -53,12 +53,14 @@
 				<ul class="nav nav-pills nav-stacked">
 					<li><a class="aperfil" href="inicio"><span
 							class="glyphicon glyphicon-user"></span> Perfil</a></li>
-					<li><a class="aperfil" href="inicio?page=productosVenta"><span
-							class="glyphicon glyphicon-shopping-cart"></span> Productos en
-							venta</a></li>
-					<li><a class="aperfil" href="inicio?page=productosComprados"><span
-							class="glyphicon glyphicon-piggy-bank"></span> Productos
-							comprados</a></li>
+					<c:if test="${usuario.nombre!='admin' }">
+						<li><a class="aperfil" href="inicio?page=productosVenta"><span
+								class="glyphicon glyphicon-shopping-cart"></span> Productos en
+								venta</a></li>
+						<li><a class="aperfil" href="inicio?page=productosComprados"><span
+								class="glyphicon glyphicon-piggy-bank"></span> Productos
+								comprados</a></li>
+					</c:if>
 					<c:if test="${ usuario.nombre eq 'admin' }">
 						<li class="active"><a class="aperfil"
 							href="inicio?page=listaUsuarios"><span
@@ -66,10 +68,11 @@
 					</c:if>
 				</ul>
 				<c:if test="${usuario.nombre!='admin' }">
-					<form>
-						<button type="button" id="comprar">Comprar</button>
-						<button type="button" id="vender">Vender</button>
-					</form>
+
+					<a class="comVend" href="RegistroProducto?page=compra"> Comprar
+					</a>
+					<br>
+					<a class="comVend" href="RegistroProducto?page=venta"> Vender </a>
 				</c:if>
 			</div>
 		</div>

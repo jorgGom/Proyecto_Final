@@ -94,7 +94,7 @@ public class RegistroProducto extends HttpServlet {
 		
 		if(correcto){
 			request.setAttribute("msg", "Registro realizado correctamente.");
-			response.sendRedirect("/Proyecto_Final/Filtrado/bienvenido.jsp");
+			response.sendRedirect("inicio?page=productosVenta");
 		}else{
 			request.setAttribute("msg", "No se pudo insertar el usuario, intentalo mas tarde");
 		}
