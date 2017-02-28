@@ -27,12 +27,10 @@ public class UserDao {
 			statement.setString(1, nombre);
 			statement.setString(2, password);
 			ResultSet rs = statement.executeQuery();
-			if (rs.next()) {				
-				u = new Usuario(rs.getInt("idusuario"),rs.getString("nombre"),
+			if (rs.next()) {	u = new Usuario(rs.getInt("idusuario"),rs.getString("nombre"),
 						rs.getString("apellido"),rs.getString("email"),
 						rs.getString("contraseña"));
-			}
-			statement.close();
+			statement.close();}
 		} catch (SQLException e) {
 			System.out.println("Error: Validate User");
 			e.printStackTrace();

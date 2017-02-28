@@ -55,9 +55,11 @@
 		</ul>
 
 		<c:if test="${usuario.nombre!='admin' }">
-		<form>
+		<form method="get" action="/Proyecto_Final/RegistroProducto">
 			<button type="button" id="comprar">Comprar</button>
-			<button type="button" id="vender">Vender</button>
+		</form>
+		<form method="POST" action="/Proyecto_Final/RegistroProducto?page=venta">
+		<input type="submit" value="vender">
 		</form>
 		</c:if>
 	</div>

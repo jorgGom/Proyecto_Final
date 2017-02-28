@@ -15,7 +15,7 @@
 	crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Dosis|Pacifico"
 	rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 <title>Añadir Producto</title>
 </head>
 <body>
@@ -36,6 +36,43 @@
 		</form>
 	</div>
 	</header>
+		<div class="mainLogin">
+	<div id="registro">
+		<h2>Añadir Producto</h2>
+		<form action="/Proyecto_Final/registro" method="POST">
+			<fieldset>
+				<div class="izq">
+				<p>
+					<label for="nombre">Nombre de producto</label>
+				</p>
+				<p>
+					<input type="text" name="nombrePro" id="nombre" placeholder="Nombre de producto" required>
+				</p>
+				</div>
+				<div class="dcha">
+				<p>
+					<label for="apellido">Descripcion</label>
+				</p>
+				<p>
+					<input  type="text" name="descripcion" id="apellido" placeholder="Descripcion" required>
+				</p>
+				</div>
+				<div class="izq">
+				<p>
+					<label for="password">Precio</label>
+				</p>
+				<p>
+					<input name="precio" type="text" id="password" placeholder="Precio" required>
+				</p>
+				<div class="centro">
+				<p class="button">
+					<input type="submit" value="Anadir">
+				</p>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	</form>
 
 </body>
 </html>

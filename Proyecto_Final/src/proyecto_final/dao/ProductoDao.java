@@ -57,8 +57,7 @@ public class ProductoDao {
 		}
 	}
 	
-	public boolean insertProduct(int idproductos, int vendido, int vendedor, int comprador, String nombre, String descripcion,
-			String precio){
+	public boolean insertProduct(int idproductos,String nombre, String descripcion,String precio, int vendido, int vendedor, int comprador){
 		boolean result= false;
 		String query = "INSERT INTO productos VALUES (?,?,?,?,?,?,?)";
 		
