@@ -2,6 +2,7 @@ package proyecto_final.servlets;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.util.List;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import proyecto_final.clases.Producto;
 import proyecto_final.dao.ProductoDao;
 
 /**
@@ -44,7 +46,24 @@ public class RegistroProducto extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("Proyecto_Final/Contenido/anadirProducto.jsp").forward(request, response);
+		HttpSession session = request.getSession();
+		int id = (int) session.getAttribute("idUser");
+		String action = request.getParameter("page");
+		switch(action){
+			
+		case ("venta"):{
+			request.getRequestDispatcher("Contenido/anadirProducto.jsp").forward(request, response);
+			break;
+		}
+		
+		case ("compra"):{
+			
+			List<Producto> pro=dao.getProductComprar(id);
+			request.setAttribute("listaProductos", pro);
+			request.getRequestDispatcher("Contenido/productos.jsp").forward(request, response);
+			
+		}
+		}
 	}
 
 	/**

@@ -62,10 +62,9 @@
 	<div class="item2">
 	<table class="tableUsu">
     <tr><th>ID</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Vendedor</th><th>Comprar</th></tr>
-    <% List<Usuario> users = (List<Usuario>)request.getAttribute("listaProductos"); %>
       <c:forEach var="i" items="${ listaProductos }">
         <tr>
-        <td>${i.idproducto}</td>
+        <td>${i.idproductos}</td>
         <td>${i.nombre}</td>
         <td>${i.descripcion}</td>
         <td>${i.vendedor}</td>
