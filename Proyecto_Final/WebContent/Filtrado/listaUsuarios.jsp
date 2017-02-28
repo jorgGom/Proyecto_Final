@@ -48,12 +48,13 @@
 	<div class="container">
 	<div class="item">
 		<h2>Bienvenido ${userName }</h2>
+		<div class="menu">
 		<ul class="nav nav-pills nav-stacked">
-			<li><a class="glyphicon glyphicon-user" href="inicio"> Perfil</a></li>
-			<li><a href="inicio?page=productosVenta">Productos en venta</a></li>
-			<li><a href="inicio?page=productosComprados">Productos comprados</a></li>
-			<c:if test="${usuario.nombre=='admin' }">
-				<li class="active"><a href="inicio?page=listaUsuarios">Lista de usuarios</a></li>
+			<li><a class="aperfil" href="inicio"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
+			<li><a class="aperfil" href="inicio?page=productosVenta"><span class="glyphicon glyphicon-shopping-cart"></span> Productos en venta</a></li>
+			<li><a class="aperfil" href="inicio?page=productosComprados"><span class="glyphicon glyphicon-piggy-bank"></span> Productos comprados</a></li>
+			<c:if test="${ usuario.nombre eq 'admin' }">
+				<li class="active"><a class="aperfil" href="inicio?page=listaUsuarios"><span class="glyphicon glyphicon-book"></span> Lista de usuarios</a></li>
 			</c:if>
 		</ul>
 		<c:if test="${usuario.nombre!='admin' }">
@@ -62,6 +63,7 @@
 			<button type="button" id="vender">Vender</button>
 		</form>
 		</c:if>
+		</div>
 	</div>
 	<div class="item2">
 	<table class="tableUsu">

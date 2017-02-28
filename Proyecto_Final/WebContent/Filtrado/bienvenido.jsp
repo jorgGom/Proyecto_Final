@@ -51,7 +51,7 @@
 			<li><a class="aperfil" href="inicio?page=productosVenta"><span class="glyphicon glyphicon-shopping-cart"></span> Productos en venta</a></li>
 			<li><a class="aperfil" href="inicio?page=productosComprados"><span class="glyphicon glyphicon-piggy-bank"></span> Productos comprados</a></li>
 			<c:if test="${ usuario.nombre eq 'admin' }">
-				<li><a class="aperfil" href="inicio?page=listaUsuarios">Lista de usuarios</a></li>
+				<li><a class="aperfil" href="inicio?page=listaUsuarios"><span class="glyphicon glyphicon-book"></span> Lista de usuarios</a></li>
 			</c:if>
 		</ul>
 
@@ -61,7 +61,7 @@
 			<input type="button" id="comprar" value="Comprar">
 		</form>
 		<form method="POST" action="/Proyecto_Final/RegistroProducto?page=venta">
-			<input type="submit" value="Cender" id="vender">
+			<input type="submit" value="Vender" id="vender">
 		</form>
 		</c:if>
 		</div>
