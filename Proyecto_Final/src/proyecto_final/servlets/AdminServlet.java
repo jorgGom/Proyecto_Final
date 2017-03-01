@@ -59,6 +59,7 @@ public class AdminServlet extends HttpServlet {
 			String apellido=request.getParameter("ape");
 			String email=request.getParameter("mail");
 			String password=request.getParameter("pass");
+			System.out.println("Llegan los parametros"+nombre+apellido+email+password);
 			
 			dao.modUser(id, nombre, apellido, email, password);
 			
