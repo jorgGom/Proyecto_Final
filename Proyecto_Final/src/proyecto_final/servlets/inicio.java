@@ -60,7 +60,7 @@ public class inicio extends HttpServlet {
 			int idUser = (int) session.getAttribute("idUser");
 			List<Producto> pro=daoPro.getProductUser(idUser);
 			request.setAttribute("listaProductos", pro);
-			request.getRequestDispatcher("Filtrado/productosEnVenta.jsp").forward(request, response);
+			request.getRequestDispatcher("Contenido/productos.jsp").forward(request, response);
 			return;
 		}
 		else if("listaUsuarios".equals(page)){
@@ -71,7 +71,7 @@ public class inicio extends HttpServlet {
 			}
 		
 		else if("productosComprados".equals(page)){
-			request.getRequestDispatcher("Filtrado/productosComprados.jsp").forward(request, response);
+			request.getRequestDispatcher("Contenido/productos.jsp").forward(request, response);
 			return;
 		}
 		//response.sendRedirect("inicio?action=new");

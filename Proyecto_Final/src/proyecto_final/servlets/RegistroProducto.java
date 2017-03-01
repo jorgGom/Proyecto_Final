@@ -60,7 +60,7 @@ public class RegistroProducto extends HttpServlet {
 			System.out.println(idUser + "comprobacion");
 			List<Producto> pro=dao.getProductComprar(idUser);
 			request.setAttribute("listaProductos", pro);
-			request.getRequestDispatcher("Filtrado/productosEnVenta.jsp").forward(request, response);
+			request.getRequestDispatcher("Contenido/productos.jsp").forward(request, response);
 			
 		}
 		}

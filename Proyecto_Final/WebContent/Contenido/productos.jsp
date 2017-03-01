@@ -26,7 +26,7 @@
 		<h1><a href="index.jsp" class="company">${attCompanyName}</a></h1>
 		<nav id="navPrincipal"> 
 			<a class="amenu" href="InitSess"></a>
-		 	<a class="amenu" href="login?accion=salir">Cerrar sesiÃ³n</a>
+		 	<a class="amenu" href="login?accion=salir">Cerrar sesión</a>
 		</nav>
 		<nav id="navPrincipal"> <a class="amenu" href="InitSess">${nombreUsuario }</a>
 		<a class="amenu" href="InitSess"><p class="glyphicon glyphicon-off"></p></a> </nav>
@@ -35,7 +35,7 @@
 	<div class="form-busqueda">
 		<form class="busqueda" action="/" method="post">
 			<input type="text" class="busqueda"
-				placeholder="Â¿QuÃ© estÃ¡s buscando?" maxlength="150" />
+				placeholder="¿Qué estás buscando?" maxlength="150" />
 			<button type="button" id="buscar">
 				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 			</button>
@@ -56,7 +56,7 @@
 			<c:if test="${ usuario.nombre eq 'admin' }">
 				<li><a class="aperfil" href="inicio?page=listaUsuarios"><span class="glyphicon glyphicon-book"></span> Lista de usuarios</a></li>
 			</c:if>
-			<li class="active"><a class="aperfil" href="busqueda"><span class="glyphicon glyphicon-piggy-bank"></span> Lista de productos</a></li>
+			<li class="active"><a class="aperfil" href="inicio?page=productosVenta"><span class="glyphicon glyphicon-piggy-bank"></span> Productos en Venta</a></li>
 		</ul>
 
 				<c:if test="${usuario.nombre!='admin' }">
@@ -73,7 +73,14 @@
 	</div>
 	<div class="item2">
 	<table class="tableUsu">
-    <tr class="trUser"><th>ID Producto</th><th>Nombre</th><th>DescripciÃ³n</th><th>Vendedor</th><th>Precio</th><th>Comprar</th></tr>
+    <tr class="trUser">
+    	<th>ID Producto</th>
+    	<th>Nombre</th>
+    	<th>Descripción</th>
+    	<th>Vendedor</th>
+    	<th>Precio</th>
+    	<th>Comprar</th>
+    </tr>
       <c:forEach var="i" items="${ listaProductos }">
         <tr>
         <td class="tdUser">${i.idproductos}</td>
