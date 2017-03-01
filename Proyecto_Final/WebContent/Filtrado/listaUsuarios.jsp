@@ -82,7 +82,6 @@
 			</div>
 		</div>
 		<div class="item2">
-<!-- 		<form action="Admin" method="get"> -->
 			<table class="tableUsu">
 				<tr class="trUser">
 					<th>ID</th>
@@ -110,7 +109,31 @@
 				</c:forEach>
 			</table>
 			<c:if test="${formulario eq 'form' }">
-				<p>Hola buenas tardes</p>
+
+			<form action="Admin" method="POST" class="formMod">
+				<p>Modificar el usuario</p>
+				<table class="tableUsu">
+				<tr class="trUser">
+					<th>ID</th>
+					<th>Nombre</th>
+					<th>Apellido</th>
+					<th>Email</th>
+					<th>Contraseña</th>
+					<th>Enviar</th>
+				</tr>
+					<tr>
+						<td class="tdUser">${idMod}</td>
+						<td class="tdUser"><input type="text" placeholder="Nuevo nombre" name="nom"/></td>
+						<td class="tdUser"><input type="text" placeholder="Nuevo apellido" name="ape"/></td>
+						<td class="tdUser"><input type="text" placeholder="Nuevo email" name="mail"/></td>
+						<td class="tdUser"><input type="text" placeholder="Nueva contraseña" name="pass"/></td>
+						<td class="tdUser"><input type="submit" value="modificar" name="modificar"></td>
+					</tr>
+			</table>
+			
+			</form>
+			
+
 				<a href="#">Ha funcionado perfectamente</a>
 			
 			</c:if>

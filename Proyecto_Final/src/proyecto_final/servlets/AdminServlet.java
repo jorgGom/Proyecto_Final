@@ -109,10 +109,32 @@ public class AdminServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("Filtrado/bienvenido.jsp").forward(request, response);
+		//request.getRequestDispatcher("Filtrado/bienvenido.jsp").forward(request, response);
 		
 		String action=request.getParameter("action");
 		
+		HttpSession session =request.getSession();
+		int id=(int) session.getAttribute("idMod");
+			
+		String nombre=request.getParameter("nom");
+		String apellido=request.getParameter("ape");
+		String email=request.getParameter("mail");
+		String password=request.getParameter("pass");
+		session.removeAttribute("formulario");
+		
+		dao.modUser(id, nombre, apellido, email, password);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("inicio?page=listaUsuarios");
+		dispatcher.forward(request, response);
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
 		if ("eliminar".equals(action)){
 			try {
 				String id=request.getParameter("id");
@@ -126,7 +148,7 @@ public class AdminServlet extends HttpServlet {
 			} catch (Exception e) {
 				response.sendRedirect("inicio");
 			}
-			
+			*/
 			
 			
 			
@@ -135,4 +157,4 @@ public class AdminServlet extends HttpServlet {
 			
 	}
 
-}
+
