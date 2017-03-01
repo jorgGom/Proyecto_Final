@@ -78,6 +78,8 @@ public class AutenticadorServlet extends HttpServlet {
 			if ("admin".equalsIgnoreCase(newName) && "admin".equalsIgnoreCase(newPass)) {
 				session.setAttribute("userName", newName);
 				session.setAttribute("usuario", user);
+				String formulario = null;
+				session.setAttribute("formulario", formulario);
 				RequestDispatcher dispatcher = request.getRequestDispatcher("Admin");
 				dispatcher.forward(request, response);
 

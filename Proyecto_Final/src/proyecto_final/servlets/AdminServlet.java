@@ -28,6 +28,7 @@ public class AdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	private UserDao dao;
+	private Usuario user;
 	
     public AdminServlet() {
         super();
@@ -54,17 +55,36 @@ public class AdminServlet extends HttpServlet {
 		String accion=request.getParameter("accion");
 		
 		if("modificar".equals(accion)){
-			int id=Integer.parseInt(request.getParameter("id"));
+			
+			
+		String idModS = request.getParameter("id");
+		int idMod = Integer.parseInt(idModS);
+		session.setAttribute("idMod", idMod);
+		session.removeAttribute("formulario");
+		String formulario = "form";
+		session.setAttribute("formulario", formulario );
+		RequestDispatcher dispatcher = request.getRequestDispatcher("inicio?page=listaUsuarios");
+		dispatcher.forward(request, response);
+		
+		
+		
+			
+			
+			
+			/*String idS=request.getParameter("id");
+			int id = Integer.parseInt(idS);
 			String nombre=request.getParameter("nom");
 			String apellido=request.getParameter("ape");
 			String email=request.getParameter("mail");
 			String password=request.getParameter("pass");
-			System.out.println("Llegan los parametros"+nombre+apellido+email+password);
+			System.out.println("Llegan los parametros "+ id + " " + nombre + " " + apellido +  " " + email +  " " + password);
 			
 			dao.modUser(id, nombre, apellido, email, password);
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("inicio?page=listaUsuarios");
-			dispatcher.forward(request, response);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");*/
+			
+			//RequestDispatcher dispatcher = request.getRequestDispatcher("inicio?page=listaUsuarios");
+			//dispatcher.forward(request, response);
 			
 		}
 		else if("eliminar".equals(accion)){
@@ -72,7 +92,7 @@ public class AdminServlet extends HttpServlet {
 			String idS=request.getParameter("id");
 			int id = Integer.parseInt(idS);
 			dao.deleteUser(id);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("inicio?page=listaUsuarios");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 			dispatcher.forward(request, response);
 			//response.sendRedirect("Filtrado/bienvenido.jsp");
 		}
@@ -93,7 +113,7 @@ public class AdminServlet extends HttpServlet {
 		
 		String action=request.getParameter("action");
 		
-		if (action.equals("eliminar")){
+		if ("eliminar".equals(action)){
 			try {
 				String id=request.getParameter("id");
 				dao.deleteUser(Integer.parseInt(id));
