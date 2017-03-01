@@ -82,7 +82,7 @@
 			</div>
 		</div>
 		<div class="item2">
-		<form action="Admin" method="get">
+<!-- 		<form action="Admin" method="get"> -->
 			<table class="tableUsu">
 				<tr class="trUser">
 					<th>ID</th>
@@ -95,15 +95,20 @@
 				</tr>
 <%-- 				<c:if test="btn"> --%>
 				<c:forEach var="i" items="${ listaUsuarios }">
+
 					<tr>
 						<td class="tdUser"><input type="text" value="${i.idusuario}"name="id"></td>
 						<td class="tdUser"><input type="text" value="${i.nombre}" name="nombre"></td>
 						<td class="tdUser"><input type="text" value="${i.apellido}" name="apellido"></td>
-						<td class="tdUser"><input type="email" value="${i.email}" name="email"></td>
+						<td class="tdUser"><input type="text" value="${i.email}" name="email"></td>
 						<td class="tdUser"><input type="text" value="${i.password}" name="contraseña"></td>
 						<td class="tdUser"><a class="btn"
 							href="Admin?accion=modificar&id=
-							<c:out value="${i.idusuario}"></c:out>">Modificar</a></td>
+							<c:out value="${i.idusuario}"></c:out>
+							&nom=<c:out value="${i.nombre}"></c:out>
+							&ape=<c:out value="${i.apellido}"></c:out>
+							&mail=<c:out value="${i.email}"></c:out>
+							&pass=<c:out value="${i.password}"></c:out>">Modificar</a></td>
 						<td class="tdUser"><a class="btn"
 							href="Admin?accion=eliminar&id=
 							<c:out value="${i.idusuario}"></c:out>">Eliminar</a></td>
@@ -128,7 +133,7 @@
 <!-- 					</tr> -->
 <%-- 				</c:forEach> --%>
 			</table>
-			</form>
+<!-- 			</form> -->
 		</div>
 	</div>
 </body>

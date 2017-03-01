@@ -55,10 +55,10 @@ public class AdminServlet extends HttpServlet {
 		
 		if("modificar".equals(accion)){
 			int id=Integer.parseInt(request.getParameter("id"));
-			String nombre=request.getParameter("nombre");
-			String apellido=request.getParameter("apellido");
-			String email=request.getParameter("email");
-			String password=request.getParameter("contraseña");
+			String nombre=request.getParameter("nom");
+			String apellido=request.getParameter("ape");
+			String email=request.getParameter("mail");
+			String password=request.getParameter("pass");
 			
 			dao.modUser(id, nombre, apellido, email, password);
 			

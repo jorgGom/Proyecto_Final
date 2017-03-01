@@ -97,7 +97,7 @@ public class UserDao {
 	}
 	
 	public void modUser(int idusuario, String nombre, String apellido,String email, String password){
-		String query = "UPDATE usuario SET nombre=?,apellido=?, email=?, contraseña=? WHERE idusuario=?";
+		String query = "UPDATE usuario SET nombre=?,apellido=?, email=?, contraseña=? WHERE (idusuario=?)";
 		
 		try {
 			statement = conn.prepareStatement(query);
