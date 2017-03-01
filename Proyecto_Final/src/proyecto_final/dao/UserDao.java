@@ -96,15 +96,16 @@ public class UserDao {
 		return result;
 	}
 	
-	public void modUser(int idusuario, String nombre, String password, String descripcion){
-		String query = "UPDATE usuario SET nombre=?, contraseña=?, descripcion=? WHERE idusuario=?";
+	public void modUser(int idusuario, String nombre, String apellido,String email, String password){
+		String query = "UPDATE usuario SET nombre=?, apellido=?, email=?, contraseña=? WHERE idusuario=?";
 		
 		try {
 			statement = conn.prepareStatement(query);
 			statement.setString(1, nombre);
-			statement.setString(2, password);
-			statement.setString(3, descripcion);
-			statement.setInt(4, idusuario);
+			statement.setString(2, apellido);
+			statement.setString(3, email);
+			statement.setString(4, password);
+			statement.setInt(5, idusuario);
 			statement.executeUpdate();
 			statement.close();
 		} catch (SQLException e) {

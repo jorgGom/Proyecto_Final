@@ -54,10 +54,17 @@ public class AdminServlet extends HttpServlet {
 		String accion=request.getParameter("accion");
 		
 		if("modificar".equals(accion)){
-			int id=(int) session.getAttribute(accion);
-			request.setAttribute("idUser", id);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("Filtrado/listaUsuarios.jsp");
+			int id=Integer.parseInt(request.getParameter("id"));
+			String nombre=request.getParameter("nombre");
+			String apellido=request.getParameter("apellido");
+			String email=request.getParameter("email");
+			String password=request.getParameter("contraseña");
+			
+			dao.modUser(id, nombre, apellido, email, password);
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("inicio?page=listaUsuarios");
 			dispatcher.forward(request, response);
+			
 		}
 		else if("eliminar".equals(accion)){
 			//int id=(int) session.getAttribute(accion);

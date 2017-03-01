@@ -82,21 +82,25 @@
 			</div>
 		</div>
 		<div class="item2">
+		<form action="Admin" method="get">
 			<table class="tableUsu">
 				<tr class="trUser">
 					<th>ID</th>
 					<th>Nombre</th>
 					<th>Apellido</th>
 					<th>Email</th>
+					<th>Contraseña</th>
 					<th>Modificar</th>
 					<th>Eliminar</th>
 				</tr>
+<%-- 				<c:if test="btn"> --%>
 				<c:forEach var="i" items="${ listaUsuarios }">
 					<tr>
-						<td class="tdUser">${i.idusuario}</td>
-						<td class="tdUser">${i.nombre}</td>
-						<td class="tdUser">${i.apellido}</td>
-						<td class="tdUser">${i.email}</td>
+						<td class="tdUser"><input type="text" value="${i.idusuario}"name="id"></td>
+						<td class="tdUser"><input type="text" value="${i.nombre}" name="nombre"></td>
+						<td class="tdUser"><input type="text" value="${i.apellido}" name="apellido"></td>
+						<td class="tdUser"><input type="email" value="${i.email}" name="email"></td>
+						<td class="tdUser"><input type="text" value="${i.password}" name="contraseña"></td>
 						<td class="tdUser"><a class="btn"
 							href="Admin?accion=modificar&id=
 							<c:out value="${i.idusuario}"></c:out>">Modificar</a></td>
@@ -104,8 +108,27 @@
 							href="Admin?accion=eliminar&id=
 							<c:out value="${i.idusuario}"></c:out>">Eliminar</a></td>
 					</tr>
+					
 				</c:forEach>
+<%-- 				</c:if> --%>
+
+<%-- 				<c:forEach var="i" items="${ listaUsuarios }"> --%>
+<!-- 					<tr> -->
+<%-- 						<td class="tdUser">${i.idusuario}</td> --%>
+<%-- 						<td class="tdUser">${i.nombre}</td> --%>
+<%-- 						<td class="tdUser">${i.apellido}</td> --%>
+<%-- 						<td class="tdUser">${i.email}</td> --%>
+<%-- 						<td class="tdUser">${i.password}</td> --%>
+<!-- 						<td class="tdUser"><a class="btn" -->
+<%-- 							href="Admin?accion=modificar&id= --%>
+<%-- 							<c:out value="${i.idusuario}"></c:out>">Modificar</a></td> --%>
+<!-- 						<td class="tdUser"><a class="btn" -->
+<%-- 							href="Admin?accion=eliminar&id= --%>
+<%-- 							<c:out value="${i.idusuario}"></c:out>">Eliminar</a></td> --%>
+<!-- 					</tr> -->
+<%-- 				</c:forEach> --%>
 			</table>
+			</form>
 		</div>
 	</div>
 </body>
