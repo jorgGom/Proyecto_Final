@@ -125,7 +125,7 @@ public class ProductoDao {
 		Producto producto=null;
 		try {
 			statement = conn.prepareStatement(query);
-			statement.setInt(1, iduser);
+			statement.setLong(1, iduser);
 			ResultSet rs=statement.executeQuery();
 			while(rs.next()) {
 				producto = new Producto(rs.getInt("idproductos"),rs.getInt("vendido"),

@@ -47,7 +47,6 @@ public class RegistroProducto extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		int id = (int) session.getAttribute("idUser");
 		String action = request.getParameter("page");
 		switch(action){
 			
@@ -57,10 +56,11 @@ public class RegistroProducto extends HttpServlet {
 		}
 		
 		case ("compra"):{
-			
-			List<Producto> pro=dao.getProductComprar(id);
+			int idUser = (int) session.getAttribute("idUser");
+			System.out.println(idUser + "comprobacion");
+			List<Producto> pro=dao.getProductComprar(idUser);
 			request.setAttribute("listaProductos", pro);
-			request.getRequestDispatcher("Contenido/productos.jsp").forward(request, response);
+			request.getRequestDispatcher("Filtrado/productosEnVenta.jsp").forward(request, response);
 			
 		}
 		}

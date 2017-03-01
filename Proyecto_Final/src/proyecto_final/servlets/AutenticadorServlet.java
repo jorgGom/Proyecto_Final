@@ -87,9 +87,9 @@ public class AutenticadorServlet extends HttpServlet {
 			session.setAttribute("usuario", user);
 			session.setAttribute("idUser", idUser);
 			System.out.println(idUser);
-			request.getRequestDispatcher("Filtrado/bienvenido.jsp").forward(request, response);
 			List<Usuario> users=dao.readUsers();
 			request.setAttribute("listaUsuarios", users);
+			request.getRequestDispatcher("Filtrado/bienvenido.jsp").forward(request, response);
 			}
 	
 		}
