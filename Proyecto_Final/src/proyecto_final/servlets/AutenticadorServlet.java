@@ -80,7 +80,7 @@ public class AutenticadorServlet extends HttpServlet {
 				session.setAttribute("usuario", user);
 				String formulario = null;
 				session.setAttribute("formulario", formulario);
-				RequestDispatcher dispatcher = request.getRequestDispatcher("Admin");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("Filtrado/bienvenido.jsp");
 				dispatcher.forward(request, response);
 
 			}else{
