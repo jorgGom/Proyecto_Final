@@ -92,7 +92,7 @@ public class AdminServlet extends HttpServlet {
 			String idS=request.getParameter("id");
 			int id = Integer.parseInt(idS);
 			dao.deleteUser(id);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("inicio?page=listaUsuarios");
 			dispatcher.forward(request, response);
 			//response.sendRedirect("Filtrado/bienvenido.jsp");
 		}
@@ -128,11 +128,7 @@ public class AdminServlet extends HttpServlet {
 		dispatcher.forward(request, response);
 		
 		
-		
-		
-		
-		
-		
+
 		
 		/*
 		if ("eliminar".equals(action)){

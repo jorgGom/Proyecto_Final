@@ -111,7 +111,7 @@
 			<c:if test="${formulario eq 'form' }">
 
 			<form action="Admin" method="POST" class="formMod">
-				<p>Modificar el usuario</p>
+				<h2>Modificar el usuario</h2>
 				<table class="tableUsu">
 				<tr class="trUser">
 					<th>ID</th>
@@ -119,7 +119,7 @@
 					<th>Apellido</th>
 					<th>Email</th>
 					<th>Contraseña</th>
-					<th>Enviar</th>
+					<th>Modificar</th>
 				</tr>
 					<tr>
 						<td class="tdUser">${idMod}</td>
@@ -132,9 +132,6 @@
 			</table>
 			
 			</form>
-			
-
-				<a href="#">Ha funcionado perfectamente</a>
 			
 			</c:if>
 
