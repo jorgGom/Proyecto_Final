@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -61,7 +62,21 @@ public class RegistroProducto extends HttpServlet {
 			List<Producto> pro=dao.getProductComprar(idUser);
 			request.setAttribute("listaProductos", pro);
 			request.getRequestDispatcher("Contenido/productos.jsp").forward(request, response);
+			break;
+		}
+		case ("modificar"):{
+			int idUser = (int) session.getAttribute("idUser");
 			
+			break;
+		}
+		case ("eliminar"):{
+			String idP=request.getParameter("idPro");
+			int idPro = Integer.parseInt(idP);
+			dao.deleteProducto(idPro);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("inicio?page=productosVenta");
+			dispatcher.forward(request, response);
+			
+			break;
 		}
 		}
 	}

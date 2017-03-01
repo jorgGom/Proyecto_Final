@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
-<%@ page import="java.util.List" %>
-<%@ page import="proyecto_final.clases.Usuario" %>   
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.util.List"%>
+<%@ page import="proyecto_final.clases.Usuario"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -23,13 +23,14 @@
 <body>
 	<header class="navbar navbar-default navbar-fixed-top">
 	<div class="navegacion">
-		<h1><a href="index.jsp" class="company">${attCompanyName}</a></h1>
-		<nav id="navPrincipal"> 
-			<a class="amenu" href="InitSess"></a>
-		 	<a class="amenu" href="login?accion=salir">Cerrar sesión</a>
-		</nav>
+		<h1>
+			<a href="index.jsp" class="company">${attCompanyName}</a>
+		</h1>
+		<nav id="navPrincipal"> <a class="amenu" href="InitSess"></a> <a
+			class="amenu" href="login?accion=salir">Cerrar sesión</a> </nav>
 		<nav id="navPrincipal"> <a class="amenu" href="InitSess">${nombreUsuario }</a>
-		<a class="amenu" href="InitSess"><p class="glyphicon glyphicon-off"></p></a> </nav>
+		<a class="amenu" href="InitSess"><p
+				class="glyphicon glyphicon-off"></p></a> </nav>
 
 	</div>
 	<div class="form-busqueda">
@@ -45,55 +46,74 @@
 
 
 	<div class="container">
-	<div class="item">
-		<h2>Bienvenido ${userName }</h2><div class="menu">
-		<ul class="nav nav-pills nav-stacked">
-			<li><a class="aperfil" href="inicio"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
-			<c:if test="${ usuario.nombre eq 'admin' }">
-			<li><a class="aperfil" href="inicio?page=productosVenta"><span class="glyphicon glyphicon-shopping-cart"></span> Productos en venta</a></li>
-			<li><a class="aperfil" href="inicio?page=productosComprados"><span class="glyphicon glyphicon-piggy-bank"></span> Productos comprados</a></li>
-			</c:if>
-			<c:if test="${ usuario.nombre eq 'admin' }">
-				<li><a class="aperfil" href="inicio?page=listaUsuarios"><span class="glyphicon glyphicon-book"></span> Lista de usuarios</a></li>
-			</c:if>
-			<li class="active"><a class="aperfil" href="inicio?page=productosVenta"><span class="glyphicon glyphicon-piggy-bank"></span> Productos en Venta</a></li>
-		</ul>
+		<div class="item">
+			<h2>Bienvenido ${userName }</h2>
+			<div class="menu">
+				<ul class="nav nav-pills nav-stacked">
+					<li><a class="aperfil" href="inicio"><span
+							class="glyphicon glyphicon-user"></span> Perfil</a></li>
+					<c:if test="${ usuario.nombre eq 'admin' }">
+						<li><a class="aperfil" href="inicio?page=productosVenta"><span
+								class="glyphicon glyphicon-shopping-cart"></span> Productos en
+								venta</a></li>
+						<li><a class="aperfil" href="inicio?page=productosComprados"><span
+								class="glyphicon glyphicon-piggy-bank"></span> Productos
+								comprados</a></li>
+					</c:if>
+					<c:if test="${ usuario.nombre eq 'admin' }">
+						<li><a class="aperfil" href="inicio?page=listaUsuarios"><span
+								class="glyphicon glyphicon-book"></span> Lista de usuarios</a></li>
+					</c:if>
+					<li class="active"><a class="aperfil"
+						href="inicio?page=productosVenta"><span
+							class="glyphicon glyphicon-piggy-bank"></span> Productos en Venta</a></li>
+				</ul>
 
 				<c:if test="${usuario.nombre!='admin' }">
-		
-		<p class="botones"><a class="comVen" href="RegistroProducto?page=compra">
-		Comprar
-		</a></p>
-		<br>
-		<p class="botones"><a class="comVend" href="RegistroProducto?page=venta">
-		Vender
-		</a></p>
-		</c:if>
-		</div>
-	</div>
-	<div class="item2">
-	<table class="tableUsu">
-    <tr class="trUser">
-    	<th>ID Producto</th>
-    	<th>Nombre</th>
-    	<th>Descripción</th>
-    	<th>Vendedor</th>
-    	<th>Precio</th>
-    	<th>Comprar</th>
-    </tr>
-      <c:forEach var="i" items="${ listaProductos }">
-        <tr>
-        <td class="tdUser">${i.idproductos}</td>
-        <td class="tdUser">${i.nombre}</td>
-        <td class="tdUser">${i.descripcion}</td>
-        <td class="tdUser">${i.vendedor}</td>
-        <td class="tdUser">${i.precio}</td>
-        <td class="tdUser"><button>Comprar</button></td>
-        </tr>  
-      </c:forEach>
-  </table>
-	</div>
 
-</div>
+					<p class="botones">
+						<a class="comVen" href="RegistroProducto?page=compra"> Comprar
+						</a>
+					</p>
+					<br>
+					<p class="botones">
+						<a class="comVend" href="RegistroProducto?page=venta"> Vender
+						</a>
+					</p>
+				</c:if>
+			</div>
+		</div>
+		<div class="item2">
+			<table class="tableUsu">
+				<tr class="trUser">
+					<th>ID Producto</th>
+					<th>Nombre</th>
+					<th>Descripción</th>
+					<th>Vendedor</th>
+					<th>Precio</th>
+					<th>Comprar</th>
+					<th>Modificar</th>
+					<th>Eliminar</th>
+				</tr>
+				<c:forEach var="i" items="${ listaProductos }">
+					<tr>
+						<td class="tdUser">${i.idproductos}</td>
+						<td class="tdUser">${i.nombre}</td>
+						<td class="tdUser">${i.descripcion}</td>
+						<td class="tdUser">${i.vendedor}</td>
+						<td class="tdUser">${i.precio}</td>
+						<td class="tdUser"><button>Comprar</button></td>
+						<td class="tdUser"><a class="btn"
+							href="RegistroProducto?page=modificar&idPro=
+						<c:out value="${i.idproductos}"></c:out>">Modificar</a></td> 
+						<td class="tdUser"><a class="btn"
+							href="RegistroProducto?page=eliminar&idPro=
+							<c:out value="${i.idproductos}"></c:out>">Eliminar</a></td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
+
+	</div>
 </body>
 </html>
