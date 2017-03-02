@@ -72,19 +72,59 @@
 		</div>
 	</div>
 	<div class="item2">
-	<table class="tableUsu">
-    <tr class="trUser"><th>ID Producto</th><th>Nombre</th><th>Descripción</th><th>Vendedor</th><th>Precio</th><th>Comprar</th></tr>
-      <c:forEach var="i" items="${ lista }">
-        <tr>
-        <td class="tdUser">${i.idproductos}</td>
-        <td class="tdUser">${i.nombre}</td>
-        <td class="tdUser">${i.descripcion}</td>
-        <td class="tdUser">${i.vendedor}</td>
-        <td class="tdUser">${i.precio}</td>
-        <td class="tdUser"><button>Comprar</button></td>
-        </tr>  
-      </c:forEach>
-  </table>
+	<c:forEach var="i" items="${ lista }">
+				<table class="tablePro">
+					<tr class="trProducto">
+						<th class="thProd" colspan="3">${i.nombre}</th>
+					</tr>
+
+					<tr>
+						<td rowspan="3" class="tdProdImg"><img class="imgProd"
+							alt="imgPrd" src="resources/img/prod.jpg"></td>
+						<td colspan="2" class="tdProd">${i.precio}</td>
+					<tr>
+						<td colspan="2" class="tdProd">${i.vendedor}</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="tdProd">${i.descripcion}</td>
+					</tr>
+					<tr>
+						<td class="tdDenun"><input type="submit" value="Denunciar"></td>
+						<c:if test="${usuario.nombre eq usuario.nombre }">
+
+							<td class="tdProd"><a class="btn"
+								href="RegistroProducto?page=modificar&idPro=
+							<c:out value="${i.idproductos}"></c:out>
+							&nom=<c:out value="${i.nombre}"></c:out>">Modificar</a></td>
+
+							<td class="tdProd"><a class="btn"
+								href="RegistroProducto?page=eliminar&idPro=
+							<c:out value="${i.idproductos}"></c:out>">Eliminar</a></td>
+
+						</c:if>
+					</tr>
+					<tr>
+						<td colspan="3" class="tdButton"><input type="submit"
+							value="Comprar"></td>
+					</tr>
+					</tr>
+
+				</table>
+			</c:forEach>
+	
+<!-- 	<table class="tableUsu"> -->
+<!--     <tr class="trUser"><th>ID Producto</th><th>Nombre</th><th>Descripción</th><th>Vendedor</th><th>Precio</th><th>Comprar</th></tr> -->
+<%--       <c:forEach var="i" items="${ lista }"> --%>
+<!--         <tr> -->
+<%--         <td class="tdUser">${i.idproductos}</td> --%>
+<%--         <td class="tdUser">${i.nombre}</td> --%>
+<%--         <td class="tdUser">${i.descripcion}</td> --%>
+<%--         <td class="tdUser">${i.vendedor}</td> --%>
+<%--         <td class="tdUser">${i.precio}</td> --%>
+<!--         <td class="tdUser"><button>Comprar</button></td> -->
+<!--         </tr>   -->
+<%--       </c:forEach> --%>
+<!--   </table> -->
 	</div>
 
 </div>
