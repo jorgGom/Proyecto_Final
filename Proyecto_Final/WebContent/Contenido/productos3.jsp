@@ -84,42 +84,34 @@
 			</div>
 		</div>
 		<div class="item2">
-			<c:forEach var="i" items="${ listaProductos }">
-				<table class="tablePro">
-					<tr class="trProducto">
-						<th class="thProd" colspan="3">${i.nombre}</th>
-					</tr>
-					
+			<table class="tableUsu">
+				<tr class="trUser">
+					<th>ID Producto</th>
+					<th>Nombre</th>
+					<th>Descripción</th>
+					<th>Vendedor</th>
+					<th>Precio</th>
+					<th>Comprar</th>
+					<th>Modificar</th>
+					<th>Eliminar</th>
+				</tr>
+				<c:forEach var="i" items="${ listaProductos }">
 					<tr>
-						<td rowspan="3" class="tdProdImg"><img class="imgProd"
-							alt="imgPrd" src="resources/img/prod.jpg"></td>
-						<td colspan="2" class="tdProd">${i.precio}</td>
-					<tr>
-						<td colspan="2" class="tdProd">${i.vendedor}</td>
-					</tr>
-					<tr>
-						<td colspan="2" class="tdProd">${i.descripcion}</td>
-					</tr>
-					<tr>
-						<td class="tdDenun"><input type="submit"
-							value="Denunciar"></td>
-						<c:if test="${usuario.nombre!='admin' }">
-							<td class="tdProd"><a class="btn"
-								href="RegistroProducto?page=modificar&idPro=
-						<c:out value="${i.idproductos}"></c:out>">Modificar</a></td>
-							<td class="tdProd"><a class="btn"
-								href="RegistroProducto?page=eliminar&idPro=
+						<td class="tdUser">${i.idproductos}</td>
+						<td class="tdUser">${i.nombre}</td>
+						<td class="tdUser">${i.descripcion}</td>
+						<td class="tdUser">${i.vendedor}</td>
+						<td class="tdUser">${i.precio}</td>
+						<td class="tdUser"><button>Comprar</button></td>
+						<td class="tdUser"><a class="btn"
+							href="RegistroProducto?page=modificar&idPro=
+						<c:out value="${i.idproductos}"></c:out>">Modificar</a></td> 
+						<td class="tdUser"><a class="btn"
+							href="RegistroProducto?page=eliminar&idPro=
 							<c:out value="${i.idproductos}"></c:out>">Eliminar</a></td>
-						</c:if>
 					</tr>
-					<tr>
-						<td colspan="3" class="tdButton"><input type="submit"
-							value="Comprar"></td>
-					</tr>
-					</tr>
-
-				</table>
-			</c:forEach>
+				</c:forEach>
+			</table>
 		</div>
 
 	</div>

@@ -8,9 +8,11 @@ header {
 	-webkit-box-shadow: 0px 10px 20px 4px rgba(0, 0, 0, 0.27);
 	margin-bottom: 50px;
 }
-a.company{
-	color:white;
+
+a.company {
+	color: white;
 }
+
 .navbar-default {
 	background-color: rgba(19, 193, 172, .93);
 	border-color: #e7e7e7;
@@ -27,9 +29,11 @@ h1 {
 	display: block;
 	color: white;
 }
-h2{
+
+h2 {
 	font-size: 35px;
 }
+
 #navPrincipal {
 	display: inline-block;
 	float: right;
@@ -120,26 +124,33 @@ p {
 	font-family: 'Dosis', sans-serif;
 	font-size: 20px;
 }
-p.botones{
-	margin-top:70px;
-	margin-bottom:-20px;
+
+p.botones {
+	margin-top: 70px;
+	margin-bottom: -20px;
 	margin-left: 15%;
 }
-a.conVend:hover{
-	transition: 0.4s;
-	background-color: rgba(19, 193, 172, .93);
-}a.conVen:hover{
+
+a.conVend:hover {
 	transition: 0.4s;
 	background-color: rgba(19, 193, 172, .93);
 }
-a.comVend{
+
+a.conVen:hover {
+	transition: 0.4s;
+	background-color: rgba(19, 193, 172, .93);
+}
+
+a.comVend {
 	border: 3px solid;
-    padding: 15px 80px 15px 80px;
+	padding: 15px 80px 15px 80px;
 }
-a.comVen{
+
+a.comVen {
 	padding: 15px 73px 15px 73px;
-    border: 3px solid;
+	border: 3px solid;
 }
+
 table {
 	width: 100%;
 	margin-top: 10px;
@@ -177,10 +188,12 @@ main {
 	margin-bottom: 0px;
 	margin-top: 250px;
 }
+
 .centro {
-    margin-top: 35%;
-    margin-left: 9%;
+	margin-top: 35%;
+	margin-left: 9%;
 }
+
 .izq {
 	float: left;
 	margin-left: 10px;
@@ -282,74 +295,139 @@ input {
 
 .item {
 	margin-top: -35px;
-	margin-right:50px;
+	margin-right: 50px;
 	order: 1;
 	width: 25%;
 }
 
 .item2 {
-	margin-right:10px;
-	margin-top:60px;
+	margin-right: 10px;
+	margin-top: 60px;
 	order: 2;
 	width: 75%;
 	font-size: 20px;
 	font-family: 'Dosis', sans-serif;
 }
-.imgPerfil{
-	float:left;
+
+.imgPerfil {
+	float: left;
 	width: 15%;
 }
-.ulPerfil{
-	float:left;
+
+.ulPerfil {
+	float: left;
 	list-style-type: none;
 }
-.liPerfil{
-	margin-bottom: 10px;	
+
+.liPerfil {
+	margin-bottom: 10px;
 }
-span{
+
+span {
 	font-size: 25px;
 }
-.aperfil{
+
+.aperfil {
 	font-family: 'Dosis', sans-serif;
 	font-size: 20px;
 }
-.menu{
-	margin-top:40px;
+
+.menu {
+	margin-top: 40px;
 }
 
-#comprar{
+#comprar {
 	margin-left: 20px;
-    margin-top: 30px;
-    margin-bottom:30px;
-    padding: 15px;
-    font-size: 20px;
-    width: 90%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 15px;
+	font-size: 20px;
+	width: 90%;
 }
-#vender{
+
+#vender {
 	margin-left: 20px;
-    margin-top: 20px;
-    padding: 15px;
-    font-size: 20px;
-    width: 90%;
+	margin-top: 20px;
+	padding: 15px;
+	font-size: 20px;
+	width: 90%;
 }
 /*-------------- Tabla usuarios ---------*/
 .tableUsu {
 	font-family: 'Dosis', sans-serif;
 }
-.trUser{
+
+.trUser {
 	border-bottom: solid;
 }
-th{
-	font-size:18px;
-	text-align:left;
+
+th {
+	font-size: 18px;
+	text-align: left;
 	padding-bottom: 10px;
 }
-.tdUser{
+
+.tdUser {
 	font-size: 16px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid black;
 }
-.formMod{
+
+.formMod {
 	margin-top: 50px;
+}
+/*------------ Tabla productos --------------*/
+.tablePro {
+	max-width: 0;
+	width: 40%;
+	height: 40%;
+	float: left;
+	margin-right: 80px;
+	margin-bottom: 60px;
+	padding-bottom: 10px;
+	-moz-border-radius: 22px;
+	-webkit-border-radius: 22px;
+		
+	box-shadow: 15px -10px 3px rgba(0, 0, 0, 0.27);
+	-webkit-box-shadow: 0px 10px 20px 4px rgba(0, 0, 0, 0.27);
+	-moz-box-shadow: 15px -10px 3px rgba(0, 0, 0, 0.27);
+	
+}
+
+.thProd {
+	background-color: rgba(19, 193, 172, .93);
+	border-radius: 20px 20px 0 0;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 30px;
+	color: white;
+}
+
+.tdProdImg {
+	padding: 20px;
+}
+
+.imgProd {
+	width: 130px;
+}
+
+.tdProd {
+	width: 60px;
+}
+.tdButton{
+	text-align:center;
+	padding-bottom: 20px;
+}
+.tdDenun{
+	text-align: center;
+}
+.tdButton input[type="submit"] {
+
+	background-color: rgba(19, 193, 172, .93);
+	margin-top: 20px;
+	border-radius: 5px 5px 5px 5px;
+	width: 40%;
+	height: 40px;
+	color: white;
 }
