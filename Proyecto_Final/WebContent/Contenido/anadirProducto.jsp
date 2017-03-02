@@ -24,10 +24,10 @@
 		<h1><a href="inicio" class="company">${attCompanyName}</a></h1>
 	</div>
 	<div class="form-busqueda">
-		<form class="busqueda" action="/" method="post">
-			<input type="text" class="busqueda"
+		<form class="busqueda" action="busqueda" method="get">
+			<input type="text" class="busqueda" name="buscar"
 				placeholder="¿Qué estás buscando?" maxlength="150" />
-			<button type="button" id="buscar">
+			<button type="submit" id="buscar">
 				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 			</button>
 		</form>

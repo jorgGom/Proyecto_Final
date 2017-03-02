@@ -33,7 +33,7 @@
 		<form class="busqueda" action="busqueda" method="get">
 			<input type="text" class="busqueda" name="buscar"
 				placeholder="¿Qué estás buscando?" maxlength="150" />
-			<button type="submit" id="busq">
+			<button type="submit" id="buscar">
 				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 			</button>
 		</form>
@@ -52,7 +52,7 @@
 		<form class="busqueda" action="busqueda" method="get">
 			<input type="text" class="busqueda" name="buscar"
 				placeholder="¿Qué estás buscando?" maxlength="150" />
-			<button type="submit" id="busq">
+			<button type="submit" id="buscar">
 				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 			</button>
 		</form>

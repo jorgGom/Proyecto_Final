@@ -34,7 +34,7 @@
 		<form class="busqueda" action="busqueda" method="get">
 			<input type="text" class="busqueda" name="buscar"
 				placeholder="¿Qué estás buscando?" maxlength="150" />
-			<button type="submit" id="busq">
+			<button type="submit" id="buscar">
 				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 			</button>
 		</form>
@@ -53,7 +53,7 @@
 		<form class="busqueda" action="busqueda" method="get">
 			<input type="text" class="busqueda" name="buscar"
 				placeholder="¿Qué estás buscando?" maxlength="150" />
-			<button type="submit" id="busq">
+			<button type="submit" id="buscar">
 				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 			</button>
 		</form>
@@ -74,7 +74,7 @@
 			<c:if test="${ usuario.nombre eq 'admin' }">
 				<li><a class="aperfil" href="inicio?page=listaUsuarios"><span class="glyphicon glyphicon-book"></span> Lista de usuarios</a></li>
 			</c:if>
-			<li class="active"><a class="aperfil" href="RegistroProducto?page=compra"><span class="glyphicon glyphicon-piggy-bank"></span> Lista de productos</a></li>
+			<li class="active"><a class="aperfil" href="busqueda?buscar="><span class="glyphicon glyphicon-piggy-bank"></span> Lista de productos</a></li>
 		</ul>
 
 		<c:if test="${usuario.nombre!='admin' }">
