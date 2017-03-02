@@ -5,7 +5,6 @@ public class Producto {
 	private int idproductos,vendido,vendedor,comprador;
 	private String nombre,descripcion,precio;
 	
-
 	public Producto(int idproductos, int vendido, int vendedor, int comprador, String nombre, String descripcion,
 			String precio) {
 		super();

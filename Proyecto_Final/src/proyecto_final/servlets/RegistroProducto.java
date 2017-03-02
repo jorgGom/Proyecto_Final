@@ -22,99 +22,112 @@ import proyecto_final.dao.ProductoDao;
 @WebServlet("/RegistroProducto")
 public class RegistroProducto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	private ProductoDao dao;
-       
-	
-	
-	
-	
-    @Override
+
+	@Override
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
 		super.init(config);
-		dao = new ProductoDao((Connection)getServletContext().getAttribute("conection"));
+		dao = new ProductoDao((Connection) getServletContext().getAttribute("conection"));
 	}
 
 	public RegistroProducto() {
-        super();
-        // TODO Auto-generated constructor stub
-        
-    }
+		super();
+		// TODO Auto-generated constructor stub
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		String action = request.getParameter("page");
-		switch(action){
-			
-		case ("venta"):{
+		switch (action) {
+
+		case ("venta"): {
 			request.getRequestDispatcher("Contenido/anadirProducto.jsp").forward(request, response);
 			break;
 		}
-		
-		case ("compra"):{
+
+		case ("compra"): {
 			int idUser = (int) session.getAttribute("idUser");
 			System.out.println(idUser + "comprobacion");
-			List<Producto> pro=dao.getProductComprar(idUser);
+			List<Producto> pro = dao.getProductComprar(idUser);
 			request.setAttribute("listaProductos", pro);
 			request.getRequestDispatcher("Contenido/productos.jsp").forward(request, response);
 			break;
 		}
-		case ("modificar"):{
-			int idUser = (int) session.getAttribute("idUser");
-			
+		case ("modificar"): {
+			String idModS = request.getParameter("idPro");
+			int idMod = Integer.parseInt(idModS);
+			session.setAttribute("idMod", idMod);
+			session.removeAttribute("formulario");
+			String formulario = "form";
+			session.setAttribute("formulario", formulario);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("inicio?page=productosVenta");
+			dispatcher.forward(request, response);
+
 			break;
 		}
-		case ("eliminar"):{
-			String idP=request.getParameter("idPro");
+		case ("eliminar"): {
+			String idP = request.getParameter("idPro");
 			int idPro = Integer.parseInt(idP);
 			dao.deleteProducto(idPro);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("inicio?page=productosVenta");
 			dispatcher.forward(request, response);
-			
+
 			break;
 		}
 		}
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//nombre, apellido, contraseña, rep, email
-		
+		// nombre, apellido, contraseña, rep, email
+
 		String page = request.getParameter("page");
-		
-		if("venta".equals(page)){
+		if("modProducto".equals(page)){
+			HttpSession session =request.getSession();
+			int id=(int) session.getAttribute("idPro");
+			String nombre=request.getParameter("nom");
+			String descripcion=request.getParameter("desc");
+			String precio=request.getParameter("pre");
+			session.removeAttribute("formulario");
+			
+			dao.modProduct(id, nombre, descripcion, precio);
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("inicio?page=listaUsuarios");
+			dispatcher.forward(request, response);
+		}
+
+		else if ("venta".equals(page)) {
 			request.getRequestDispatcher("Contenido/anadirProducto.jsp").forward(request, response);
-		}
-		else{
-		HttpSession session = request.getSession();
-		System.out.println(session.getAttribute("userName"));
-		int id = (int) session.getAttribute("idUser");
-		System.out.println(id);
-		String nombre = request.getParameter("nombrePro");
-		String descripcion = request.getParameter("descripcion");
-		String precio = request.getParameter("precio");
-		
-		
-		
-		
-		boolean correcto = dao.insertProduct(0, nombre, descripcion, precio, 0,id, 0);
-		
-		if(correcto){
-			request.setAttribute("msg", "Registro realizado correctamente.");
-			response.sendRedirect("inicio?page=productosVenta");
-		}else{
-			request.setAttribute("msg", "No se pudo insertar el usuario, intentalo mas tarde");
-		}
-		//request.getRequestDispatcher("vistas/registro.jsp").forward(request, response);
-		
+		} else {
+			HttpSession session = request.getSession();
+			System.out.println(session.getAttribute("userName"));
+			int id = (int) session.getAttribute("idUser");
+			System.out.println(id);
+			String nombre = request.getParameter("nombrePro");
+			String descripcion = request.getParameter("descripcion");
+			String precio = request.getParameter("precio");
+
+			boolean correcto = dao.insertProduct(0, nombre, descripcion, precio, 0, id, 0);
+
+			if (correcto) {
+				request.setAttribute("msg", "Registro realizado correctamente.");
+				response.sendRedirect("inicio?page=productosVenta");
+			} else {
+				request.setAttribute("msg", "No se pudo insertar el usuario, intentalo mas tarde");
+			}
+			// request.getRequestDispatcher("vistas/registro.jsp").forward(request,
+			// response);
+
 		}
 	}
 

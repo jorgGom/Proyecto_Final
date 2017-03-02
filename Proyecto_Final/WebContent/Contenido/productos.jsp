@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.List"%>
+<%@ page import="javax.swing.JOptionPane"%>
 <%@ page import="proyecto_final.clases.Usuario"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -82,6 +83,32 @@
 					</p>
 				</c:if>
 			</div>
+			<c:if test="${formulario eq 'form' }">
+				<form action="RegistroProducto" method="POST" class="formProd" name="modProducto">
+					<h2>Modificar el Producto ${nombre}</h2>
+					<table border="2" class="tablaMod">
+						<tr>
+							<td class="tdModIzq">Nombre:</td>
+							<td class="tdModDcha"><input class="inMod" type="text"
+								placeholder="Nuevo nombre del Producto" name="nom" /></td>
+						</tr>
+						<tr>
+							<td class="tdModIzq">Descripción:</td>
+							<td class="tdModDcha"><input class="inMod" type="text" placeholder="Nueva Descripcion"
+								name="desc" /></td>
+						</tr>
+						<tr>
+							<td class="tdModIzq">Precio:</td>
+							<td class="tdModDcha"><input class="inMod" type="text" placeholder="Nuevo Precio" name="pre" /></td>
+						</tr>
+						<tr>
+							<td colspan="2" class="tdBcenter"><input class="btnModP" type="submit" value="Modificar"
+								name="modificar"></td>
+						</tr>
+					</table>
+				</form>
+
+			</c:if>
 		</div>
 		<div class="item2">
 			<c:forEach var="i" items="${ listaProductos }">
@@ -89,7 +116,7 @@
 					<tr class="trProducto">
 						<th class="thProd" colspan="3">${i.nombre}</th>
 					</tr>
-					
+
 					<tr>
 						<td rowspan="3" class="tdProdImg"><img class="imgProd"
 							alt="imgPrd" src="resources/img/prod.jpg"></td>
@@ -101,15 +128,18 @@
 						<td colspan="2" class="tdProd">${i.descripcion}</td>
 					</tr>
 					<tr>
-						<td class="tdDenun"><input type="submit"
-							value="Denunciar"></td>
+						<td class="tdDenun"><input type="submit" value="Denunciar"></td>
 						<c:if test="${usuario.nombre!='admin' }">
+
 							<td class="tdProd"><a class="btn"
 								href="RegistroProducto?page=modificar&idPro=
-						<c:out value="${i.idproductos}"></c:out>">Modificar</a></td>
+							<c:out value="${i.idproductos}"></c:out>
+							&nom=<c:out value="${i.nombre}"></c:out>">Modificar</a></td>
+
 							<td class="tdProd"><a class="btn"
 								href="RegistroProducto?page=eliminar&idPro=
 							<c:out value="${i.idproductos}"></c:out>">Eliminar</a></td>
+
 						</c:if>
 					</tr>
 					<tr>

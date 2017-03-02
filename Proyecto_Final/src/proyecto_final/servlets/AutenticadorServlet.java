@@ -92,6 +92,10 @@ public class AutenticadorServlet extends HttpServlet {
 			session.setAttribute("userName", newName);
 			session.setAttribute("usuario", user);
 			session.setAttribute("idUser", idUser);
+			
+			String formulario = null;
+			session.setAttribute("formulario", formulario);
+			
 			System.out.println(idUser);
 			List<Usuario> users=dao.readUsers();
 			request.setAttribute("listaUsuarios", users);

@@ -82,7 +82,7 @@ public class ProductoDao {
 
 	public void modProduct(int idproductos, int vendido, int comprador, String nombre, String descripcion,
 			String precio){
-		String query = "UPDATE productos SET vendido=?, comprador=?, nombre=? , descripcion?, precio=? WHERE idproducto=?";
+		String query = "UPDATE productos SET vendido=?, comprador=?, nombre=? , descripcion?, precio=? WHERE idproductos=?";
 		
 		try {
 			statement = conn.prepareStatement(query);
@@ -91,6 +91,22 @@ public class ProductoDao {
 			statement.setString(3, nombre);
 			statement.setString(4, descripcion);
 			statement.setString(5, precio);
+			statement.setInt(6, idproductos);
+			statement.executeUpdate();
+			statement.close();
+		} catch (SQLException e) {
+			System.out.println("Error SQL");
+			e.printStackTrace();
+		}
+	}public void modProduct(int idproductos, String nombre, String descripcion, String precio){
+		String query = "UPDATE productos SET nombre=? , descripcion?, precio=? WHERE idproductos=?";
+		
+		try {
+			statement = conn.prepareStatement(query);
+			statement.setString(1, nombre);
+			statement.setString(2, descripcion);
+			statement.setString(3, precio);
+			statement.setInt(4, idproductos);
 			statement.executeUpdate();
 			statement.close();
 		} catch (SQLException e) {
