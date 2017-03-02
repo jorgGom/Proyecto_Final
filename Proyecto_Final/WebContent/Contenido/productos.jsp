@@ -126,18 +126,19 @@
 							<c:out value="${i.idproductos}"></c:out>
 							&nom=<c:out value="${i.nombre}"></c:out>">Modificar</a></td>
 
-							<td class="tdProd"><a class="btn"
+							<td class="tdProd">
+							<a class="btn"
 								href="RegistroProducto?page=eliminar&idPro=
-							<c:out value="${i.idproductos}"></c:out>">Eliminar</a></td>
-
+							<c:out value="${i.idproductos}"></c:out>">Eliminar</a>
+							</td>
 						</c:if>
 					</tr>
 					<tr>
-						<td colspan="3" class="tdButton"><input type="submit"
-							value="Comprar"></td>
+						<td colspan="3" class="tdButton">
+							<a href="RegistroProducto?page=comprar&idPro=
+							<c:out value="${i.idproductos}"></c:out>">Comprar</a>
+							</td>
 					</tr>
-					</tr>
-
 				</table>
 			</c:forEach>
 		</div>

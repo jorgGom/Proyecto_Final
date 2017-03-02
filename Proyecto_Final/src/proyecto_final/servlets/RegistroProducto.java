@@ -79,6 +79,14 @@ public class RegistroProducto extends HttpServlet {
 
 			break;
 		}
+		case ("comprar"): {
+			String idP = request.getParameter("idPro");
+			int idPro = Integer.parseInt(idP);
+			int idComp = (int) session.getAttribute("idUser");
+			dao.comprarProducto(idPro, idComp);
+			response.sendRedirect("inicio?page=productosComprados");
+		}
+		
 		}
 	}
 

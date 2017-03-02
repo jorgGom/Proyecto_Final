@@ -80,18 +80,14 @@ public class ProductoDao {
 		return result;
 	}
 
-	public void modProducto(int idproductos, int vendido, int comprador, String nombre, String descripcion,
-			String precio){
-		String query = "UPDATE productos SET vendido=?, comprador=?, nombre=? , descripcion=?, precio=? WHERE idproductos=?";
+	public void comprarProducto(int idproductos, int comprador){
+		String query = "UPDATE productos SET vendido=?,comprador=? WHERE idproductos=?";
 		
 		try {
 			statement = conn.prepareStatement(query);
-			statement.setInt(1, vendido);
+			statement.setInt(1, 1);
 			statement.setInt(2, comprador);
-			statement.setString(3, nombre);
-			statement.setString(4, descripcion);
-			statement.setString(5, precio);
-			statement.setInt(6, idproductos);
+			statement.setInt(3, idproductos);
 			statement.executeUpdate();
 			statement.close();
 		} catch (SQLException e) {
@@ -129,6 +125,30 @@ public class ProductoDao {
 						rs.getString("precio"));
 				productos.add(pro);
 			}
+			statement.close();
+		} catch (SQLException e){
+			System.out.println("Error SQL");
+			e.printStackTrace();
+		}
+		return productos;
+	}
+	
+	public List<Producto> getProductComprados (int idUsuario){
+		String query = "SELECT * FROM productos WHERE (comprador=?) and (vendido=?)";
+		List <Producto> productos=new ArrayList<>();
+		try {
+			statement = conn.prepareStatement(query);
+			statement.setInt(1, idUsuario);
+			statement.setInt(2, 1);
+			ResultSet rs=statement.executeQuery();
+			while(rs.next()) {
+				Producto pro = new Producto(rs.getInt("idproductos"),rs.getInt("vendido"),
+						rs.getInt("vendedor"),rs.getInt("comprador"),
+						rs.getString("nombre"),rs.getString("descripcion"),
+						rs.getString("precio"));
+				productos.add(pro);
+			}
+			statement.close();
 		} catch (SQLException e){
 			System.out.println("Error SQL");
 			e.printStackTrace();
@@ -137,12 +157,13 @@ public class ProductoDao {
 	}
 	
 	public List<Producto> getProductComprar (int iduser){
-		String query = "SELECT * FROM productos WHERE (vendedor not Like ?)";
+		String query = "SELECT * FROM productos WHERE (vendedor not Like ?) and vendido=?";
 		List <Producto> prod = new ArrayList<>(); 
 		Producto producto=null;
 		try {
 			statement = conn.prepareStatement(query);
 			statement.setLong(1, iduser);
+			statement.setInt(2, 0);
 			ResultSet rs=statement.executeQuery();
 			while(rs.next()) {
 				producto = new Producto(rs.getInt("idproductos"),rs.getInt("vendido"),

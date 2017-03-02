@@ -27,7 +27,7 @@
 		</nav>
 	</div>
 	<div class="form-busqueda">
-		<form class="busqueda" action="busqueda" method="get">
+		<form class="busqueda" action="../busqueda" method="get">
 			<input type="text" class="busqueda" name="buscar"
 				placeholder="¿Qué estás buscando?" maxlength="150" />
 			<button type="submit" id="buscar">

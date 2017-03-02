@@ -71,6 +71,9 @@ public class inicio extends HttpServlet {
 			}
 		
 		else if("productosComprados".equals(page)){
+			int idUser = (int) session.getAttribute("idUser");
+			List<Producto> pro=daoPro.getProductComprados(idUser);
+			request.setAttribute("listaProductos", pro);
 			request.getRequestDispatcher("Filtrado/productosComprados.jsp").forward(request, response);
 			return;
 		}

@@ -51,6 +51,7 @@ public class RegistroServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String prueba = "prueba";
 		String producto = request.getParameter("buscar");
+		System.out.println(producto);
 		if(producto.equalsIgnoreCase("")){
 		List<Producto> lista = daoPro.readProductos();
 		request.setAttribute("lista", lista);
