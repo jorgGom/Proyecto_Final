@@ -52,9 +52,13 @@ public class AutenticadorServlet extends HttpServlet {
 		String accion=request.getParameter("accion");
 		if ("salir".equals(accion)) {
 			session.invalidate();
-		}
 		
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
+		request.getRequestDispatcher("index.jsp").forward(request, response);}
+		else{
+			
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
 	}
 
 	/**
