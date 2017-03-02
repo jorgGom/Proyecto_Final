@@ -22,25 +22,43 @@
 </head>
 <body>
 	<header class="navbar navbar-default navbar-fixed-top">
+		<c:if test="${userName eq null }">
 	<div class="navegacion">
-		<h1><a href="index.jsp" class="company">${attCompanyName}</a></h1>
-		<nav id="navPrincipal"> 
-			<a class="amenu" href="InitSess"></a>
-		 	<a class="amenu" href="login?accion=salir">Cerrar sesión</a>
+		<h1><a href="home" class="company">${attCompanyName}</a></h1>
+		<nav id="navPrincipal">
+			<a class="amenu" href="Contenido/login.jsp">Inicio de Sesion</a>
+			<a class="amenu" href="Contenido/registro.jsp">Registrarse</a> 
 		</nav>
-		<nav id="navPrincipal"> <a class="amenu" href="InitSess">${nombreUsuario }</a>
-		<a class="amenu" href="InitSess"><p class="glyphicon glyphicon-off"></p></a> </nav>
-
 	</div>
 	<div class="form-busqueda">
-		<form class="busqueda" action="/" method="post">
-			<input type="text" class="busqueda"
+		<form class="busqueda" action="busqueda" method="get">
+			<input type="text" class="busqueda" name="buscar"
 				placeholder="¿Qué estás buscando?" maxlength="150" />
-			<button type="button" id="buscar">
+			<button type="submit" id="busq">
 				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 			</button>
 		</form>
 	</div>
+	</c:if>
+	<c:if test="${userName != null }">
+		<div class="navegacion">
+		<h1><a href="home" class="company">${attCompanyName}</a></h1>
+		<nav id="navPrincipal"> 
+			<a class="amenu" href="InitSess"></a>
+		 	<a class="amenu" href="login?accion=salir">Cerrar sesión</a>
+		</nav>
+
+	</div>
+	<div class="form-busqueda">
+		<form class="busqueda" action="busqueda" method="get">
+			<input type="text" class="busqueda" name="buscar"
+				placeholder="¿Qué estás buscando?" maxlength="150" />
+			<button type="submit" id="busq">
+				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+			</button>
+		</form>
+	</div>
+	</c:if>
 	</header>
 
 
@@ -48,8 +66,8 @@
 	<div class="item">
 		<h2>Bienvenido ${userName }</h2><div class="menu">
 		<ul class="nav nav-pills nav-stacked">
-			<li><a class="aperfil" href="inicio"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
-			<c:if test="${ prueba!='prueba' }">
+			<c:if test="${usuario.nombre!=null}">
+			<li><a class="aperfil" href="inicio"><span class="glyphicon glyphicon-user"></span> Perfil ${userName }</a></li>
 			<li><a class="aperfil" href="inicio?page=productosVenta"><span class="glyphicon glyphicon-shopping-cart"></span> Productos en venta</a></li>
 			<li><a class="aperfil" href="inicio?page=productosComprados"><span class="glyphicon glyphicon-piggy-bank"></span> Productos comprados</a></li>
 			</c:if>

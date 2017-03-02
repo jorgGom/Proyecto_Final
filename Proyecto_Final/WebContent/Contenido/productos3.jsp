@@ -52,9 +52,9 @@
 				<ul class="nav nav-pills nav-stacked">
 					<li><a class="aperfil" href="inicio"><span
 							class="glyphicon glyphicon-user"></span> Perfil</a></li>
-					<c:if test="${ usuario.nombre eq 'admin' }">
+					<c:if test="${ usuario.nombre eq userName }">
 						<li><a class="aperfil" href="inicio?page=productosVenta"><span
-								class="glyphicon glyphicon-shopping-cart"></span> Productos en
+								class="glyphicon glyphicon-shopping-cart"></span> Mis Productos en
 								venta</a></li>
 						<li><a class="aperfil" href="inicio?page=productosComprados"><span
 								class="glyphicon glyphicon-piggy-bank"></span> Productos
@@ -66,7 +66,7 @@
 					</c:if>
 					<li class="active"><a class="aperfil"
 						href="inicio?page=productosVenta"><span
-							class="glyphicon glyphicon-piggy-bank"></span> Productos en Venta</a></li>
+							class="glyphicon glyphicon-piggy-bank"></span> Mis Productos en Venta</a></li>
 				</ul>
 
 				<c:if test="${usuario.nombre!='admin' }">

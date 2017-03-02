@@ -30,7 +30,7 @@
 		<nav id="navPrincipal"> <a class="amenu" href="InitSess"></a> <a
 			class="amenu" href="login?accion=salir">Cerrar sesión</a> </nav>
 		<nav id="navPrincipal"> <a class="amenu" href="InitSess">${nombreUsuario }</a>
-		</nav>
+		 </nav>
 
 	</div>
 	<div class="form-busqueda">
@@ -49,10 +49,10 @@
 		<div class="item">
 			<h2>Bienvenido ${userName }</h2>
 			<div class="menu">
-				<ul class="nav nav-pills nav-stacked">
+					<ul class="nav nav-pills nav-stacked">
 			<li><a class="aperfil" href="inicio"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
 			<c:if test="${usuario.nombre!='admin' }">
-			<li><a class="aperfil" href="inicio?page=productosVenta"><span class="glyphicon glyphicon-shopping-cart"></span> Mis Productos en venta</a></li>
+			<li class="active"><a class="aperfil" href="inicio?page=productosVenta"><span class="glyphicon glyphicon-shopping-cart"></span> Mis Productos en venta</a></li>
 			<li><a class="aperfil" href="inicio?page=productosComprados"><span class="glyphicon glyphicon-piggy-bank"></span> Mis Productos comprados</a></li>
 			</c:if>
 			<c:if test="${ usuario.nombre eq 'admin' }">
@@ -63,7 +63,7 @@
 				<c:if test="${usuario.nombre!='admin' }">
 
 					<p class="botones">
-						<a class="comVen" href="RegistroProducto?page=compra" style="background-color: rgba(19, 193, 172, .93)"> Comprar
+						<a class="comVen" href="RegistroProducto?page=compra"> Comprar
 						</a>
 					</p>
 					<br>

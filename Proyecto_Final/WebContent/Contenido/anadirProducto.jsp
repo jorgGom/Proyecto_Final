@@ -21,10 +21,7 @@
 <body style="background-color: #F1F1F1">
 <header class="navbar navbar-default navbar-fixed-top">
 	<div class="navegacion">
-		<h1><a href="/Proyecto_Final/home" class="company">${attCompanyName}</a></h1>
-		<nav id="navPrincipal"> 
-			<a class="amenu" href="login.jsp">Inicio de Sesion</a>
-		</nav>
+		<h1><a href="inicio" class="company">${attCompanyName}</a></h1>
 	</div>
 	<div class="form-busqueda">
 		<form class="busqueda" action="/" method="post">
