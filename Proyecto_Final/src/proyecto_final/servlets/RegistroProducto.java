@@ -97,14 +97,13 @@ public class RegistroProducto extends HttpServlet {
 			HttpSession session =request.getSession();
 			int idPro = (int) session.getAttribute("idMod");
 			String nombre=request.getParameter("nom");
-			String descripcion=request.getParameter("desc");
+			String descripcion=request.getParameter("desc").trim();
 			String precio=request.getParameter("pre");
 			session.removeAttribute("formulario");
 			System.out.println("Datos llegados " + idPro + " " + nombre + " " + descripcion + " " + precio);
 			dao.modProduct(idPro, nombre, descripcion, precio);
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("inicio?page=listaUsuarios");
-			dispatcher.forward(request, response);
+			response.sendRedirect("inicio?page=productosVenta");
 		}
 
 		else if ("venta".equals(page)) {

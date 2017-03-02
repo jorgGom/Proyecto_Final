@@ -82,7 +82,7 @@ public class ProductoDao {
 
 	public void modProducto(int idproductos, int vendido, int comprador, String nombre, String descripcion,
 			String precio){
-		String query = "UPDATE productos SET vendido=?, comprador=?, nombre=? , descripcion?, precio=? WHERE idproductos=?";
+		String query = "UPDATE productos SET vendido=?, comprador=?, nombre=? , descripcion=?, precio=? WHERE idproductos=?";
 		
 		try {
 			statement = conn.prepareStatement(query);
@@ -99,7 +99,7 @@ public class ProductoDao {
 			e.printStackTrace();
 		}
 	}public void modProduct(int idproductos, String nombre, String descripcion, String precio){
-		String query = "UPDATE productos SET nombre=? , descripcion?, precio=? WHERE idproductos=?";
+		String query = "UPDATE productos SET nombre=? , descripcion=?, precio=? WHERE idproductos=?";
 		
 		try {
 			statement = conn.prepareStatement(query);
