@@ -50,11 +50,18 @@ public class RegistroServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String prueba = "prueba";
-		//String producto = request.getParameter("buscar");
-		List<Producto> lista = daoPro.readProductos();
-		request.setAttribute("lista", lista);
-		request.setAttribute("prueba", prueba);
-		request.getRequestDispatcher("Contenido/busqueda.jsp").forward(request, response);
+		String producto = request.getParameter("buscar");
+		if(producto.equalsIgnoreCase("")){
+			List<Producto> lista = daoPro.readProductos();
+			request.setAttribute("lista", lista);
+			request.setAttribute("prueba", prueba);
+			request.getRequestDispatcher("Contenido/busqueda.jsp").forward(request, response);}
+		else{
+			List<Producto> lista = daoPro.getProduct(producto);
+			request.setAttribute("lista", lista);
+			request.setAttribute("prueba", prueba);
+			request.getRequestDispatcher("Contenido/busqueda.jsp").forward(request, response);
+		}
 		
 	}
 

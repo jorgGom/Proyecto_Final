@@ -99,24 +99,25 @@ public class ProductoDao {
 		}
 	}
 	
-	public Producto getProduct (int idproductos){
-		String query = "SELECT * FROM productos WHERE (idproductos=?)";
-		Producto prod=null;
+	public List<Producto> getProduct (String nombre){
+		String query = "SELECT * FROM productos WHERE (nombre=?)";
+		List <Producto> productos=new ArrayList<>();
 		try {
 			statement = conn.prepareStatement(query);
-			statement.setLong(1, idproductos);
+			statement.setString(1, nombre);
 			ResultSet rs=statement.executeQuery();
-			if (rs.next()) {
-				prod = new Producto(rs.getInt("idproductos"),rs.getInt("vendido"),
+			while(rs.next()) {
+				Producto pro = new Producto(rs.getInt("idproductos"),rs.getInt("vendido"),
 						rs.getInt("vendedor"),rs.getInt("comprador"),
 						rs.getString("nombre"),rs.getString("descripcion"),
 						rs.getString("precio"));
+				productos.add(pro);
 			}
 		} catch (SQLException e){
 			System.out.println("Error SQL");
 			e.printStackTrace();
 		}
-		return prod;
+		return productos;
 	}
 	
 	public List<Producto> getProductComprar (int iduser){
