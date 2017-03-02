@@ -82,12 +82,9 @@ public class RegistroServlet extends HttpServlet {
 		boolean correcto = dao.insertUser(nombre, apellido, email, pass);
 		
 		if(correcto){
-			session.setAttribute("userName", nombre);
-			Usuario user = dao.validateUser(nombre, pass);
-			session.setAttribute("usuario", user);
 			request.setAttribute("msg", "Registro realizado correctamente.");
-			request.getRequestDispatcher("Filtrado/bienvenido.jsp").forward(request, response);
-			//response.sendRedirect("inicio");
+			//request.getRequestDispatcher("Contenido/login.jsp").forward(request, response);
+			response.sendRedirect("Contenido/login.jsp");
 		}else{
 			request.setAttribute("msg", "No se pudo insertar el usuario, intentalo mas tarde");
 		}

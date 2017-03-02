@@ -84,7 +84,7 @@
 				</c:if>
 			</div>
 			<c:if test="${formulario eq 'form' }">
-				<form action="RegistroProducto" method="POST" class="formProd" name="modProducto">
+				<form action="RegistroProducto?page=modProducto" method="POST" class="formProd">
 					<h2>Modificar el Producto ${nombre}</h2>
 					<table border="2" class="tablaMod">
 						<tr>

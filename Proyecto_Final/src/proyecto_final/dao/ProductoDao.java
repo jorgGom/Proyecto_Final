@@ -80,7 +80,7 @@ public class ProductoDao {
 		return result;
 	}
 
-	public void modProduct(int idproductos, int vendido, int comprador, String nombre, String descripcion,
+	public void modProducto(int idproductos, int vendido, int comprador, String nombre, String descripcion,
 			String precio){
 		String query = "UPDATE productos SET vendido=?, comprador=?, nombre=? , descripcion?, precio=? WHERE idproductos=?";
 		

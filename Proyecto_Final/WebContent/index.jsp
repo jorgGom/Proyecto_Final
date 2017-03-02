@@ -39,7 +39,7 @@
 		</form>
 	</div>
 	</c:if>
-	<c:if test="${userName eq 'jorge' }">
+	<c:if test="${userName != null }">
 		<div class="navegacion">
 		<h1><a href="index.jsp" class="company">${attCompanyName} de ${userName}</a></h1>
 		<nav id="navPrincipal"> 
