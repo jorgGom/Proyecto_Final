@@ -101,6 +101,45 @@
 			</c:if>
 		</div>
 		<div class="item2">
+		
+		<c:forEach var="i" items="${ listaProductos }">
+				<table class="tablePro">
+					<tr class="trProducto">
+						<th class="thProd" colspan="3">${i.nombre}</th>
+					</tr>
+
+					<tr>
+						<td rowspan="2" class="tdProdImg"><img class="imgProd"
+							alt="imgPrd" src="resources/img/prod.jpg"></td>
+						<td colspan="2" class="tdProd"><span>Precio: </span>${i.precio}</td>
+					<tr>
+						<td colspan="2" class="tdProd"><span>Vendedor: </span>${i.vendedor}</td>
+					</tr>
+					<tr>
+					<c:if test="${usuario.nombre!='admin' }">
+							<td class="tdProd"><a class="btn"
+								href="RegistroProducto?page=modificar&idPro=
+							<c:out value="${i.idproductos}"></c:out>
+							&nom=<c:out value="${i.nombre}"></c:out>">Modificar</a></td>
+
+							<td class="tdProd"><a class="btn"
+								href="RegistroProducto?page=eliminar&idPro=
+							<c:out value="${i.idproductos}"></c:out>">Eliminar</a></td>
+						</c:if>
+					</tr>
+					<tr>
+					<td colspan="2"><hr></td>
+					</tr>
+					<tr>
+						<td colspan="2" class="tdDesc">${i.descripcion}</td>
+					</tr>		
+
+				</table>
+			</c:forEach>
+		
+		
+		
+		<%-- 
 			<c:forEach var="i" items="${ listaProductos }">
 				<table class="tablePro">
 					<tr class="trProducto">
@@ -139,7 +178,7 @@
 					</tr>
 
 				</table>
-			</c:forEach>
+			</c:forEach> --%>
 		</div>
 
 	</div>

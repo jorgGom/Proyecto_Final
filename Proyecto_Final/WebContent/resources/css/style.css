@@ -379,20 +379,18 @@ th {
 }
 /*------------ Tabla productos --------------*/
 .tablePro {
-	max-width: 0;
-	width: 40%;
-	height: 40%;
+	max-width: 35%;
+	width: 330px;
+	height: 20%;
 	float: left;
 	margin-right: 80px;
 	margin-bottom: 60px;
 	padding-bottom: 10px;
 	-moz-border-radius: 22px;
 	-webkit-border-radius: 22px;
-		
 	box-shadow: 15px -10px 3px rgba(0, 0, 0, 0.27);
 	-webkit-box-shadow: 0px 10px 20px 4px rgba(0, 0, 0, 0.27);
 	-moz-box-shadow: 15px -10px 3px rgba(0, 0, 0, 0.27);
-	
 }
 
 .thProd {
@@ -405,15 +403,20 @@ th {
 }
 
 .tdProdImg {
-	padding: 20px;
+	padding: 15px 0px 30px 14px;
 }
 
 .imgProd {
 	width: 130px;
 }
-
+hr{
+	background-color:rgba(19, 193, 172, .93); 
+	width: 80%;
+	margin-bottom: -20px;
+	margin-top: -5px;
+}
 .tdProd {
-	width: 60px;
+	width: 103px;
 }
 .tdButton{
 	text-align:center;
@@ -421,6 +424,10 @@ th {
 }
 .tdDenun{
 	text-align: center;
+}
+.tdDesc{
+	text-align: center;
+	padding-bottom: 20px;
 }
 .tdButton input[type="submit"] {
 

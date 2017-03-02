@@ -97,33 +97,23 @@
 					</tr>
 
 					<tr>
-						<td rowspan="3" class="tdProdImg"><img class="imgProd"
+						<td rowspan="2" class="tdProdImg"><img class="imgProd"
 							alt="imgPrd" src="resources/img/prod.jpg"></td>
-						<td colspan="2" class="tdProd">${i.precio}</td>
+						<td colspan="2" class="tdProd"><span>Precio: </span>${i.precio}</td>
 					<tr>
-						<td colspan="2" class="tdProd">${i.vendedor}</td>
+						<td colspan="2" class="tdProd"><span>Vendedor: </span>${i.vendedor}</td>
 					</tr>
 					<tr>
-						<td colspan="2" class="tdProd">${i.descripcion}</td>
+					<td colspan="2"><hr></td>
 					</tr>
 					<tr>
-						<td class="tdDenun"><input type="submit" value="Denunciar"></td>
-						<c:if test="${usuario.nombre eq usuario.nombre }">
-
-							<td class="tdProd"><a class="btn"
-								href="RegistroProducto?page=modificar&idPro=
-							<c:out value="${i.idproductos}"></c:out>
-							&nom=<c:out value="${i.nombre}"></c:out>">Modificar</a></td>
-
-							<td class="tdProd"><a class="btn"
-								href="RegistroProducto?page=eliminar&idPro=
-							<c:out value="${i.idproductos}"></c:out>">Eliminar</a></td>
-
-						</c:if>
+						<td colspan="2" class="tdDesc">${i.descripcion}</td>
 					</tr>
 					<tr>
-						<td colspan="3" class="tdButton"><input type="submit"
-							value="Comprar"></td>
+						<td colspan="3" class="tdButton">
+							<a href="RegistroProducto?page=comprar&idPro=
+							<c:out value="${i.idproductos}"></c:out>">Comprar</a>
+							</td>
 					</tr>
 					</tr>
 

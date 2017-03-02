@@ -72,7 +72,7 @@
 			</div>
 		</div>
 		<div class="item2">
-						<c:forEach var="i" items="${ listaProductos }">
+			<c:forEach var="i" items="${ listaProductos }">
 				<table class="tablePro">
 					<tr class="trProducto">
 						<th class="thProd" colspan="3">${i.nombre}</th>
@@ -81,15 +81,21 @@
 					<tr>
 						<td rowspan="2" class="tdProdImg"><img class="imgProd"
 							alt="imgPrd" src="resources/img/prod.jpg"></td>
-						<td colspan="2" class="tdProd">${i.precio}</td>
+						<td colspan="2" class="tdProd"><span>Precio: </span>${i.precio}</td>
 					<tr>
-						<td colspan="2" class="tdProd">${i.vendedor}</td>
+						<td colspan="2" class="tdProd"><span>Vendedor: </span>${i.vendedor}</td>
 					</tr>
 					<tr>
-						<td colspan="2" class="tdProd">${i.descripcion}</td>
+					<td colspan="2"><hr></td>
 					</tr>
+					<tr>
+						<td colspan="2" class="tdDesc">${i.descripcion}</td>
+					</tr>
+
 				</table>
 			</c:forEach>
+		
+						
 		</div>
 
 	</div>
