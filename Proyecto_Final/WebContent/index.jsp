@@ -33,7 +33,7 @@
 		<form class="busqueda" action="busqueda" method="get">
 			<input type="text" class="busqueda" name="buscar"
 				placeholder="¿Qué estás buscando?" maxlength="150" />
-			<button type="submit" id="buscar">
+			<button type="submit" id="busq">
 				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 			</button>
 		</form>
@@ -51,10 +51,10 @@
 
 	</div>
 	<div class="form-busqueda">
-		<form class="busqueda" action="/" method="post">
-			<input type="text" class="busqueda"
+		<form class="busqueda" action="busqueda" method="get">
+			<input type="text" class="busqueda" name="buscar"
 				placeholder="¿Qué estás buscando?" maxlength="150" />
-			<button type="button" id="buscar">
+			<button type="submit" id="busq">
 				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 			</button>
 		</form>
@@ -71,7 +71,7 @@
 			Está permitido vender todo tipo de productos, excepto seres humanos, drogas y armas. Ante malos comportamientos o cuentas sospechosas nuestro 
 			todopoderoso ADMINISTRADOR actuará con mano firme.<br>
 			OS DESEAMOS UNA BUENA COMPRA/VENTA.<br>
-			Pinchando en el siguiente enlace puedes acceder a los productos que están en este momento a la venta--><a href="busqueda">Productos en venta</a>
+			Pinchando en el siguiente enlace puedes acceder a los productos que están en este momento a la venta--><a href="busqueda?buscar=">Productos en venta</a>
 			</p>
 
 		</div>
