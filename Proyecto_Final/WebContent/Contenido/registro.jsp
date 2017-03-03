@@ -23,7 +23,7 @@
 	<div class="navegacion">
 		<h1><a href="/Proyecto_Final/home" class="company">${attCompanyName}</a></h1>
 		<nav id="navPrincipal"> 
-			<a class="amenu" href="/Proyecto_Final/home">Inicio de Sesion</a>
+			<a class="amenu" href="/Proyecto_Final/login">Inicio de Sesion</a>
 		</nav>
 	</div>
 	<div class="form-busqueda">

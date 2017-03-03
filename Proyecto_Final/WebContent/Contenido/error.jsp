@@ -39,14 +39,18 @@
 
 	<div class="mainLogin">
 	<div id="login">
-		<h2 class="error">Error al logearse</h2>
+	<c:if test="${userName == null }">
+	<h2 class="error">Iniciar Sesión</h2>
+	</c:if>
+	<c:if test="${userName!=null }">
+		<h2 class="error">Error al logearse</h2></c:if>
 		<form action="/Proyecto_Final/home" method="POST">
 			<fieldset>
 				<p>
 					<label>Nombre</label>
 				</p>
 				<p>
-					<input type="text" name="nombre" placeholder="nombre">
+					<input type="text" name="nombre" placeholder="Nombre">
 				</p>
 				<p>
 					<label>Contraseña</label>

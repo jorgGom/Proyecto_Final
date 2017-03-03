@@ -77,7 +77,7 @@
 			<li class="active"><a class="aperfil" href="busqueda?buscar="><span class="glyphicon glyphicon-piggy-bank"></span> Lista de productos</a></li>
 		</ul>
 
-		<c:if test="${usuario.nombre!='admin' }">
+		<c:if test="${usuario.nombre!='admin' and usuario.nombre!=null}">
 		
 		<p class="botones"><a class="comVen" href="RegistroProducto?page=compra">
 		Comprar
@@ -90,6 +90,7 @@
 		</div>
 	</div>
 	<div class="item2">
+	<div class="tablas">
 	<c:forEach var="i" items="${ lista }">
 				<table class="tablePro">
 					<tr class="trProducto">
@@ -99,7 +100,7 @@
 					<tr>
 						<td rowspan="2" class="tdProdImg"><img class="imgProd"
 							alt="imgPrd" src="resources/img/prod.jpg"></td>
-						<td colspan="2" class="tdProd"><span>Precio: </span>${i.precio}</td>
+						<td colspan="2" class="tdProd"><span>Precio: </span>${i.precio} &#8364</td>
 					<tr>
 						<td colspan="2" class="tdProd"><span>Vendedor: </span>${i.vendedor}</td>
 					</tr>
@@ -112,33 +113,18 @@
 					<c:if test="${i.vendido==0 }">
 					<tr>
 						<td colspan="3" class="tdButton">
-							<a href="RegistroProducto?page=comprar&idPro=
-							
+							<a class="btnComp" href="RegistroProducto?page=comprar&idPro=
 							<c:out value="${i.idproductos}"></c:out>">Comprar</a>
 							</td>
 					</tr>
 					</c:if>
 					<c:if test="${i.vendido==1 }">
 					<tr class="trProducto">
-						<td class="thProd" colspan="3" style="color:red;">VENDIDO</td>
+						<td class="tdVendido" colspan="3">VENDIDO</td>
 					</tr>
 					</c:if>
 				</table>
 			</c:forEach>
-	
-<!-- 	<table class="tableUsu"> -->
-<!--     <tr class="trUser"><th>ID Producto</th><th>Nombre</th><th>Descripción</th><th>Vendedor</th><th>Precio</th><th>Comprar</th></tr> -->
-<%--       <c:forEach var="i" items="${ lista }"> --%>
-<!--         <tr> -->
-<%--         <td class="tdUser">${i.idproductos}</td> --%>
-<%--         <td class="tdUser">${i.nombre}</td> --%>
-<%--         <td class="tdUser">${i.descripcion}</td> --%>
-<%--         <td class="tdUser">${i.vendedor}</td> --%>
-<%--         <td class="tdUser">${i.precio}</td> --%>
-<!--         <td class="tdUser"><button>Comprar</button></td> -->
-<!--         </tr>   -->
-<%--       </c:forEach> --%>
-<!--   </table> -->
 	</div>
 
 </div>

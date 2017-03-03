@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.xml.ws.Response;
 
 import proyecto_final.clases.Producto;
 import proyecto_final.dao.ProductoDao;
@@ -49,18 +50,25 @@ public class RegistroProducto extends HttpServlet {
 			request.getRequestDispatcher("Contenido/anadirProducto.jsp").forward(request, response);
 			break;
 		}
-
+		case("cerrarVentana"):{
+			session.removeAttribute("formulario");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("inicio?page=productosVenta");
+			dispatcher.forward(request, response);
+		}
 		case ("compra"): {
 			int idUser = (int) session.getAttribute("idUser");
 			System.out.println(idUser + "comprobacion");
 			List<Producto> pro = dao.getProductComprar(idUser);
+			request.setAttribute("idUser", idUser);
 			request.setAttribute("listaProductos", pro);
 			request.getRequestDispatcher("Contenido/productos.jsp").forward(request, response);
 			break;
 		}
 		case ("modificar"): {
+			String nombre = request.getParameter("nom");
 			String idModS = request.getParameter("idPro");
 			int idMod = Integer.parseInt(idModS);
+			session.setAttribute("nombre", nombre);
 			session.setAttribute("idMod", idMod);
 			session.removeAttribute("formulario");
 			String formulario = "form";
@@ -80,6 +88,9 @@ public class RegistroProducto extends HttpServlet {
 			break;
 		}
 		case ("comprar"): {
+			if (session.getAttribute("userName")==null) {
+				request.getRequestDispatcher("Contenido/error.jsp").forward(request, response);
+			}
 			String idP = request.getParameter("idPro");
 			int idPro = Integer.parseInt(idP);
 			int idComp = (int) session.getAttribute("idUser");

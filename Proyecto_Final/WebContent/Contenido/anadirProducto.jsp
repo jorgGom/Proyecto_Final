@@ -22,6 +22,8 @@
 <header class="navbar navbar-default navbar-fixed-top">
 	<div class="navegacion">
 		<h1><a href="inicio" class="company">${attCompanyName}</a></h1>
+		<nav id="navPrincipal">
+		<a class="amenu" href="login?accion=salir">Cerrar sesión</a> </nav>
 	</div>
 	<div class="form-busqueda">
 		<form class="busqueda" action="busqueda" method="get">
@@ -43,7 +45,7 @@
 					<label for="nombrePro">Nombre de producto</label>
 				</p>
 				<p>
-					<input type="text" name="nombrePro" id="nombrePro" placeholder="Nombre de producto" required>
+					<input type="text" name="nombrePro" id="nombrePro" placeholder="Nombre de producto" required="">
 				</p>
 				</div>
 				<div class="dcha">
@@ -51,7 +53,7 @@
 					<label for="descripcion">Descripcion</label>
 				</p>
 				<p>
-					<input  type="text" name="descripcion" id="descripcion" placeholder="Descripcion" required>
+					<textarea name="descripcion" id="descripcion" rows="5" cols="32" placeholder="Descripcion" required></textarea>
 				</p>
 				</div>
 				<div class="izq">
@@ -59,8 +61,9 @@
 					<label for="precio">Precio</label>
 				</p>
 				<p>
-					<input name="precio" type="text" id="precio" placeholder="Precio" required>
+					<input name="precio" type="text" id="precio" placeholder="Precio" required="">
 				</p>
+				</div>
 				<div class="centro">
 				<p class="button">
 					<input type="submit" value="Añadir">
@@ -69,7 +72,6 @@
 			</fieldset>
 		</form>
 	</div>
-	</form>
 
 </body>
 </html>

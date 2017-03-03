@@ -96,7 +96,11 @@ public class AdminServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 			//response.sendRedirect("Filtrado/bienvenido.jsp");
 		}
-		
+		else if("cerrarVentana".equals(accion)){
+			session.removeAttribute("formulario");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("inicio?page=listaUsuarios");
+			dispatcher.forward(request, response);
+		}
 		else{
 			request.getRequestDispatcher("Proyecto_Final/Filtrado/bienvenido.jsp").forward(request, response);
 			

@@ -79,8 +79,8 @@ a:hover {
 	padding-left: 10px;
 	font-family: 'Dosis', sans-serif;
 }
-
 #buscar {
+	outline: none;
 	height: 40px;
 	width: 70px;
 	border-radius: 30px;
@@ -126,12 +126,12 @@ p {
 }
 
 p.botones {
-	margin-top: 70px;
+	margin-top: 60px;
 	margin-bottom: -20px;
 	margin-left: 15%;
 }
 
-a.conVend:hover {
+a.conVend:active {
 	transition: 0.4s;
 	background-color: rgba(19, 193, 172, .93);
 }
@@ -143,11 +143,19 @@ a.conVen:hover {
 
 a.comVend {
 	border: 3px solid;
+	border-radius:10px;
 	padding: 15px 80px 15px 80px;
 }
-
+a.comVenC{
+	background-color:#337ab7;
+	color:white;
+	border:0px;
+	padding: 15px 73px 15px 73px;
+	border-radius:10px;
+}
 a.comVen {
 	padding: 15px 73px 15px 73px;
+	border-radius:10px;
 	border: 3px solid;
 }
 
@@ -207,7 +215,18 @@ main {
 .button {
 	margin-right: 75px;
 }
-
+.tablas{
+	margin-left: 8%;
+}
+textarea#descripcion {
+    background-color: #eee;
+    color: #777;
+    border: none;
+    border-radius: 10px;
+    float: left;
+    height: 155px;
+    outline: none;
+}
 input {
 	border: none;
 	font-family: inherit;
@@ -381,7 +400,7 @@ th {
 .tablePro {
 	max-width: 35%;
 	width: 330px;
-	height: 20%;
+	height: 30%;
 	float: left;
 	margin-right: 80px;
 	margin-bottom: 60px;
@@ -408,15 +427,14 @@ th {
 
 .imgProd {
 	width: 130px;
+	margin-left: 10px;
+    margin-right: -20px;
 }
 hr{
 	background-color:rgba(19, 193, 172, .93); 
 	width: 80%;
 	margin-bottom: -20px;
 	margin-top: -5px;
-}
-.tdProd {
-	width: 103px;
 }
 .tdButton{
 	text-align:center;
@@ -438,9 +456,46 @@ hr{
 	height: 40px;
 	color: white;
 }
+.tdVendido{
+	background-color: rgba(19, 193, 172, .93);
+	border-radius: 20px 20px 20px 20px;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 30px;
+	color: red;
+}
+.btnComp{
+	padding: 7px 25px 8px 25px;
+    border-radius: 6px 6px 6px 6px;
+    background-color: rgba(19, 193, 172, .93);
+    color: white;
+}
+.btn{
+	font-size: 18px;
+}
+.btnComp:hover{
+	color: white;
+}
+.btnComp:active{
+	background-color: rgba(36, 162, 147, 0.93);
+}
+.tdM{
+	text-align: center;
+	padding-bottom: 15px;
+}
+.tdE{
+	text-align: left;
+	padding-bottom: 15px;
+}
 /*----tabla modificar Producto -------*/
+.cerr{
+	float: right;
+}
+a.glyphicon.glyphicon-remove {
+    color: red;
+}
 .formProd{
-	margin-top:100px;
+	margin-top:80px;
 	margin-left: 10px;
 }
 .tablaMod{
@@ -449,15 +504,16 @@ hr{
 	font-family: 'Dosis', sans-serif;
 }
 .inMod{
-	width: 110%;
+	width: 98%;
 }
 .tdModDcha{
 	font-size: 20px;
-	padding: 6px 100px 6px 10px;
+	padding: 6px 0px 6px 10px;
 }
 .tdModIzq{
 	font-size: 20px;
 	padding-left: 10px;
+	width: 25%;
 }
 .tdBcenter{
 	text-align: center;	

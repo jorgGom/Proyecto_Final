@@ -4,6 +4,7 @@
 <%@ page import="java.util.List"%>
 <%@ page import="javax.swing.JOptionPane"%>
 <%@ page import="proyecto_final.clases.Usuario"%>
+<%@ page import="proyecto_final.clases.Producto"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -27,8 +28,8 @@
 		<h1>
 			<a href="index.jsp" class="company">${attCompanyName}</a>
 		</h1>
-		<nav id="navPrincipal"> <a class="amenu" href="InitSess"></a> <a
-			class="amenu" href="login?accion=salir">Cerrar sesión</a> </nav>
+		<nav id="navPrincipal"> <a class="amenu" href="InitSess"></a> 
+		<a class="amenu" href="login?accion=salir">Cerrar sesión</a> </nav>
 		<nav id="navPrincipal"> <a class="amenu" href="InitSess">${nombreUsuario }</a>
 		</nav>
 
@@ -63,7 +64,7 @@
 				<c:if test="${usuario.nombre!='admin' }">
 
 					<p class="botones">
-						<a class="comVen" href="RegistroProducto?page=compra" style="background-color: rgba(19, 193, 172, .93)"> Comprar
+						<a class="comVenC" href="RegistroProducto?page=compra"> Comprar
 						</a>
 					</p>
 					<br>
@@ -80,16 +81,16 @@
 						<tr>
 							<td class="tdModIzq">Nombre:</td>
 							<td class="tdModDcha"><input class="inMod" type="text"
-								placeholder="Nuevo nombre del Producto" name="nom" /></td>
+								placeholder="Nuevo nombre del Producto" name="nom" required/></td>
 						</tr>
 						<tr>
 							<td class="tdModIzq">Descripción:</td>
 							<td class="tdModDcha"><input class="inMod" type="text" placeholder="Nueva Descripcion"
-								name="desc" /></td>
+								name="desc" required/></td>
 						</tr>
 						<tr>
 							<td class="tdModIzq">Precio:</td>
-							<td class="tdModDcha"><input class="inMod" type="text" placeholder="Nuevo Precio" name="pre" /></td>
+							<td class="tdModDcha"><input class="inMod" type="text" placeholder="Nuevo Precio" name="pre" required/></td>
 						</tr>
 						<tr>
 							<td colspan="2" class="tdBcenter"><input class="btnModP" type="submit" value="Modificar"
@@ -101,17 +102,19 @@
 			</c:if>
 		</div>
 		<div class="item2">
-
+		<c:if test="${idUser eq producto.vendedor}">
+			<h2>No hay ningun producto a la venta</h2>
+		</c:if>
+		<div class="tablas">
 		<c:forEach var="i" items="${ listaProductos }">
 				<table class="tablePro">
 					<tr class="trProducto">
 						<th class="thProd" colspan="3">${i.nombre}</th>
 					</tr>
-
 					<tr>
 						<td rowspan="2" class="tdProdImg"><img class="imgProd"
 							alt="imgPrd" src="resources/img/prod.jpg"></td>
-						<td colspan="2" class="tdProd"><span>Precio: </span>${i.precio}</td>
+						<td colspan="2" class="tdProd"><span>Precio: </span>${i.precio} &#8364</td>
 					<tr>
 						<td colspan="2" class="tdProd"><span>Vendedor: </span>${i.vendedor}</td>
 					</tr>
@@ -123,14 +126,13 @@
 					</tr>
 					<tr>
 						<td colspan="3" class="tdButton">
-							<a href="RegistroProducto?page=comprar&idPro=
+							<a class="btnComp" href="RegistroProducto?page=comprar&idPro=
 							<c:out value="${i.idproductos}"></c:out>">Comprar</a>
 							</td>
 					</tr>
 				</table>
 			</c:forEach>
+			</div>
 		</div>
-
-	</div>
 </body>
 </html>

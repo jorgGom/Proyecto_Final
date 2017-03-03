@@ -72,6 +72,7 @@
 			</div>
 		</div>
 		<div class="item2">
+			<div class="tablas">
 			<c:forEach var="i" items="${ listaProductos }">
 				<table class="tablePro">
 					<tr class="trProducto">
@@ -81,7 +82,7 @@
 					<tr>
 						<td rowspan="2" class="tdProdImg"><img class="imgProd"
 							alt="imgPrd" src="resources/img/prod.jpg"></td>
-						<td colspan="2" class="tdProd"><span>Precio: </span>${i.precio}</td>
+						<td colspan="2" class="tdProd"><span>Precio: </span>${i.precio} &#8364</td>
 					<tr>
 						<td colspan="2" class="tdProd"><span>Vendedor: </span>${i.vendedor}</td>
 					</tr>
@@ -94,10 +95,7 @@
 
 				</table>
 			</c:forEach>
-		
-						
-		</div>
-
+			</div>
 	</div>
 </body>
 </html>

@@ -75,7 +75,9 @@
 			</div>
 			<c:if test="${formulario eq 'form' }">
 				<form action="RegistroProducto?page=modProducto" method="POST" class="formProd">
-					<h2>Modificar el Producto ${nombre}</h2>
+					<span class="cerr"><a href="RegistroProducto?page=cerrarVentana" class="glyphicon glyphicon-remove"></a></span>
+					<h2>Modificar el Producto "${nombre}"</h2>
+					
 					<table border="2" class="tablaMod">
 						<tr>
 							<td class="tdModIzq">Nombre:</td>
@@ -101,8 +103,9 @@
 			</c:if>
 		</div>
 		<div class="item2">
-		
+		<div class="tablas">
 		<c:forEach var="i" items="${ listaProductos }">
+		
 				<table class="tablePro">
 					<tr class="trProducto">
 						<th class="thProd" colspan="3">${i.nombre}</th>
@@ -111,18 +114,18 @@
 					<tr>
 						<td rowspan="2" class="tdProdImg"><img class="imgProd"
 							alt="imgPrd" src="resources/img/prod.jpg"></td>
-						<td colspan="2" class="tdProd"><span>Precio: </span>${i.precio}</td>
+						<td colspan="2" class="tdProd"><span>Precio: </span>${i.precio} &#8364</td>
 					<tr>
 						<td colspan="2" class="tdProd"><span>Vendedor: </span>${i.vendedor}</td>
 					</tr>
 					<tr>
 					<c:if test="${usuario.nombre!='admin' }">
-							<td class="tdProd"><a class="btn"
+							<td class="tdM"><a class="btn"
 								href="RegistroProducto?page=modificar&idPro=
 							<c:out value="${i.idproductos}"></c:out>
 							&nom=<c:out value="${i.nombre}"></c:out>">Modificar</a></td>
 
-							<td class="tdProd"><a class="btn"
+							<td class="tdE"><a class="btn"
 								href="RegistroProducto?page=eliminar&idPro=
 							<c:out value="${i.idproductos}"></c:out>">Eliminar</a></td>
 						</c:if>
@@ -136,49 +139,7 @@
 
 				</table>
 			</c:forEach>
-		
-		
-		
-		<%-- 
-			<c:forEach var="i" items="${ listaProductos }">
-				<table class="tablePro">
-					<tr class="trProducto">
-						<th class="thProd" colspan="3">${i.nombre}</th>
-					</tr>
-
-					<tr>
-						<td rowspan="3" class="tdProdImg"><img class="imgProd"
-							alt="imgPrd" src="resources/img/prod.jpg"></td>
-						<td colspan="2" class="tdProd">${i.precio}</td>
-					<tr>
-						<td colspan="2" class="tdProd">${i.vendedor}</td>
-					</tr>
-					<tr>
-						<td colspan="2" class="tdProd">${i.descripcion}</td>
-					</tr>
-					<tr>
-						<td class="tdDenun"><input type="submit" value="Denunciar"></td>
-						<c:if test="${usuario.nombre!='admin' }">
-
-							<td class="tdProd"><a class="btn"
-								href="RegistroProducto?page=modificar&idPro=
-							<c:out value="${i.idproductos}"></c:out>
-							&nom=<c:out value="${i.nombre}"></c:out>">Modificar</a></td>
-
-							<td class="tdProd"><a class="btn"
-								href="RegistroProducto?page=eliminar&idPro=
-							<c:out value="${i.idproductos}"></c:out>">Eliminar</a></td>
-
-						</c:if>
-					</tr>
-					<tr>
-						<td colspan="3" class="tdButton"><input type="submit"
-							value="Comprar"></td>
-					</tr>
-					</tr>
-
-				</table>
-			</c:forEach> --%>
+			</div>
 		</div>
 
 	</div>

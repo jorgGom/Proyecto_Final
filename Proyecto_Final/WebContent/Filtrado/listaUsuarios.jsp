@@ -111,6 +111,7 @@
 			<c:if test="${formulario eq 'form' }">
 
 			<form action="Admin" method="POST" class="formMod">
+				<span class="cerr"><a href="Admin?accion=cerrarVentana" class="glyphicon glyphicon-remove"></a></span>
 				<h2>Modificar el usuario</h2>
 				<table class="tableUsu">
 				<tr class="trUser">
