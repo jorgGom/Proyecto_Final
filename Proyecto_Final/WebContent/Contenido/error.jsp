@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,10 +21,11 @@
 <body style="background-color: #F1F1F1">
 	<header class="navbar navbar-default navbar-fixed-top">
 	<div class="navegacion">
-		<h1><a href="/Proyecto_Final/home" class="company">${attCompanyName}</a></h1>
-		<nav id="navPrincipal">
-			<a class="amenu" href="login?accion=registro">Registrarse</a> 
-		</nav>
+		<h1>
+			<a href="/Proyecto_Final/home" class="company">${attCompanyName}</a>
+		</h1>
+		<nav id="navPrincipal"> <a class="amenu"
+			href="login?accion=registro">Registrarse</a> </nav>
 	</div>
 	<div class="form-busqueda">
 		<form class="busqueda" action="busqueda" method="get">
@@ -38,33 +39,37 @@
 	</header>
 
 	<div class="mainLogin">
-	<div id="login">
-	<c:if test="${userName == null }">
-	<h2 class="error">Iniciar Sesión</h2>
-	</c:if>
-	<c:if test="${userName!=null }">
-		<h2 class="error">Error al logearse</h2></c:if>
-		<form action="/Proyecto_Final/home" method="POST">
-			<fieldset>
-				<p>
-					<label>Nombre</label>
-				</p>
-				<p>
-					<input type="text" name="nombre" placeholder="Nombre">
-				</p>
-				<p>
-					<label>Contraseña</label>
-				</p>
-				<p>
-					<input type="password" name="pass" placeholder="Contraseña">
-				</p>
-				<p>
-					<input type="submit" value="Iniciar Sesión">
-				</p>
-			</fieldset>
+		<div id="login">
+
+			<c:choose>
+				<c:when test="${fallo!=null }">
+					<h2 class="error">Error al logearse</h2>
+				</c:when>
+				<c:when test="${userName == null }">
+					<h2 class="error">Iniciar Sesión</h2>
+				</c:when>
+			</c:choose>
+			<form action="/Proyecto_Final/home" method="POST">
+				<fieldset>
+					<p>
+						<label>Nombre</label>
+					</p>
+					<p>
+						<input type="text" name="nombre" placeholder="Nombre">
+					</p>
+					<p>
+						<label>Contraseña</label>
+					</p>
+					<p>
+						<input type="password" name="pass" placeholder="Contraseña">
+					</p>
+					<p>
+						<input type="submit" value="Iniciar Sesión">
+					</p>
+				</fieldset>
+			</form>
+		</div>
 		</form>
 	</div>
-	</form>
-</div>
 </body>
 </html>

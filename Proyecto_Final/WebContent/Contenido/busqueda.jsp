@@ -68,8 +68,11 @@
 		<ul class="nav nav-pills nav-stacked">
 			<c:if test="${usuario.nombre!=null}">
 			<li><a class="aperfil" href="inicio"><span class="glyphicon glyphicon-user"></span> Perfil ${userName }</a></li>
+		
+			<c:if test="${usuario.nombre!='admin'  }">
 			<li><a class="aperfil" href="inicio?page=productosVenta"><span class="glyphicon glyphicon-shopping-cart"></span> Productos en venta</a></li>
 			<li><a class="aperfil" href="inicio?page=productosComprados"><span class="glyphicon glyphicon-piggy-bank"></span> Productos comprados</a></li>
+			</c:if>
 			</c:if>
 			<c:if test="${ usuario.nombre eq 'admin' }">
 				<li><a class="aperfil" href="inicio?page=listaUsuarios"><span class="glyphicon glyphicon-book"></span> Lista de usuarios</a></li>

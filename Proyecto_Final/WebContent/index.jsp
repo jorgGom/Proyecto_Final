@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,67 +19,73 @@
 <title>WallaTroll</title>
 </head>
 <body>
-	
-	<header class="navbar navbar-default navbar-fixed-top">
-	<c:if test="${userName eq null }">
-	<div class="navegacion">
-		<h1>${attCompanyName}</h1>
-		<nav id="navPrincipal">
-			<a class="amenu" href="login?accion=login">Inicio de Sesion</a>
-			<a class="amenu" href="login?accion=registro">Registrarse</a> 
-		</nav>
-	</div>
-	<div class="form-busqueda">
-		<form class="busqueda" action="busqueda" method="get">
-			<input type="text" class="busqueda" name="buscar"
-				placeholder="¿Qué estás buscando?" maxlength="150" />
-			<button type="submit" id="buscar">
-				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-			</button>
-		</form>
-	</div>
-	</c:if>
-	<c:if test="${userName != null }">
-		<div class="navegacion">
-		<h1><a href="inicio" class="company">${attCompanyName} de ${userName}</a></h1>
-		<nav id="navPrincipal"> 
-			<a class="amenu" href="InitSess"></a>
-		 	<a class="amenu" href="login?accion=salir">Cerrar sesión</a>
-		</nav>
 
-	</div>
-	<div class="form-busqueda">
-		<form class="busqueda" action="busqueda" method="get">
-			<input type="text" class="busqueda" name="buscar"
-				placeholder="¿Qué estás buscando?" maxlength="150" />
-			<button type="submit" id="buscar">
-				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-			</button>
-		</form>
-	</div>
-	</c:if>
-	</header>
+	<header class="navbar navbar-default navbar-fixed-top"> <c:if
+		test="${userName eq null }">
+		<div class="navegacion">
+			<h1>${attCompanyName}</h1>
+			<nav id="navPrincipal"> <a class="amenu"
+				href="login?accion=login">Inicio de Sesion</a> <a class="amenu"
+				href="login?accion=registro">Registrarse</a> </nav>
+		</div>
+		<div class="form-busqueda">
+			<form class="busqueda" action="busqueda" method="get">
+				<input type="text" class="busqueda" name="buscar"
+					placeholder="¿Qué estás buscando?" maxlength="150" />
+				<button type="submit" id="buscar">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+				</button>
+			</form>
+		</div>
+	</c:if> <c:if test="${userName != null }">
+		<div class="navegacion">
+			<h1>
+				<a href="inicio" class="company">${attCompanyName} de
+					${userName}</a>
+			</h1>
+			<nav id="navPrincipal"> <a class="amenu" href="InitSess"></a> <a
+				class="amenu" href="login?accion=salir">Cerrar sesión</a> </nav>
+
+		</div>
+		<div class="form-busqueda">
+			<form class="busqueda" action="busqueda" method="get">
+				<input type="text" class="busqueda" name="buscar"
+					placeholder="¿Qué estás buscando?" maxlength="150" />
+				<button type="submit" id="buscar">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+				</button>
+			</form>
+		</div>
+	</c:if> </header>
 	<main>
 	<div class="contenedor">
 		<div class="descripcion">
 			<h2>Qué hacemos</h2>
 			<p>
-			Somos una web en la que facilitamos la venta y compra de productos ya sean de segunda mano o nuevos, sin intermediarios 
-			, el precio lo fija el vendedor y el comprador puede negociar para llegar a un acuerdo<br>
-			Está permitido vender todo tipo de productos, excepto seres humanos, drogas y armas. Ante malos comportamientos o cuentas sospechosas nuestro 
-			todopoderoso ADMINISTRADOR actuará con mano firme.<br>
-			OS DESEAMOS UNA BUENA COMPRA/VENTA.<br>
-			Pinchando en el siguiente enlace puedes acceder a los productos que están en este momento a la venta--><a href="busqueda?buscar=">Productos en venta</a>
+				Somos una web en la que facilitamos la venta y compra de productos
+				ya sean de segunda mano o nuevos, sin intermediarios , el precio lo
+				fija el vendedor y el comprador puede negociar para llegar a un
+				acuerdo<br> Está permitido vender todo tipo de productos,
+				excepto seres humanos, drogas y armas. Ante malos comportamientos o
+				cuentas sospechosas nuestro todopoderoso ADMINISTRADOR actuará con
+				mano firme.<br> OS DESEAMOS UNA BUENA COMPRA/VENTA.<br>
+				Pinchando en el siguiente enlace puedes acceder a los productos que
+				están en este momento a la venta--><a href="busqueda?buscar=">Productos
+					en venta</a>
 			</p>
 
 		</div>
 		<div class="imagenes">
 			<table>
 				<tr>
-					<td class="tdimg" ROWSPAN="2">ESTOS SON ALGUNOS DE LOS PRODUCTOS QUE PODRÁS ENCONTRAR EN VENTA. TODOS LOS QUE SE VEN EN LAS IMÁGENES SON 
-					FOTOS REALES DE PRODUCTOS VENDIDOS Y COMPRADOS EN ESTA WEB.<br>
-					SI QUIERES PODER ACCEDER A LA WEB NO SE TE OLVIDE REGISTRARTE, EN UNOS SENCILLOS PASOS Y MUY RÁPIDOS ESTARÁS LISTO PARA COMPRAR O VENDER LO QUE QUIERAS.<br>
-					NO NOS HACEMOS RESPONSABLES DE LAS IMAGENES NI LA DESCRIPCIÓN DE CADA PRODUCTO.
+					<td class="tdimg" ROWSPAN="2">ESTOS SON ALGUNOS DE LOS
+						PRODUCTOS QUE PODRÁS ENCONTRAR EN VENTA. TODOS LOS QUE SE VEN EN
+						LAS IMÁGENES SON FOTOS REALES DE PRODUCTOS VENDIDOS Y COMPRADOS EN
+						ESTA WEB.<br> SI QUIERES PODER ACCEDER A LA WEB NO SE TE
+						OLVIDE REGISTRARTE, EN UNOS SENCILLOS PASOS Y MUY RÁPIDOS ESTARÁS
+						LISTO PARA COMPRAR O VENDER LO QUE QUIERAS.<br> NO NOS
+						HACEMOS RESPONSABLES DE LAS IMAGENES NI LA DESCRIPCIÓN DE CADA
+						PRODUCTO.
 					</td>
 					<td><img class="imgportada" src="resources\img\LG.jpg" /></td>
 					<td><img class="imgportada" src="resources\img\calcetines.jpg" /></td>

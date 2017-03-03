@@ -24,74 +24,75 @@ import proyecto_final.dao.UserDao;
 @WebServlet("/inicio")
 public class inicio extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	
+
 	private UserDao dao;
 	private ProductoDao daoPro;
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
 
-    
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
 		super.init(config);
 		dao = new UserDao((Connection) config.getServletContext().getAttribute("conection"));
-		daoPro = new ProductoDao((Connection) config.getServletContext().getAttribute("conection")); 
+		daoPro = new ProductoDao((Connection) config.getServletContext().getAttribute("conection"));
 	}
-	
-    public inicio() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-    
-    
+
+	public inicio() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String page = request.getParameter("page");
-		HttpSession session =request.getSession();
-		
-		if("productosVenta".equals(page)){
+		HttpSession session = request.getSession();
+
+		if ("productosVenta".equals(page)) {
+
 			int idUser = (int) session.getAttribute("idUser");
-			List<Producto> pro=daoPro.getProductUser(idUser);
+			List<Producto> pro = daoPro.getProductUser(idUser);
+
 			request.setAttribute("listaProductos", pro);
 			request.getRequestDispatcher("Filtrado/productosVenta.jsp").forward(request, response);
 			return;
-		}
-		else if("listaUsuarios".equals(page)){
-			List<Usuario> users=dao.readUsers();
+		} else if ("listaUsuarios".equals(page)) {
+			List<Usuario> users = dao.readUsers();
 			request.setAttribute("listaUsuarios", users);
 			request.getRequestDispatcher("Filtrado/listaUsuarios.jsp").forward(request, response);
 			return;
-			}
-		
-		else if("productosComprados".equals(page)){
+		}
+
+		else if ("productosComprados".equals(page)) {
 			int idUser = (int) session.getAttribute("idUser");
-			List<Producto> pro=daoPro.getProductComprados(idUser);
+			List<Producto> pro = daoPro.getProductComprados(idUser);
 			request.setAttribute("listaProductos", pro);
 			request.getRequestDispatcher("Filtrado/productosComprados.jsp").forward(request, response);
 			return;
 		}
-		//response.sendRedirect("inicio?action=new");
+		// response.sendRedirect("inicio?action=new");
 		request.getRequestDispatcher("Filtrado/bienvenido.jsp").forward(request, response);
 
-		
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		List<Usuario> users=dao.readUsers();
+		List<Usuario> users = dao.readUsers();
 		request.setAttribute("listaUsuarios", users);
 		request.getRequestDispatcher("Filtrado/listaUsuarios.jsp").forward(request, response);
-		
+
 	}
 
 }

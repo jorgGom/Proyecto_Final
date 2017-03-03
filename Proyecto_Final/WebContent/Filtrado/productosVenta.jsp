@@ -103,7 +103,10 @@
 			</c:if>
 		</div>
 		<div class="item2">
-		<div class="tablas">
+			<c:if test="${fallo==null }">
+				<h2>No hay ningun producto puesto a la venta</h2>
+			</c:if>
+			<div class="tablas">
 		<c:forEach var="i" items="${ listaProductos }">
 		
 				<table class="tablePro">

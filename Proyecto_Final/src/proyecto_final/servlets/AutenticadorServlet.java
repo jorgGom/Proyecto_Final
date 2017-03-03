@@ -79,6 +79,7 @@ public class AutenticadorServlet extends HttpServlet {
 		Usuario user = dao.validateUser(newName, newPass);
 
 		if (user == null) {
+			request.setAttribute("fallo", "fallo");
 			request.getRequestDispatcher("Contenido/error.jsp").forward(request, response);
 
 
