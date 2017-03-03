@@ -110,13 +110,19 @@
 						<td colspan="2" class="tdDesc">${i.descripcion}</td>
 					</tr>
 					<tr>
+					<c:if test="${i.vendido==0 }">
 						<td colspan="3" class="tdButton">
 							<a href="RegistroProducto?page=comprar&idPro=
+							
 							<c:out value="${i.idproductos}"></c:out>">Comprar</a>
 							</td>
+					</c:if>
+					<c:if test="${i.vendido==1 }">
+					<tr class="trProducto">
+						<th class="thProd" colspan="3" style="color:red;">VENDIDO</th>
 					</tr>
+					</c:if>
 					</tr>
-
 				</table>
 			</c:forEach>
 	
