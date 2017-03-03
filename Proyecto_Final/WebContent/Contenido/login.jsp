@@ -15,7 +15,7 @@
 	crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Dosis|Pacifico"
 	rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 <title>Iniciar Sesión</title>
 </head>
 <body style="background-color: #F1F1F1">
@@ -23,7 +23,7 @@
 	<div class="navegacion">
 		<h1><a href="/Proyecto_Final/home" class="company" >${attCompanyName}</a></h1>
 		<nav id="navPrincipal">
-			<a class="amenu" href="registro.jsp">Registrarse</a> 
+			<a class="amenu" href="login?accion=registro">Registrarse</a> 
 		</nav>
 	</div>
 	<div class="form-busqueda">

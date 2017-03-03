@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Servlet Filter implementation class Filtro
  */
-//@WebFilter("/Filtro")
+@WebFilter("filtrado/*")
 public class Filtro implements Filter {
 
     /**
@@ -42,8 +42,11 @@ public class Filtro implements Filter {
 		// pass the request along the filter chain
 		String ifVar=(String)((HttpServletRequest)request).getSession().getAttribute("userName");
 		
-		if (ifVar!=null) {System.out.println("Tiene sesion");
-			if (ifVar.equals(request.getServletContext().getInitParameter("prueba"))) {
+		
+		
+		if (ifVar!=null) {
+			System.out.println("Tiene sesion");
+			if (ifVar.equals(request.getServletContext().getInitParameter(""))) {
 				chain.doFilter(request, response);
 			}else {request.getRequestDispatcher("index.jsp").forward(request, response);
 					}

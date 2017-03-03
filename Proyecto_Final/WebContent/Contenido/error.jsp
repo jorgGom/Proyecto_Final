@@ -23,7 +23,7 @@
 	<div class="navegacion">
 		<h1><a href="/Proyecto_Final/home" class="company">${attCompanyName}</a></h1>
 		<nav id="navPrincipal">
-			<a class="amenu" href="Contenido/registro.jsp">Registrarse</a> 
+			<a class="amenu" href="login?accion=registro">Registrarse</a> 
 		</nav>
 	</div>
 	<div class="form-busqueda">

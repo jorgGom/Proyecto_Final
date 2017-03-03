@@ -26,8 +26,8 @@
 	<div class="navegacion">
 		<h1><a href="home" class="company">${attCompanyName}</a></h1>
 		<nav id="navPrincipal">
-			<a class="amenu" href="Contenido/login.jsp">Inicio de Sesion</a>
-			<a class="amenu" href="Contenido/registro.jsp">Registrarse</a> 
+			<a class="amenu" href="login?accion=login">Inicio de Sesion</a>
+			<a class="amenu" href="login?accion=registro">Registrarse</a> 
 		</nav>
 	</div>
 	<div class="form-busqueda">
