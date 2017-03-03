@@ -74,32 +74,7 @@
 					</p>
 				</c:if>
 			</div>
-			<c:if test="${formulario eq 'form' }">
-				<form action="RegistroProducto?page=modProducto" method="POST" class="formProd">
-					<h2>Modificar el Producto ${nombre}</h2>
-					<table border="2" class="tablaMod">
-						<tr>
-							<td class="tdModIzq">Nombre:</td>
-							<td class="tdModDcha"><input class="inMod" type="text"
-								placeholder="Nuevo nombre del Producto" name="nom" required/></td>
-						</tr>
-						<tr>
-							<td class="tdModIzq">Descripción:</td>
-							<td class="tdModDcha"><input class="inMod" type="text" placeholder="Nueva Descripcion"
-								name="desc" required/></td>
-						</tr>
-						<tr>
-							<td class="tdModIzq">Precio:</td>
-							<td class="tdModDcha"><input class="inMod" type="text" placeholder="Nuevo Precio" name="pre" required/></td>
-						</tr>
-						<tr>
-							<td colspan="2" class="tdBcenter"><input class="btnModP" type="submit" value="Modificar"
-								name="modificar"></td>
-						</tr>
-					</table>
-				</form>
-
-			</c:if>
+			
 		</div>
 		<div class="item2">
 		<c:if test="${idUser eq producto.vendedor}">
