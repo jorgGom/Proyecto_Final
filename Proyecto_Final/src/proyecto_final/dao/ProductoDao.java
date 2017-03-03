@@ -181,12 +181,13 @@ public class ProductoDao {
 	}
 	
 	public List<Producto> getProductUser (int idUser){
-		String query = "SELECT * FROM productos WHERE (vendedor=?)";
+		String query = "SELECT * FROM productos WHERE (vendedor=?) and vendido=?";
 		List <Producto> prod=new ArrayList<>();
 		Producto producto=null;
 		try {
 			statement = conn.prepareStatement(query);
 			statement.setInt(1, idUser);
+			statement.setInt(2, 0);
 			ResultSet rs=statement.executeQuery();
 			while(rs.next()) {
 				producto = new Producto(rs.getInt("idproductos"),rs.getInt("vendido"),
