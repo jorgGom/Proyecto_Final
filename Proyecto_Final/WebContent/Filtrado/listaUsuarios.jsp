@@ -29,9 +29,6 @@
 		</h1>
 		<nav id="navPrincipal"> <a class="amenu" href="InitSess"></a> <a
 			class="amenu" href="login?accion=salir">Cerrar sesión</a> </nav>
-		<nav id="navPrincipal"> <a class="amenu" href="InitSess">${nombreUsuario }</a>
-		<a class="amenu" href="InitSess"><p
-				class="glyphicon glyphicon-off"></p></a> </nav>
 
 	</div>
 	<div class="form-busqueda">
@@ -89,8 +86,10 @@
 					<th>Apellido</th>
 					<th>Email</th>
 					<th>Contraseña</th>
+					<c:if test="${usuario.nombre eq 'admin' }">
 					<th>Modificar</th>
 					<th>Eliminar</th>
+					</c:if>
 				</tr>
 				<c:forEach var="i" items="${ listaUsuarios }">
 					<tr>
@@ -99,12 +98,14 @@
 						<td class="tdUser">${i.apellido}</td>
 						<td class="tdUser">${i.email}</td>
 						<td class="tdUser">${i.password}</td>
+						<c:if test="${usuario.nombre eq 'admin' }">
 						<td class="tdUser"><a class="btn"
 							href="Admin?accion=modificar&id=
 						<c:out value="${i.idusuario}"></c:out>">Modificar</a></td> 
 						<td class="tdUser"><a class="btn"
 							href="Admin?accion=eliminar&id=
 							<c:out value="${i.idusuario}"></c:out>">Eliminar</a></td>
+							</c:if>
 					</tr>
 				</c:forEach>
 			</table>

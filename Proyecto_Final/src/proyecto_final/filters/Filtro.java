@@ -49,16 +49,17 @@ public class Filtro implements Filter {
 		if ("admin".equals(ifVar)) {
 			chain.doFilter(request, response);}
 		
-		else if(ifVar==null){
+		if(ifVar==null){
 			String str = request2.getRequestURI();
-			if(str.contains("inicio")){
+			if(str.contains("inicio") || str.contains("Admin")){
 		        RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
 		        dispatcher.forward(request, response);
 			}}
-			else if(!(ifVar==null) && !"admin".equals(ifVar)){
+		
+		if(!(ifVar==null) && !"admin".equals(ifVar)){
 				String str = request2.getRequestURI();
 				
-				if(str.contains("listaUsuarios")){
+				if(str.contains("Admin")){
 		        RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
 		        dispatcher.forward(request, response);}
 				else{
