@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Servlet Filter implementation class Filtro
  */
-//@WebFilter("filtrado/*")
+@WebFilter("/inicio/*")
 public class Filtro implements Filter {
 
     /**
@@ -41,23 +41,31 @@ public class Filtro implements Filter {
 
 		// pass the request along the filter chain
 		String ifVar=(String)((HttpServletRequest)request).getSession().getAttribute("userName");
+		HttpServletRequest request2 =(HttpServletRequest) request;    
+		System.out.println(ifVar);
 		
 		
 		
-		if (ifVar!=null) {
-			System.out.println("Tiene sesion");
-			if (ifVar.equals(request.getServletContext().getInitParameter(""))) {
-				chain.doFilter(request, response);
-			}else {request.getRequestDispatcher("index.jsp").forward(request, response);
-					}
-		} else {
-			System.out.println("No tiene sesion");
-			RequestDispatcher dispatcher = request.getRequestDispatcher("Contenido/error.jsp");
-			dispatcher.forward(request, response);
+		if ("admin".equals(ifVar)) {
+			chain.doFilter(request, response);}
+		
+		else if(ifVar==null){
+			String str = request2.getRequestURI();
+			if(str.contains("inicio")){
+		        RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+		        dispatcher.forward(request, response);
+			}}
+			else if(!(ifVar==null) && !"admin".equals(ifVar)){
+				String str = request2.getRequestURI();
+				
+				if(str.contains("listaUsuarios")){
+		        RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+		        dispatcher.forward(request, response);}
+				else{
+					chain.doFilter(request, response);
+				}
+			}
 		}
-	}
-	
-
 	/**
 	 * @see Filter#init(FilterConfig)
 	 */

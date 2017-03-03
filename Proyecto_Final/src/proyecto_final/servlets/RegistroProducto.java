@@ -47,7 +47,7 @@ public class RegistroProducto extends HttpServlet {
 		switch (action) {
 
 		case ("venta"): {
-			request.getRequestDispatcher("Contenido/anadirProducto.jsp").forward(request, response);
+			request.getRequestDispatcher("Filtrado/anadirProducto.jsp").forward(request, response);
 			break;
 		}
 		case("cerrarVentana"):{
@@ -61,7 +61,7 @@ public class RegistroProducto extends HttpServlet {
 			List<Producto> pro = dao.getProductComprar(idUser);
 			request.setAttribute("idUser", idUser);
 			request.setAttribute("listaProductos", pro);
-			request.getRequestDispatcher("Contenido/productos.jsp").forward(request, response);
+			request.getRequestDispatcher("Filtrado/productos.jsp").forward(request, response);
 			break;
 		}
 		case ("modificar"): {
@@ -126,7 +126,7 @@ public class RegistroProducto extends HttpServlet {
 		}
 
 		else if ("venta".equals(page)) {
-			request.getRequestDispatcher("Contenido/anadirProducto.jsp").forward(request, response);
+			request.getRequestDispatcher("Filtrado/anadirProducto.jsp").forward(request, response);
 		} else {
 			HttpSession session = request.getSession();
 			System.out.println(session.getAttribute("userName"));
