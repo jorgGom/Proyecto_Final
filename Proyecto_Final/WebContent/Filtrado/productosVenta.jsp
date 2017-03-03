@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ page import="java.util.List"%>
 <%@ page import="javax.swing.JOptionPane"%>
 <%@ page import="proyecto_final.clases.Usuario"%>
@@ -59,7 +60,6 @@
 				<li><a class="aperfil" href="inicio?page=listaUsuarios"><span class="glyphicon glyphicon-book"></span> Lista de usuarios</a></li>
 			</c:if>
 		</ul>
-
 				<c:if test="${usuario.nombre!='admin' }">
 
 					<p class="botones">
@@ -103,9 +103,8 @@
 			</c:if>
 		</div>
 		<div class="item2">
-			<c:if test="${fallo==null }">
-				<h2>No hay ningun producto puesto a la venta</h2>
-			</c:if>
+		<c:choose>
+			<c:when test="${fn:length(listaProductos)gt 0 }">
 			<div class="tablas">
 		<c:forEach var="i" items="${ listaProductos }">
 		
@@ -143,8 +142,13 @@
 				</table>
 			</c:forEach>
 			</div>
+			</c:when>
+			<c:when test="${fn:length(listaProductos)eq 0 }">
+					<h2>OPSS!! No hay ningun producto puesto a la venta</h2>
+				</c:when>
+		
+		</c:choose>			
 		</div>
-
 	</div>
 </body>
 </html>

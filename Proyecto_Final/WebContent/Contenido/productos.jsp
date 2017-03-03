@@ -118,7 +118,7 @@
 				//</c:when>
 
 				<c:when test="${fn:length(listaProductos)eq 0 }">
-					<h2>No hay ningun producto a la venta</h2>
+					<h2>OPSS!! No hay ningun producto a la venta</h2>
 				</c:when>
 
 			</c:choose>

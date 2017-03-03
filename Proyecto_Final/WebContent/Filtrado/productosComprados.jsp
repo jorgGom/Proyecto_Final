@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -72,7 +73,9 @@
 			</div>
 		</div>
 		<div class="item2">
-			<div class="tablas">
+		<c:choose>
+			<c:when test="${fn:length(listaProductos)gt 0 }">
+				<div class="tablas">
 			<c:forEach var="i" items="${ listaProductos }">
 				<table class="tablePro">
 					<tr class="trProducto">
@@ -96,6 +99,14 @@
 				</table>
 			</c:forEach>
 			</div>
+			</c:when>
+			<c:when test="${fn:length(listaProductos)eq 0 }">
+					<h2>OPSS!! No has comprado ningun producto</h2>
+			</c:when>
+		</c:choose>
+		
+		
+			
 	</div>
 </body>
 </html>
