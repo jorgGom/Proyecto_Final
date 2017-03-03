@@ -115,7 +115,7 @@
 							</table>
 						</c:forEach>
 					</div>
-				//</c:when>
+				</c:when>
 
 				<c:when test="${fn:length(listaProductos)eq 0 }">
 					<h2>OPSS!! No hay ningun producto a la venta</h2>

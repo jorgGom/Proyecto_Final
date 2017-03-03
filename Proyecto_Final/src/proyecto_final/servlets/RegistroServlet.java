@@ -85,7 +85,7 @@ public class RegistroServlet extends HttpServlet {
 		if(correcto){
 			request.setAttribute("msg", "Registro realizado correctamente.");
 			//request.getRequestDispatcher("Contenido/login.jsp").forward(request, response);
-			response.sendRedirect("Contenido/login.jsp");
+			response.sendRedirect("login?accion=login");
 		}else{
 			request.setAttribute("msg", "No se pudo insertar el usuario, intentalo mas tarde");
 		}

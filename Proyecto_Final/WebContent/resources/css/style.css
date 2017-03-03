@@ -216,7 +216,7 @@ main {
 	margin-right: 75px;
 }
 .tablas{
-	margin-left: 8%;
+	margin-left: 3%;
 }
 textarea#descripcion {
     background-color: #eee;
@@ -399,7 +399,7 @@ th {
 /*------------ Tabla productos --------------*/
 .tablePro {
 	max-width: 35%;
-	width: 330px;
+	width: 320px;
 	height: 30%;
 	float: left;
 	margin-right: 80px;
