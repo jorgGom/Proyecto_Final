@@ -119,7 +119,7 @@
 					</c:if>
 					<c:if test="${i.vendido==1 }">
 					<tr class="trProducto">
-						<th class="thProd" colspan="3" style="color:red;">VENDIDO</th>
+						<td class="thProd" colspan="3" style="color:red;">VENDIDO</td>
 					</tr>
 					</c:if>
 					</tr>
