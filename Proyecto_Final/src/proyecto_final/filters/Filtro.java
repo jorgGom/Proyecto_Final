@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Servlet Filter implementation class Filtro
  */
-@WebFilter("filtrado/*")
+//@WebFilter("filtrado/*")
 public class Filtro implements Filter {
 
     /**
